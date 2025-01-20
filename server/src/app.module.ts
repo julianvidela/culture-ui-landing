@@ -1,10 +1,8 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { S3ComponentModule } from './s3-component/s3-component.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [S3ComponentModule, ConfigModule.forRoot({isGlobal: true})],
 })
 export class AppModule {}
