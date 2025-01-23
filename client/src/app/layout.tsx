@@ -26,7 +26,10 @@ export default function RootLayout({
       <body
         className={`${manrope.variable}  antialiased`}
       >
+        <div className="max-w-[1400px] mx-auto">
         {children}
+
+        </div>
       </body>
     </html>
   );
