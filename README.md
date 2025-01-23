@@ -95,7 +95,7 @@ CultureUI es una plataforma digital diseñada para desarrolladores que buscan ac
 </li>
 
 
-## Capturas y Demo
+# Capturas y Demo
 
 
 
