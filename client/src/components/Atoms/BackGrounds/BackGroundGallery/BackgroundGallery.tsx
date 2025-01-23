@@ -6,7 +6,7 @@ const BackgroundGallery: React.FC = () => {
     <div className="background-container">  
       <div className="blur-bg">
         <div className="blur-circle circle-1"></div>
-        <div className="blur-circle circle-2"></div>
+        <div className="blur-circle circle-2-c"></div>
         <div className="blur-circle circle-3"></div>
         <div className="blur-circle circle-4"></div>
         <div className="blur-circle circle-5"></div>
