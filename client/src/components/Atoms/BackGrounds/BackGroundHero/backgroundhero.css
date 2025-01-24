@@ -90,31 +90,31 @@ body {
   }
    
   
-  .circle-1 {
-    top: 30%;
-    left:36%;
+  .circle-1-h {
+    top: 20%;
+    left:35%;
     background: radial-gradient(circle, rgb(70, 50, 16), transparent);
   }
   
-  .circle-2 {
+  .circle-2-h {
     top: 10%;
     left: 1%;
     background: radial-gradient(circle, rgba(178, 253, 230, 0.322), transparent);
   }
   
-  .circle-3 {
+  .circle-3-h {
     bottom: 2%;
     right: 6%;
     background: radial-gradient(circle, rgb(10, 45, 73), transparent);
   }
   
-  .circle-4 {
+  .circle-4-h {
     bottom: 2%;
     left: 6%;
     background: radial-gradient(circle, rgb(10, 45, 73), transparent);
   }
 
-  .circle-5 {
+  .circle-5-h {
     top: 9%;
     right: 1%;
     background: radial-gradient(circle, rgba(178, 248, 253, 0.336), transparent);

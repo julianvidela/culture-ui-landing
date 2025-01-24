@@ -89,37 +89,37 @@ body {
   }
    
   
-  .circle-1 {
-    top: 30%;
+  .circle-1-g {
+    top: 25%;
     left:36%;
-    background: radial-gradient(circle, rgba(70, 50, 16, 0.473), transparent);
+    background: radial-gradient(circle, rgba(70, 50, 16, 0.527), transparent);
   }
   
-  .circle-2-c {
+  .circle-2-g {
     bottom: 50%;
     right: 10%;
     background: radial-gradient(circle, rgba(178, 248, 253, 0.288), transparent);
   }
   
-  .circle-3 {
+  .circle-3-g {
     bottom: 15%;
     right: 10%;
     background: radial-gradient(circle, rgba(10, 45, 73, 0.356), transparent);
   }
   
-  .circle-4 {
+  .circle-4-g {
     bottom: 15%;
     left: 10%;
     background: radial-gradient(circle, rgba(10, 45, 73, 0.478), transparent);
   }
 
-  .circle-5 {
+  .circle-5-g {
     top: 9%;
     right: 60%;
     background: radial-gradient(circle, rgba(178, 248, 253, 0.288), transparent);
   }
-  .circle-6 {
-    top: 60%;
+  .circle-6-g {
+    top: 50%;
     left:36%;
     background: radial-gradient(circle, rgba(70, 50, 16, 0.596), transparent);
   }

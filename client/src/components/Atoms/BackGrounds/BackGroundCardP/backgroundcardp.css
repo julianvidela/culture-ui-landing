@@ -27,13 +27,13 @@
     border-radius: 50%;
   }
   
-  .circle-1 {
+  .circle-1-p {
     bottom: -70%;
     left: 2%; 
     background: radial-gradient(circle, rgba(10, 45, 73, 0.445), transparent);
   }
   
-  .circle-2 {
+  .circle-2-p {
     bottom: 20%; 
     left: 80%; 
     background: radial-gradient(circle, rgba(178, 253, 230, 0.322), transparent);
