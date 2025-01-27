@@ -4,14 +4,17 @@
 // En Test.tsx
 /*import Button from '../components/cultureui/button/buttonProps/ButtonGreen'; */
 /*import {ButtonGreen} from '../components/cultureui/button/buttonProps/ButtonGreen';*/
-import NotFoundCard from "../components/cultureui/cards/NotFoundCard";
+/*import CommentPhoto from "../components/cultureui/cards/commentPhoto/CommentPhoto";*/
+import NotFoundPage from '../components/cultureui/cards/notFoundPage/NotFoundPage';
 
 /*import {CommentPhoto} from '../components/cultureui/commentwithphoto/commentPhoto/CommentPhoto'*/
 export const Test = () => {
   return (
     <div>Test
       {/*<ButtonText/>*/}
-      <NotFoundCard />
+      {/*<NotFoundCard />*/}
+      {/*<CommentPhoto/>*/}
+      <NotFoundPage/>
     </div>
     
   )
