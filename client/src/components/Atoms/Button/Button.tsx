@@ -2,7 +2,9 @@
 import React, { ReactNode } from 'react';
 import styles from './Button.module.css';
 
+
 interface ButtonProps {
+  className?:string;
   text?: string; // Texto opcional para el botón
   color?: string; // Color de fondo del botón
   textColor?: string; // Color del texto

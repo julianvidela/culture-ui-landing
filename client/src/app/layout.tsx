@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import {Manrope} from "next/font/google"
 
 import "./globals.css";
+import { Navbar } from "@/components/Navbar/Navbar";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({
         className={`${manrope.variable}  antialiased`}
       >
         <div className="max-w-[1400px] mx-auto">
+          <Navbar/>
         {children}
 
         </div>

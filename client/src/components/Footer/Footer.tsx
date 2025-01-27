@@ -6,13 +6,13 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <div className="h-[25rem] w-full mt-40 flex flex-col gap-10">
+    <div className="h-auto w-full mt-40 mb-10 flex flex-col gap-8 p-4">
       <div className="w-full flex justify-center">
         <img src={Img.CultureUiText} alt="" />
       </div>
       <hr className="hr_footer"/>
       <div className="flex justify-center">
-        <div className="flex gap-9 ml-6 text-sm">
+        <div className="flex gap-9 text-sm">
           {navLinksDesktop.map((link, index) => (
             <Link
               key={index}
