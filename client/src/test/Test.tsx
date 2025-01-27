@@ -5,7 +5,9 @@
 /*import Button from '../components/cultureui/button/buttonProps/ButtonGreen'; */
 /*import {ButtonGreen} from '../components/cultureui/button/buttonProps/ButtonGreen';*/
 /*import CommentPhoto from "../components/cultureui/cards/commentPhoto/CommentPhoto";*/
-import NotFoundPage from '../components/cultureui/cards/notFoundPage/NotFoundPage';
+/*import NotFoundPage from '../components/cultureui/cards/notFoundPage/NotFoundPage';*/
+import RememberMeOptions from "../components/cultureui/cards/remenberMeOptions/RememberMeOptions";
+
 
 /*import {CommentPhoto} from '../components/cultureui/commentwithphoto/commentPhoto/CommentPhoto'*/
 export const Test = () => {
@@ -14,7 +16,8 @@ export const Test = () => {
       {/*<ButtonText/>*/}
       {/*<NotFoundCard />*/}
       {/*<CommentPhoto/>*/}
-      <NotFoundPage/>
+      {/*<NotFoundPage/>*/}
+      <RememberMeOptions/>
     </div>
     
   )
