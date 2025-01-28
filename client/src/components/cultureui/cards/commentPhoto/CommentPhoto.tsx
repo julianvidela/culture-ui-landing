@@ -13,7 +13,7 @@ const CommentWithPhoto = () => {
       <div className="pt-6 md:pt-0 md:pl-8 text-center md:text-left space-y-4">
         <blockquote>
           <p className="text-lg font-medium text-gray-800 dark:text-gray-200">
-            "No dejes que la opinión de alguien sobre ti se convierta en tu realidad".
+            "Don't let someone's opinion of you become your reality.".
           </p>
         </blockquote>
         <figcaption className="font-medium">

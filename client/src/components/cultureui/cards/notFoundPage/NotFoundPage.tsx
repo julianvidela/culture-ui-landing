@@ -14,8 +14,7 @@ const NotFoundPage = () => {
         viewBox="0 0 200 200"
         fill="none"
       >
-        <circle cx="50" cy="50" r="30" stroke="currentColor" strokeWidth="8" />
-        <text x="95" y="100" fontSize="80" fontWeight="bold" fill="currentColor">
+        <text x="65" y="100" fontSize="80" fontWeight="bold" fill="currentColor">
           404
         </text>
       </svg>
