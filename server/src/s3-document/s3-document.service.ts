@@ -1,4 +1,4 @@
-import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
+import { DeleteObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 
@@ -67,13 +67,31 @@ export class S3DocumentService {
         return await document.save();
     }
 
+    async deleteFileFromS3(key: string): Promise<void> {
+        try {
+            const command = new DeleteObjectCommand({
+                Bucket: this.bucketName,
+                Key: key,
+            });
+            await this.s3Client.send(command);
+            console.log(`Archivo eliminado de S3: ${key}`);
+        } catch (error) {
+            throw new Error(`Error al eliminar el archivo de S3: ${error.message}`);
+        }
+    }
+
+    async updateFileMetadata(key: string): Promise<void> {
+        try {
+            await this.documentFileModel.findOneAndDelete({ key });
+            console.log(`Registro eliminado de la base de datos para la clave: ${key}`);
+        } catch (error) {
+            throw new Error(`Error al actualizar la base de datos: ${error.message}`);
+        }
+    }
+
     /*
     delete(id: string) {
         return this.documentFileModel.findByIdAndDelete(id)
-    }
-
-    update(id: string, document: any) {
-        return this.documentFileModel.findByIdAndUpdate(id, document)
     }
     */
         
