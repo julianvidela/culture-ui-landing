@@ -48,7 +48,7 @@ CultureUI es una plataforma digital diseñada para desarrolladores que buscan ac
 
 # Intalación y uso
 
-# Despliegue
+# Deploy
 
 # Equipo
 
