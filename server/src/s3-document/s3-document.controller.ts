@@ -74,12 +74,13 @@ export class S3DocumentController {
           return savedDocument;
     }
 
-    /*
-    @Delete()
-    delete() {
-        return 'Delete document'
+    @Delete(':key')
+    async deleteFile(@Param('key') key: string): Promise<void> {
+        await this.s3DocumentService.deleteFileFromS3(key);
+        return this.s3DocumentService.updateFileMetadata(key);
     }
 
+    /*
     @Put()
     upadate() {
         return 'Put document'
