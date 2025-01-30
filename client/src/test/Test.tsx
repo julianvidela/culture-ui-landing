@@ -1,23 +1,13 @@
 
-/*import ButtonBlue from '../components/cultureui/button/buttonBlue/ButtonBlue';*/
-/*import  ButtonText  from '../components/cultureui/button/buttonText/ButtonText';*/
-// En Test.tsx
-/*import Button from '../components/cultureui/button/buttonProps/ButtonGreen'; */
-/*import {ButtonGreen} from '../components/cultureui/button/buttonProps/ButtonGreen';*/
-/*import CommentPhoto from "../components/cultureui/cards/commentPhoto/CommentPhoto";*/
-import NotFoundPage from '../components/cultureui/cards/notFoundPage/NotFoundPage';
-/*import RememberMeOptions from "../components/cultureui/cards/remenberMeOptions/RememberMeOptions";*/
 
+import ButtonUnited from '../components/cultureui/button/ButtonUnited/ButtonUnited';
 
-/*import {CommentPhoto} from '../components/cultureui/commentwithphoto/commentPhoto/CommentPhoto'*/
 export const Test = () => {
   return (
     <div>Test
-      {/*<ButtonText/>*/}
-      {/*<NotFoundCard />*/}
-      {/*<CommentPhoto/>*/}
-      <NotFoundPage/>
-      {/*<RememberMeOptions/>*/}
+      
+      <ButtonUnited variant='secondary' textColor='pink' color='red'/>
+    
     </div>
     
   )
