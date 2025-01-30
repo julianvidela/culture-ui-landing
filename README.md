@@ -46,7 +46,7 @@ CultureUI es una plataforma digital diseñada para desarrolladores que buscan ac
 -Estilos: Tailwind CSS. <br>
 -Herramientas: Webpack, Vite, Storybook.
 
-# Intalación y uso
+# Instalación y uso
 
 # Deploy
 
