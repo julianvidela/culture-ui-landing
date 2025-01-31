@@ -5,6 +5,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { S3ComponentModule } from './s3-component/s3-component.module';
 import { S3DocumentModule } from './s3-document/s3-document.module';
 import { AuthModule } from './auth/auth.module';
+import { ComponentModule } from './component/component.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { AuthModule } from './auth/auth.module';
       }),
       inject: [ConfigService],
     }),
+    ComponentModule,
     S3DocumentModule,
     //S3ComponentModule,
     //AuthModule,
