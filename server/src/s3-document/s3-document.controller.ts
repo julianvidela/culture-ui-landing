@@ -3,8 +3,9 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { S3DocumentService } from './s3-document.service';
 import { CreateDocumentDto } from 'src/dto/create-document.dto';
 import { DocumentFile } from 'src/schemas/s3-document.schema';
-import { ApiBody, ApiConsumes, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiBody, ApiConsumes, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('S3-Document')
 @Controller('s3-document')
 export class S3DocumentController {
     constructor(private readonly s3DocumentService: S3DocumentService) {}
