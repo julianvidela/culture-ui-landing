@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { ComponentService } from './component.service';
-import { CreateComponentDto } from 'src/dto/component/create-document.dto';
+import { CreateComponentDto } from 'src/dto/component/create-component.dto';
 
 import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
