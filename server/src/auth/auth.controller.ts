@@ -11,7 +11,7 @@ export class AuthController {
   login(@Res() res: Response) {
     const domain = process.env.AUTH0_DOMAIN;
     const clientId = process.env.AUTH0_CLIENT_ID;
-    const redirectUri = encodeURIComponent('http://localhost:3000/api/v1/auth/callback');
+    const redirectUri = encodeURIComponent('https://c23-53-webapp-production.up.railway.app/api/v1/auth/callback');
 
     const authUrl = `https://${domain}/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&scope=openid profile email`;
     res.redirect(authUrl);
@@ -22,7 +22,7 @@ export class AuthController {
     const domain = process.env.AUTH0_DOMAIN;
     const clientId = process.env.AUTH0_CLIENT_ID;
     const clientSecret = process.env.AUTH0_CLIENT_SECRET;
-    const redirectUri = 'http://localhost:3000/api/v1/auth/callback';
+    const redirectUri = 'https://c23-53-webapp-production.up.railway.app/api/v1/auth/callback';
 
     // 1️⃣ Obtener tokens desde Auth0
     const tokenUrl = `https://${domain}/oauth/token`;
