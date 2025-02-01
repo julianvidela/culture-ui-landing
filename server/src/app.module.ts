@@ -6,6 +6,7 @@ import { S3ComponentModule } from './s3-component/s3-component.module';
 import { S3DocumentModule } from './s3-document/s3-document.module';
 import { AuthModule } from './auth/auth.module';
 import { ComponentModule } from './component/component.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -19,8 +20,10 @@ import { ComponentModule } from './component/component.module';
     }),
     ComponentModule,
     S3DocumentModule,
+    UserModule,
+    AuthModule,
     //S3ComponentModule,
-    //AuthModule,
+    //
   ],
 })
 export class AppModule {}
