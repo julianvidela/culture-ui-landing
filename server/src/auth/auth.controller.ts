@@ -22,7 +22,7 @@ export class AuthController {
     const domain = process.env.AUTH0_DOMAIN;
     const clientId = process.env.AUTH0_CLIENT_ID;
     const clientSecret = process.env.AUTH0_CLIENT_SECRET;
-    const redirectUri = 'http://localhost:3000';
+    const redirectUri = 'http://localhost:3000/callback';
 
     // 1️⃣ Obtener tokens desde Auth0
     const tokenUrl = `https://${domain}/oauth/token`;

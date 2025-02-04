@@ -7,6 +7,7 @@ import { S3DocumentModule } from './s3-document/s3-document.module';
 import { AuthModule } from './auth/auth.module';
 import { ComponentModule } from './component/component.module';
 import { UserModule } from './user/user.module';
+import { MercadoPagoModule } from './mercadopago/mercadopago.module';
 
 @Module({
   imports: [
@@ -18,10 +19,11 @@ import { UserModule } from './user/user.module';
       }),
       inject: [ConfigService],
     }),
-    ComponentModule,
-    S3DocumentModule,
     UserModule,
     AuthModule,
+    ComponentModule,
+    S3DocumentModule,
+    MercadoPagoModule,
     //S3ComponentModule,
     //
   ],
