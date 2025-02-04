@@ -11,7 +11,7 @@ export class AuthController {
   login(@Res() res: Response) {
     const domain = process.env.AUTH0_DOMAIN;
     const clientId = process.env.AUTH0_CLIENT_ID;
-    const redirectUri = encodeURIComponent('http://localhost:3000/callback');
+    const redirectUri = encodeURIComponent('http://localhost:3000');
 
     const authUrl = `https://${domain}/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&scope=openid profile email`;
     res.redirect(authUrl);
@@ -22,7 +22,7 @@ export class AuthController {
     const domain = process.env.AUTH0_DOMAIN;
     const clientId = process.env.AUTH0_CLIENT_ID;
     const clientSecret = process.env.AUTH0_CLIENT_SECRET;
-    const redirectUri = 'http://localhost:3000/callback';
+    const redirectUri = 'http://localhost:3000';
 
     // 1️⃣ Obtener tokens desde Auth0
     const tokenUrl = `https://${domain}/oauth/token`;
