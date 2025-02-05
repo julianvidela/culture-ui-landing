@@ -9,6 +9,7 @@ import { ComponentModule } from './component/component.module';
 import { UserModule } from './user/user.module';
 import { MercadoPagoModule } from './mercadopago/mercadopago.module';
 import { PaypalModule } from './paypal/paypal.module';
+import { PlanModule } from './plan/plan.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { PaypalModule } from './paypal/paypal.module';
     S3DocumentModule,
     MercadoPagoModule,
     PaypalModule,
+    PlanModule,
     //S3ComponentModule,
     //
   ],
