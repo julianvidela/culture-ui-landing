@@ -8,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 import { ComponentModule } from './component/component.module';
 import { UserModule } from './user/user.module';
 import { MercadoPagoModule } from './mercadopago/mercadopago.module';
+import { PaypalModule } from './paypal/paypal.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { MercadoPagoModule } from './mercadopago/mercadopago.module';
     ComponentModule,
     S3DocumentModule,
     MercadoPagoModule,
+    PaypalModule,
     //S3ComponentModule,
     //
   ],

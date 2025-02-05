@@ -2,16 +2,25 @@ import { Controller, Get, HttpException, HttpStatus, Query, Res } from '@nestjs/
 import { Response } from 'express';
 import axios from 'axios';
 import { UserService } from '../user/user.service';
+import { ConfigService } from '@nestjs/config';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly userService: UserService) {}
+
+  private readonly domain = this.configService.getOrThrow('AUTH0_DOMAIN')
+  private readonly clientId = this.configService.getOrThrow('AUTH0_CLIENT_ID')
+  private readonly redirectUri = this.configService.getOrThrow('REDIRRECT_URI')
+  private readonly clientSecret = this.configService.getOrThrow('AUTH0_CLIENT_SECRET')
+
+  constructor(
+    private readonly configService: ConfigService,
+    private readonly userService: UserService) {}
 
   @Get('login')
   login(@Res() res: Response) {
-    const domain = process.env.AUTH0_DOMAIN;
-    const clientId = process.env.AUTH0_CLIENT_ID;
-    const redirectUri = encodeURIComponent('http://localhost:3000');
+    const domain = this.domain;
+    const clientId = this.clientId;
+    const redirectUri = encodeURIComponent(`${this.redirectUri}`);
 
     const authUrl = `https://${domain}/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&scope=openid profile email`;
     res.redirect(authUrl);
@@ -24,9 +33,9 @@ export class AuthController {
         throw new HttpException('Authorization code is required', HttpStatus.BAD_REQUEST);
       }
 
-      const domain = process.env.AUTH0_DOMAIN;
-      const clientId = process.env.AUTH0_CLIENT_ID;
-      const clientSecret = process.env.AUTH0_CLIENT_SECRET;
+      const domain = this.domain;
+      const clientId = this.clientId;
+      const clientSecret = this.clientSecret;
       const redirectUri = 'http://localhost:3000';
 
       //Obtener tokens desde Auth0
@@ -69,5 +78,13 @@ export class AuthController {
         error.response?.status || HttpStatus.INTERNAL_SERVER_ERROR
       );
     }
+  }
+
+  @Get('logout')
+  logout(@Res() res: Response) {
+    
+    const logoutUrl = `https://${this.domain}/v2/logout?client_id=${this.clientId}&returnTo=${this.redirectUri}`;
+    
+    res.redirect(logoutUrl);
   }
 }
