@@ -15,17 +15,15 @@ export class ComponentController {
         return await this.componentService.findAll();
     }
 
-    @Get(':id') 
+    @Get('id/:id') 
     async findOne(@Param('id') id: string) {
         return await this.componentService.findOne(id);
     }
 
-    @Post('find-by-slug')
-async findBySlug(@Body('slug') slug: string) {
-    console.log('Slug recibido en el body:', slug);
-    return await this.componentService.findBySlug(slug);
-}
-
+    @Get('slug')
+      async findBySlug(@Query('slug') slug: string) {
+      return await this.componentService.findBySlug(slug);
+    }
 
     @Post()
     @ApiOperation({ summary: 'Crear un nuevo componente' })

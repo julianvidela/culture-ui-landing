@@ -26,22 +26,9 @@ export class ComponentService {
             return component;
             
         }
-/** 
-    async findBySlug(query: string){
-        console.log('Buscando componente con slug:', query);
-        const component = await this.componentModel.findOne({slug: query}).exec();
-
-        if (!component) {
-            throw new NotFoundException(`Component with Slug ${query} not found`);
-        }
-        return component;
-    }
-
-
-*/
 
 async findBySlug(slug: string) {
-    console.log('Buscando componente con slug:', slug, typeof slug);
+    
     const component = await this.componentModel.findOne({ slug }).exec();
 
     if (!component) {
