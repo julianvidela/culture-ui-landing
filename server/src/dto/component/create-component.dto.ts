@@ -18,6 +18,9 @@ export class CreateComponentDto {
   name: string;
 
   @IsString() 
+  description: string;
+
+  @IsString() 
   slug: string;
 
   @IsString()
@@ -32,6 +35,9 @@ export class CreateComponentDto {
   @IsOptional()
   @IsString()
   usage?: string;
+
+  @IsString() 
+  codeExample: string;
 
   @IsBoolean()
   isPremium: boolean;

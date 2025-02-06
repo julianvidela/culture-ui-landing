@@ -19,6 +19,9 @@ export class Component extends Document {
   name: string;
 
   @Prop({ required: true })
+  description: string
+
+  @Prop({ required: true })
   slug: string;
 
   @Prop({ required: true})
@@ -29,6 +32,9 @@ export class Component extends Document {
 
   @Prop()
   usage?: string;
+
+  @Prop()
+  codeExample: string;
 
   @Prop({default: false})
   isPremiun: boolean;
