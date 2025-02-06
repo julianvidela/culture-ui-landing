@@ -1,4 +1,4 @@
-import { IsString, IsArray, IsOptional, ValidateNested, ArrayMinSize } from 'class-validator';
+import { IsString, IsArray, IsOptional, ValidateNested, ArrayMinSize, IsBoolean } from 'class-validator';
 import { Type } from 'class-transformer';
 
 class PropertyDto {
@@ -17,6 +17,9 @@ export class CreateComponentDto {
   @IsString() 
   name: string;
 
+  @IsString() 
+  slug: string;
+
   @IsString()
   installationCli: string;
 
@@ -29,4 +32,7 @@ export class CreateComponentDto {
   @IsOptional()
   @IsString()
   usage?: string;
+
+  @IsBoolean()
+  isPremium: boolean;
 }

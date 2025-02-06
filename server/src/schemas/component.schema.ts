@@ -18,7 +18,10 @@ export class Component extends Document {
   @Prop({ required: true })
   name: string;
 
-  @Prop({ required: true, unique: true })
+  @Prop({ required: true })
+  slug: string;
+
+  @Prop({ required: true})
   installationCli: string;
 
   @Prop({ type: [Property], required: true })
@@ -26,6 +29,9 @@ export class Component extends Document {
 
   @Prop()
   usage?: string;
+
+  @Prop({default: false})
+  isPremiun: boolean;
 }
 
 export const ComponentSchema = SchemaFactory.createForClass(Component);
