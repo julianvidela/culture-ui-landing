@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Query } from '@nestjs/common';
 import { ComponentService } from './component.service';
 import { CreateComponentDto } from 'src/dto/component/create-component.dto';
 
@@ -20,13 +20,20 @@ export class ComponentController {
         return await this.componentService.findOne(id);
     }
 
+    @Post('find-by-slug')
+async findBySlug(@Body('slug') slug: string) {
+    console.log('Slug recibido en el body:', slug);
+    return await this.componentService.findBySlug(slug);
+}
+
+
     @Post()
     @ApiOperation({ summary: 'Crear un nuevo componente' })
-  @ApiResponse({
+    @ApiResponse({
           status: 201,
           description: 'Documento subido y metadatos guardados',
           type: CreateComponentDto,  // Cambia según el tipo de documento que se retorne
-      })
+    })
   @ApiBody({
     description: 'Datos necesarios para crear un nuevo componente',
     type: CreateComponentDto,
