@@ -1,8 +1,12 @@
 
+import HomePage from "./pages/home/page";
+
 export default function Home() {
   return (
     <>
-      <h1>Hola mundo</h1>
+      <div>
+        <HomePage/>
+      </div>
     </>
   );
 }

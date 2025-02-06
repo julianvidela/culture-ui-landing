@@ -1,0 +1,41 @@
+
+
+.background-container {
+    position: absolute; /* Permite que los círculos se posicionen respecto al contenedor padre */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Abarca todo el espacio del contenedor */
+    z-index: -1; /* Detrás del contenido principal */
+  }
+  
+  .blur-bg {
+    position: relative; /* Contexto de posicionamiento para los círculos */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .blur-circle {
+   
+    width: 400px;
+    height: 400px;
+    filter: blur(100px);
+    border-radius: 50%;
+  }
+  
+  .circle-1-p {
+    bottom: -70%;
+    left: 2%; 
+    background: radial-gradient(circle, rgba(10, 45, 73, 0.445), transparent);
+  }
+  
+  .circle-2-p {
+    bottom: 20%; 
+    left: 80%; 
+    background: radial-gradient(circle, rgba(178, 253, 230, 0.322), transparent);
+  }
+  

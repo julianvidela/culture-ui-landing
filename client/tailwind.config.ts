@@ -36,7 +36,7 @@ const config: Config = {
         },
       },
       fontSize: {
-        small: '12px',
+        small: '16px',
         normal: '20px',
         medium: '26px',
         large: '32px',

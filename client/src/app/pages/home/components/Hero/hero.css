@@ -1,0 +1,7 @@
+.hero-background {
+    background-image: url("@/common/assets/img/allcomponents-img.jpg"); /* La ruta de la imagen en tu servidor */
+    background-size: cover;
+    background-position: center;
+    color: #ffffff7e;
+  }
+
