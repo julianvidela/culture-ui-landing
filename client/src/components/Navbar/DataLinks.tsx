@@ -1,6 +1,7 @@
-export const navLinksDesktop = [
+export const navLinks = [
+  { href: '/', label: 'Home' },
   { href: '/docs', label: 'Docs' },
   { href: '/components', label: 'Components' },
-  { href: '/pages/premium', label: 'Premium' },
+  { href: '/premium', label: 'Premium' },
 ];
 

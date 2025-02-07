@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
-*{
+* {
   padding: 0px;
   margin: 0px;
 }
@@ -37,7 +36,7 @@ body {
   --color-Grayscale-shade4:#1A1A1A;
 
 
-  /* Tamaño de fuente */
+  /* Tamaño de fuente */ 
   --font-height-small:12px;
   --font-height-normal:20px;
   --font-height-medium:26px;
@@ -45,5 +44,4 @@ body {
 
   /* Colores de bordes */
   --border-primary: #ffffff15;
- 
 }

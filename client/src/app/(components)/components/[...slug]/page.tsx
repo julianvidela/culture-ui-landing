@@ -1,7 +1,8 @@
 "use client"
-import { CodeBlock } from "@/components/Atoms/codeBlock";
-import { useState } from "react";
-// import { useState } from "react";
+import { componentBySlugService } from "@/services/componentService";
+import { OneComponent } from "@/components/OneComponent/OneComponent";
+import { useAuth } from "@/hooks/useAuth";
+import { useEffect, useState } from "react";
 
 interface Props {
   params: {
@@ -9,37 +10,46 @@ interface Props {
   }
 }
 
-const CodeSnippet = (props: Props) => {
-  const nameToUppercase = props.params.slug[0].split('-').join(' ');
-  const convertToName = nameToUppercase.charAt(0).toUpperCase() + nameToUppercase.slice(1);
-  const [codes, setCodes] = useState([
-    ` import { Button } from '@tu-libreria/ui-components';
+interface ComponentI {
+  name: string,
+  description: string,
+  installationCli: string,
+  usageExample: string,
+  properties: string[],
+  isPremium: boolean,
+  imageURL: string
+  advancedUsage: string
+}
 
-  export default function App() {
-    return (
-      <>
-        <Button variant="primary">Primario</Button>
-        <Button variant="secondary" size="lg">Secundario Grande</Button>
-        <Button disabled>Deshabilitado</Button>
-      </>
-    );
-  }`
-  ]);
 
-  return (
-    <div className="">
-      <h1 className="text-3xl font-bold mb-6 text-white">{convertToName}</h1>
-      <h2 className="text-xl">Installation CLI</h2>
-      {
-        codes.map((code) => (
 
-          <CodeBlock code={code} language="tsx" />
-        ))
+const ComponentPage = (props: Props) => {
+  const { user } = useAuth()
+  const [data, setData] = useState({})
+
+  useEffect(() => {
+    const component = async () => {
+      const service = await componentBySlugService(props.params.slug)
+      const componentData = {
+        name: service.name,
+        description: service.description,
+        installationCli: service.installationCli,
+        usage: service.usageExample,
+        properties: service.properties,
+        advancedUsage: service.advancedUsage,
+        isPremium: service.isPremium
       }
-      <h2 className="text-xl">Usage</h2>
+      setData(componentData)
+    }
+  }, [user]
+  )
+  return (
+    <div className="flex flex-col flex-wrap w-full">
+      <OneComponent user={user?.isPremium} component={data} />
     </div>
-  );
+  )
+
 };
 
 
-export default CodeSnippet;
+export default ComponentPage;

@@ -11,6 +11,7 @@ const manrope = Manrope({
 });
 
 
+
 export const metadata: Metadata = {
   title: "CultureUI",
   description: "Library of components",
@@ -26,7 +27,7 @@ export default function RootLayout({
       <body
         className={`${manrope.variable}  antialiased`}
       >
-        <div className="max-w-[1400px] sm:px-4 mx-auto">
+        <div className="max-w-[1400px] mx-auto px-4">
           <Navbar />
           {children}
         </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import "./footer.css";
-import Img from "@/app/common/assets/img";
-import { navLinksDesktop } from "../Navbar/DataLinks";
+import Img from "@/common/assets/img";
+import { navLinks } from "../Navbar/DataLinks";
 import Link from "next/link";
 
 export const Footer = () => {
@@ -10,10 +10,10 @@ export const Footer = () => {
       <div className="w-full flex justify-center">
         <img src={Img.CultureUiText} alt="" />
       </div>
-      <hr className="hr_footer"/>
+      <hr className="hr_footer" />
       <div className="flex justify-center">
         <div className="flex gap-9 text-sm">
-          {navLinksDesktop.map((link, index) => (
+          {navLinks.map((link, index) => (
             <Link
               key={index}
               href={link.href}
