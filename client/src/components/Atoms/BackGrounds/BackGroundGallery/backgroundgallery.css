@@ -1,0 +1,126 @@
+/* body {
+  margin: 0;
+  padding: 0;
+  background: black; 
+  height: 100vh;
+  
+}
+
+.blur-bg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+
+.blur-circle {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 255, 0, 0.26), transparent);
+  filter: blur(100px);
+  border-radius: 50%;
+}
+
+.circle-1 {
+  top: 20%;
+  left: 15%;
+  background: radial-gradient(circle, rgba(255, 255, 0, 0.322), transparent);
+}
+
+.circle-2 {
+  bottom: 10%;
+  left: 25%;
+  background: radial-gradient(circle, rgba(0, 255, 0, 0.24), transparent);
+}
+
+.circle-3 {
+  bottom: 15%;
+  right: 20%;
+  background: radial-gradient(circle, rgba(0, 0, 255, 0.24), transparent);
+}
+
+.circle-4 {
+  top: 10%;
+  right: 15%;
+  background: radial-gradient(circle, rgba(255, 165, 0, 0.6), transparent);
+} */
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background: black; 
+    
+  }
+  
+  
+  .background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    z-index: -1; 
+  
+  }
+  .blur-bg {
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1; 
+  }
+  
+  
+   .blur-circle {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    filter: blur(100px);
+    border-radius: 50%;
+  }
+   
+  
+  .circle-1-g {
+    top: 25%;
+    left:36%;
+    background: radial-gradient(circle, rgba(70, 50, 16, 0.527), transparent);
+  }
+  
+  .circle-2-g {
+    bottom: 50%;
+    right: 10%;
+    background: radial-gradient(circle, rgba(178, 248, 253, 0.288), transparent);
+  }
+  
+  .circle-3-g {
+    bottom: 15%;
+    right: 10%;
+    background: radial-gradient(circle, rgba(10, 45, 73, 0.356), transparent);
+  }
+  
+  .circle-4-g {
+    bottom: 15%;
+    left: 10%;
+    background: radial-gradient(circle, rgba(10, 45, 73, 0.478), transparent);
+  }
+
+  .circle-5-g {
+    top: 9%;
+    right: 60%;
+    background: radial-gradient(circle, rgba(178, 248, 253, 0.288), transparent);
+  }
+  .circle-6-g {
+    top: 50%;
+    left:36%;
+    background: radial-gradient(circle, rgba(70, 50, 16, 0.596), transparent);
+  }
+  
