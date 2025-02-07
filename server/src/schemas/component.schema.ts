@@ -31,10 +31,13 @@ export class Component extends Document {
   properties: Property[];
 
   @Prop()
-  usage?: string;
+  usageExample: string;
 
   @Prop()
-  codeExample: string;
+  advancedUsage: string;
+
+  @Prop()
+  imageURL: string;
 
   @Prop({default: false})
   isPremiun: boolean;

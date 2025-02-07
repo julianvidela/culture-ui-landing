@@ -32,12 +32,15 @@ export class CreateComponentDto {
   @ArrayMinSize(1) // Asegura que al menos haya una propiedad en el array
   properties: PropertyDto[];
 
-  @IsOptional()
+  
   @IsString()
-  usage?: string;
+  usageExample: string;
 
   @IsString() 
-  codeExample: string;
+  advancedUsage: string;
+
+  @IsString() 
+  imageURL: string;
 
   @IsBoolean()
   isPremium: boolean;
