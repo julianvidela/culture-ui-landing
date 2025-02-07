@@ -2,13 +2,13 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { pricingPlans } from "../resources/DataCards";
+import pricingPlans from "@/resources/PricingPlans";
 import CheckMark from "@/common/assets/icons/CheckMark";
 import { useAuth } from "@/hooks/useAuth";
 
 const LOGIN_URL = "https://c23-53-webapp-production.up.railway.app/api/v1/auth/login";
 
-export const CardsPricing = () => {
+const CardsPricing = () => {
   const [isMounted, setIsMounted] = useState(false);
   const router = useRouter();
   const { accessToken } = useAuth()
@@ -105,3 +105,5 @@ export const CardsPricing = () => {
     </div>
   );
 };
+
+export default CardsPricing

@@ -2,26 +2,13 @@
 import { componentBySlugService } from "@/services/componentService";
 import { OneComponent } from "@/components/OneComponent/OneComponent";
 import { useAuth } from "@/hooks/useAuth";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 interface Props {
   params: {
     slug: string;
   }
 }
-
-interface ComponentI {
-  name: string,
-  description: string,
-  installationCli: string,
-  usageExample: string,
-  properties: string[],
-  isPremium: boolean,
-  imageURL: string
-  advancedUsage: string
-}
-
-
 
 const ComponentPage = (props: Props) => {
   const { user } = useAuth()
@@ -41,6 +28,7 @@ const ComponentPage = (props: Props) => {
       }
       setData(componentData)
     }
+    component()
   }, [user]
   )
   return (

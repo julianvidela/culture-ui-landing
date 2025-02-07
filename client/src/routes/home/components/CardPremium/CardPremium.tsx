@@ -3,7 +3,7 @@ import BackgroundCardP from "@/components/Atoms/BackGrounds/BackGroundCardP/Back
 import { Button } from "@/components/Atoms/Button/Button";
 import Link from "next/link";
 
-export const CardPremium = () => {
+const CardPremium = () => {
   return (
     <div className="w-auto h-auto mb-20">
       <div className="border border-[var(--border-primary)] h-[557px] mt-12 rounded-xl relative overflow-hidden px-10 md:px-20">
@@ -54,3 +54,5 @@ export const CardPremium = () => {
     </div>
   );
 };
+
+export default CardPremium

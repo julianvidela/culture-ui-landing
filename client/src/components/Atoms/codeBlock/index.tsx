@@ -28,7 +28,7 @@ export const CodeBlock = ({ code, language }: { code: string; language: string }
             )
           }
         </div>
-        <SyntaxHighlighter wrapLongLines={true} language={language} style={oneDark} wrapLines={true}>
+        <SyntaxHighlighter language={language} style={oneDark} wrapLines={true}>
           {code}
         </SyntaxHighlighter>
       </div>

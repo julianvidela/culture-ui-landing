@@ -1,5 +1,5 @@
+import { Suspense } from 'react'
 import { AllComponents } from '@/components'
-import { Button } from '@/components/Atoms/Button/Button'
 import { componentService } from '@/services/componentService'
 import { BsStars } from "react-icons/bs";
 

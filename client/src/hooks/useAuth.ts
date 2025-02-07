@@ -5,7 +5,7 @@ import { fetchAccessToken, logoutService } from "@/services/authService";
 interface UserData {
   email: string;
   name: string;
-  isPremium: boolean;
+  isPremium?: boolean;
 }
 
 interface AuthResponse {

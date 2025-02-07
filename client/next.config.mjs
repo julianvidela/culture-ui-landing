@@ -4,16 +4,8 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'panchoskitchen.com'
+        hostname: 'culture-ui-document.s3.us-east-2.amazonaws.com'
       },
-      {
-        protocol: 'https',
-        hostname: 'static.nationalgeographic.es'
-      },
-      {
-        protocol: 'https',
-        hostname: 'example.com'
-      }
     ],
   },
   async headers() {

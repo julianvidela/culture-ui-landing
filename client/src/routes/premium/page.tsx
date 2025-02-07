@@ -1,8 +1,7 @@
 import React from 'react'
-import { CardPremium } from '../home/components/CardPremium/CardPremium';
-import { CardsPricing } from './components/CardsPricing';
+import CardsPricing from './components/CardsPricing';
 
- const Premium = () => {
+const Premium = () => {
   return (
     <section className='h-auto w-auto p-4 mb-20'>
       <div className='flex flex-col items-center text-center mt-16 '>
@@ -10,7 +9,7 @@ import { CardsPricing } from './components/CardsPricing';
         <p className='text-[16px] font-bold text-[var(--text-color-primary)]'>Explore opciones de precios adaptadas a desarrolladores de todos los niveles.</p>
       </div>
       <div className='w-auto h-auto mt-20'>
-        <CardsPricing/>
+        <CardsPricing />
       </div>
     </section>
   )

@@ -1,7 +1,7 @@
 
 import Icon from "@/common/assets/icons";
 
-export const pricingPlans = [
+const pricingPlans = [
   {
     id: "Free",
     title: "Free Plan",
@@ -88,3 +88,5 @@ export const pricingPlans = [
 //     checkMark: "#B2FDE6",
 //   },
 // },
+//
+export default pricingPlans

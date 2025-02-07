@@ -1,26 +1,15 @@
 "use client"
 import Image from "next/image"
 import Link from "next/link"
-import Img from '@/common/assets/img/index'
 import { FaLock } from "react-icons/fa";
 import { useAuth } from "@/hooks/useAuth";
-
-interface allComponentsI {
-  component: {
-    name: string,
-    isPremium: boolean,
-    slug: string,
-    imageURL: string
-  }
-
-}
 
 /*
  *
  * name, description, image, installationcli,properties [prop, type, default ], usage, premium 
  * */
 
-export const AllComponents = ({ component }: allComponentsI) => {
+export const AllComponents = ({ component }: any) => {
   const { user } = useAuth()
   return (
     <>

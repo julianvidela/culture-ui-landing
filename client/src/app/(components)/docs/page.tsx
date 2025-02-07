@@ -1,8 +1,10 @@
 import React from 'react'
-import Docs from '@/pages/docs/page'
+import Docs from '@/routes/docs/page'
 
 const DocsPage = () => {
-  return <Docs />
+  return (
+    <Docs />
+  )
 }
 
 export default DocsPage

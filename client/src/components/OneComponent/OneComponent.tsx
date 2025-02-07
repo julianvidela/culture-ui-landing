@@ -3,17 +3,9 @@ import React from 'react'
 import { CodeBlock } from '../Atoms/codeBlock'
 import { redirect } from 'next/navigation'
 
-interface OneComponentI {
-  name: string,
-  description: string,
-  installationCli: string,
-  usage: string,
-  advancedUsage: string,
-  properties: object[],
-  isPremium: boolean | undefined
-}
 
-export const OneComponent = ({ component, user }: { component: OneComponentI, user: { isPremium: boolean } }) => {
+
+export const OneComponent = ({ component, user }: any) => {
 
   if (!user?.isPremium && component.isPremium) {
     redirect('/premium')

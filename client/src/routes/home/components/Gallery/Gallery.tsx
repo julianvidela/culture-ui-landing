@@ -2,7 +2,7 @@ import Img from "@/common/assets/img";
 import BackgroundGallery from "@/components/Atoms/BackGrounds/BackGroundGallery/BackgroundGallery";
 import React from "react";
 
-export const Gallery = () => {
+const Gallery = () => {
   return (
     <section className="w-full h-auto my-28 md:mt-40 flex flex-col gap-10 relative">
       <BackgroundGallery />
@@ -50,3 +50,5 @@ export const Gallery = () => {
     </section>
   );
 };
+
+export default Gallery

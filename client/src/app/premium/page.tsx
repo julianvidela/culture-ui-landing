@@ -1,4 +1,4 @@
-import Premium from '@/pages/premium/page'
+import Premium from '@/routes/premium/page'
 
 const PremiumPage = () => {
   return <Premium />

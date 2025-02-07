@@ -1,12 +1,8 @@
-
-
 "use client";
-
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import CloseIcon from "@/app/common/assets/icons/Close";
+import CloseIcon from "@/common/assets/icons/Close";
 import "./modal.css";
-import { div } from "framer-motion/client";
 
 interface ModalProps {
   title?: string;
@@ -78,24 +74,24 @@ export const Modal: React.FC<ModalProps> = ({
             >
               <div className="close-wrapper z-1" style={{ backgroundColor }}>
                 <div className="close-container z-40">
-                <button onClick={() => setIsOpen(false)}>
-                  <CloseIcon stroke="#595D62" />
-                </button>
+                  <button onClick={() => setIsOpen(false)}>
+                    <CloseIcon stroke="#595D62" />
+                  </button>
 
                 </div>
               </div>
 
               {imageSrc && (
                 <div className="relative z-10">
-                <motion.img
-                src={imageSrc}
-                alt="Modal Image"
-                className="w-full rounded-lg"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-                />
+                  <motion.img
+                    src={imageSrc}
+                    alt="Modal Image"
+                    className="w-full rounded-lg"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5 }}
+                  />
 
                 </div>
               )}
@@ -134,7 +130,7 @@ export const Modal: React.FC<ModalProps> = ({
                     <button
                       className="submit-button-modal"
                       type="submit"
-                     
+
                     >
                       {button}
                     </button>
