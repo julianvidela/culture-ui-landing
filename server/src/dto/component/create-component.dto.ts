@@ -8,9 +8,8 @@ class PropertyDto {
   @IsString()
   type: string;
 
-  @IsOptional()
   @IsString()
-  default?: string;
+  description: string;
 }
 
 export class CreateComponentDto {

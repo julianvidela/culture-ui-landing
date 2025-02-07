@@ -10,7 +10,7 @@ class Property {
   type: string;
 
   @Prop()
-  default?: string;
+  description: string;
 }
 
 @Schema({ timestamps: true })
