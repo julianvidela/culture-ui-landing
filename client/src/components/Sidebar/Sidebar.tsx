@@ -1,41 +1,49 @@
-import { menuItems } from "./Sidebar.data"
-import { SidebarMenuComponentItem } from "./components/SidebarMenuItem/SidebarMenuComponentItem"
-import { SidebarMenuItem } from "./components/SidebarMenuItem/SidebarMenuItem"
-import { componentService } from "@/services/componentService";
+import Link from "next/link";
+import { useComponents } from "@/hooks/useComponents";
 
-interface ComponentI {
-  slug: string;
-  name: string;
-}
+const SideBar = () => {
+   const {components,error,loading} = useComponents()
 
-export default async function Sidebar() {
-  const component = await componentService()
   return (
-    <div id="menu" className="min-h-screen z-10 text-white w-full left-0 h-screen ">
-      <div id="nav" className=" ">
-        <div className="pt-10 pb-5">
-          {
-            menuItems.map((item) => {
-              return (
-                <SidebarMenuItem key={item.path} {...item} />
-              )
-            })
-          }
-        </div>
-        <div className="my-4">
+    <aside className="w-64 bg-gray-800 text-white h-full pt-16 px-4">
+      <h2 className="text-lg font-bold mb-4">Menú</h2>
+      <ul className="space-y-2">
+      
+        <li>
+          <Link href="/docs" className="block py-2 px-4 rounded hover:bg-gray-700">
+            📄 Docs
+          </Link>
+        </li>
+        <li>
+          <Link href="/allcomponents" className="block py-2 px-4 rounded hover:bg-gray-700">
+            🧩 Components
+          </Link>
+        </li>
+      </ul>
 
-          <p className="text-xl text-[16px] font-semibold mt-4 mb-2">Components</p>
-          {
-            component?.map((item: ComponentI) => {
-              return (
-                <SidebarMenuComponentItem key={item.slug} {...item} />
-              )
-            })
-          }
-        </div>
-      </div>
-    </div >
-  )
+      {/* Separador */}
+      <h3 className="mt-6 text-sm font-semibold uppercase opacity-75">Componentes</h3>
+      <ul className="mt-2 space-y-1">
+        {loading && <p className="text-gray-400">Cargando componentes...</p>}
+        {error && <p className="text-red-400">Error: {error}</p>}
 
-}
+        {!loading && !error && components.length > 0 ? (
+          components.map((component) => (
+            <li key={component._id}>
+              <Link
+                href={`/components/${component._id}`} 
+                className="block py-2 px-4 rounded hover:bg-gray-700"
+              >
+                {component.name}
+              </Link>
+            </li>
+          ))
+        ) : (
+          <p className="text-gray-400">No hay componentes disponibles</p>
+        )}
+      </ul>
+    </aside>
+  );
+};
 
+export default SideBar;

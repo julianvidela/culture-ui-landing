@@ -10,7 +10,7 @@ import Img from "@/common/assets/img";
 import { LogOut } from "lucide-react";
 
 const LOGIN_URL =
-  "https://c23-53-webapp-production.up.railway.app/api/v1/auth/login";
+  "https://c23-53-webapp.onrender.com/api/v1/auth/login";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
