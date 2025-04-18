@@ -8,7 +8,7 @@ export interface Component {
   name: string;
   description: string;
   installationCli: string;
-  usage: string;
+  usageExample: string;
   properties: string[];
   advancedUsage: string;
   isPremium: boolean;

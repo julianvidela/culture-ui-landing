@@ -6,7 +6,7 @@ import { faqs } from '@/components/cultureui/Accordion/resources/FaqData';
 
 const Docs = () => {
   return (
-    <section className='max-w-[700px] h-auto m-auto my-16 p-4'>
+    <section className='max-w-[700px] h-auto my-16 px-4'>
         <div className='flex flex-col gap-5 mt-4'>
             <h2 className='text-[32px] font-bold text-[var(--text-color-secondary)]'>Introduction</h2>
             <p className='text-[14px] font-semibold text-[var(--text-color-primary)]'>CultureUI is a modern, well-designed component library built to deliver accessible, customizable, and production-ready solutions.

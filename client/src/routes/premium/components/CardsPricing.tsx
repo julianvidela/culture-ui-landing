@@ -42,11 +42,11 @@ const CardsPricing = () => {
   }
 
   return (
-    <div className="flex flex-wrap justify-center gap-4">
+    <div className="flex flex-wrap justify-center gap-4  my-16">
       {pricingPlans.map((plan) => (
         <div
           key={plan.id}
-          className="relative border border-[var(--border-primary)] w-[308px] h-auto p-6 rounded-xl overflow-hidden"
+          className="relative border border-[var(--border-primary)] w-[308px] h-auto p-6 rounded-xl overflow-hidden bg-black"
         >
           <div
             className="absolute blur-[120px] left-3 bottom-[45%] w-36 h-36"

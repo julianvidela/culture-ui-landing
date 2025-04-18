@@ -3,6 +3,7 @@
 import {Navbar} from "@/components/Navbar/Navbar";
 import SideBar from "@/components/Sidebar/Sidebar";
 import { usePathname } from "next/navigation";
+import BackgroundGallery from "../Atoms/BackGrounds/BackGroundGallery/BackgroundGallery";
 
 
 
@@ -18,17 +19,18 @@ const LayoutWrapper = ({
 
   return (
     <div className="">
-      <div className="w-full">
+      <div className="w-full relative">
 
       <Navbar />
       </div>
 
       <div className="flex">
-        <div>
+        <div className="flex justify-start">
       {showSidebar && <SideBar />}
 
         </div>
-        <div>
+        <div className="flex flex-col w-full items-start">
+      <BackgroundGallery />
           {children}
         </div>
 

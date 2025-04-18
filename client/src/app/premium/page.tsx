@@ -1,7 +1,7 @@
-import Premium from '@/routes/premium/page'
+import Premium from "@/routes/premium/page";
 
 const PremiumPage = () => {
-  return <Premium />
-}
+  return <Premium />;
+};
 
-export default PremiumPage
+export default PremiumPage;
