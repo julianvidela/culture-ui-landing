@@ -42,13 +42,13 @@
 import { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
-
+import { Clipboard, ClipboardCheck } from "lucide-react"; 
 
 interface CodeBlockProps {
   code: string;
   language?: string;
   showLineNumbers?: boolean;
-  theme?:{ [key: string]: React.CSSProperties };
+  theme?: { [key: string]: React.CSSProperties };
 }
 
 export const CodeBlock = ({
@@ -58,7 +58,6 @@ export const CodeBlock = ({
   theme = nightOwl,
 }: CodeBlockProps) => {
   const [copied, setCopied] = useState(false);
-
 
   const handleCopy = async () => {
     try {
@@ -71,14 +70,17 @@ export const CodeBlock = ({
   };
 
   return (
-    <div className=" bg-black rounded-xl h-auto w-[100%] flex justify-start  p-6  border border-zinc-800">
-      {/* <button
+    <div className="relative p-6 overflow-auto group">
+      
+      <button
         onClick={handleCopy}
-        className="bg-white"
+        className="absolute top-3 right-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity text-white p-1 rounded-md"
+        aria-label="Copiar código"
       >
-        {copied ? "Copiado!" : "Copiar"}
-      </button> */}
+        {copied ? <ClipboardCheck color="white" size={16} /> : <Clipboard color="white" size={16} />}
+      </button>
 
+      
       <SyntaxHighlighter
         language={language}
         style={theme}
@@ -86,7 +88,7 @@ export const CodeBlock = ({
         wrapLines
         customStyle={{
           background: "transparent",
-          fontSize: "13px",
+          fontSize: "14px",
           padding: 0,
           margin: 0,
         }}
@@ -100,5 +102,3 @@ export const CodeBlock = ({
     </div>
   );
 };
-
-

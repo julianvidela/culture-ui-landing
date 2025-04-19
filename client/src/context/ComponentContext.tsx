@@ -2,6 +2,11 @@
 import React, { createContext, useContext, useEffect, useState, useMemo } from "react";
 import { componentService } from "@/services/componentService";
 
+export interface ParsedProp {
+  prop: string;
+  type: string;
+  description: string;
+}
 
 export interface Component {
   _id: string;
@@ -9,7 +14,7 @@ export interface Component {
   description: string;
   installationCli: string;
   usageExample: string;
-  properties: string[];
+  properties:ParsedProp[];
   advancedUsage: string;
   isPremium: boolean;
 }
