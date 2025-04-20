@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    /* BackgroundGallery */
+    .bg-gradient-gold { background: radial-gradient(circle, rgba(70, 50, 16, 0.527), transparent); }
+    .bg-gradient-cyan-soft { background: radial-gradient(circle, rgba(178, 248, 253, 0.288), transparent); }
+    .bg-gradient-blue-dark { background: radial-gradient(circle, rgba(10, 45, 73, 0.356), transparent); }
+    .bg-gradient-blue-deep { background: radial-gradient(circle, rgba(10, 45, 73, 0.478), transparent); }
+    .bg-gradient-cyan-soft-2 { background: radial-gradient(circle, rgba(178, 248, 253, 0.288), transparent); }
+    .bg-gradient-gold-2 { background: radial-gradient(circle, rgba(70, 50, 16, 0.596), transparent); }
+  
+    /*  BackgroundHero */
+    .bg-gradient-gold-solid { background: radial-gradient(circle, rgb(70, 50, 16), transparent); }
+    .bg-gradient-cyan-soft-hero { background: radial-gradient(circle, rgba(178, 253, 230, 0.322), transparent); }
+    .bg-gradient-blue-solid { background: radial-gradient(circle, rgb(10, 45, 73), transparent); }
+    .bg-gradient-cyan-alt { background: radial-gradient(circle, rgba(178, 248, 253, 0.336), transparent); }
+
+
+    /*  BackgroundCardP */
+    .bg-gradient-blue-deep-light { background: radial-gradient(circle, rgba(10, 45, 73, 0.445), transparent); }
+    .bg-gradient-cyan-soft-hero-2 { background: radial-gradient(circle, rgba(178, 253, 230, 0.322), transparent); }
+  }
+  

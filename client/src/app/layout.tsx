@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
  import { Providers } from "@/providers/Providers";
 import "./globals.css";
+import '@/styles/utilities.css'; 
 
 import LayoutWrapper from "@/components/LayoutWrapper/LayoutWrapper";
 

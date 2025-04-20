@@ -14,7 +14,7 @@ const ComponentDetail = () => {
   if (!component) return <p className="text-white">Componente no encontrado</p>;
 
   return (
-    <div className=" max-w-[700px] justify-start flex flex-col gap-10 text-white mb-16">
+    <div className=" max-w-[750px] justify-start flex flex-col gap-10 text-white mb-16">
       <div className="flex flex-col gap-4">
         <h2 className="text-[32px] font-bold text-[var(--text-color-secondary)]">
           {component.name}
@@ -30,13 +30,13 @@ const ComponentDetail = () => {
             Instalation CLI
           </h3>
         </div>
-        <div className="flex flex-col h-[7rem] bg-black rounded-xl border border-[var(--border-primary)]">
-          <div className="h-[40%] flex items-center p-6 border-b border-[var(--border-primary)]">
-            <p className="font-semibold text-[14px] text-[var(--text-color-primary)]">
+        <div className="flex flex-col h-[7rem] rounded-lg border border-[var(--border-primary)]">
+          <div className="h-[45px] px-6  bg-[var(--bg-black-degrade)] rounded-t-lg py-6 border-b border-[var(--border-primary)] flex items-center">
+            <p className="font-semibold text-[14px] text-[#BBBBBB]">
               npm
             </p>
           </div>
-          <div className="h-[60%] flex items-center px-5 font-semibold text-[14px] text-[var(--text-color-secondary)]">
+          <div className="h-[60%] bg-[var(--bg-black-degrade)] rounded-b-lg flex items-center px-5 font-semibold text-[14px] text-[var(--text-color-secondary)]">
             <p>{component.installationCli}</p>
           </div>
         </div>
@@ -48,9 +48,9 @@ const ComponentDetail = () => {
             Usage
           </h3>
         </div>
-        <div className="flex flex-col h-auto rounded-xl bg-black border border-[var(--border-primary)]">
-          <div className="h-[49px] px-6 py-6 border-b border-[var(--border-primary)] flex items-center">
-            <h4 className="font-semibold text-[14px] text-[var(--text-color-primary)]">
+        <div className="flex flex-col h-auto rounded-xl bg-[var(--bg-black-degrade)] border border-[var(--border-primary)]">
+          <div className="h-[45px] px-6  rounded-t-lg py-6 border-b border-[var(--border-primary)] flex items-center">
+            <h4 className="font-semibold text-[14px] text-[#BBBBBB]">
               jsx/tsx
             </h4>
           </div>
@@ -76,9 +76,9 @@ const ComponentDetail = () => {
             component props
           </h3>
         </div>
-        <div className="flex flex-col gap-4 h-auto rounded-xl bg-black border border-[var(--border-primary)]">
-          <div className="h-[49px] px-6 py-6 border-b border-[var(--border-primary)] flex items-center">
-            <h4 className="font-semibold text-[14px] text-[var(--text-color-primary)]">
+        <div className="flex flex-col h-auto rounded-xl bg-[var(--bg-black-degrade)] border border-[var(--border-primary)]">
+          <div className="h-[45px] px-6 rounded-t-lg py-6 border-b border-[var(--border-primary)] flex items-center">
+            <h4 className="font-semibold text-[14px] text-[#BBBBBB]">
               jsx/tsx
             </h4>
           </div>

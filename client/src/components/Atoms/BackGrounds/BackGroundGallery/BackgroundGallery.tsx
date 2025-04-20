@@ -1,17 +1,16 @@
 import React from 'react';
-import "./backgroundgallery.css"; 
+import BlurCircle from '@/components/BlurCircle/BlurCircle';
 
 const BackgroundGallery: React.FC = () => {
   return (
-    <div className="background-container">  
-      <div className="blur-bg">
-        <div className="blur-circle circle-1-g"></div>
-        <div className="blur-circle circle-2-g"></div>
-        <div className="blur-circle circle-3-g"></div>
-        <div className="blur-circle circle-4-g"></div>
-        <div className="blur-circle circle-5-g"></div>
-        <div className="blur-circle circle-6-g"></div>
-
+    <div className="absolute inset-0 w-full h-full -z-10">
+      <div className="absolute w-full h-full flex justify-center items-center -z-10">
+        <BlurCircle className="top-[25%] left-[36%]" gradientClass="bg-gradient-gold" />
+        <BlurCircle className="bottom-[50%] right-[10%]" gradientClass="bg-gradient-cyan-soft" />
+        <BlurCircle className="bottom-[15%] right-[10%]" gradientClass="bg-gradient-blue-dark" />
+        <BlurCircle className="bottom-[15%] left-[10%]" gradientClass="bg-gradient-blue-deep" />
+        <BlurCircle className="top-[9%] right-[60%]" gradientClass="bg-gradient-cyan-soft-2" />
+        <BlurCircle className="top-[50%] left-[36%]" gradientClass="bg-gradient-gold-2" />
       </div>
     </div>
   );

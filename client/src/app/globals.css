@@ -17,7 +17,7 @@ body {
   --background: #000000;
 
   /* Colores de texto */
-  --text-color-primary: #808080;
+  --text-color-primary: #b9b9b9a1;
   --text-color-secondary: #ffffff;
 
   /* Colores */
@@ -34,6 +34,10 @@ body {
   --color-Grayscale-shade2:#E2E2E2;
   --color-Grayscale-shade3:#595D62;
   --color-Grayscale-shade4:#1A1A1A;
+
+
+
+  --bg-black-degrade: #0000008e;
 
 
   /* Tamaño de fuente */ 

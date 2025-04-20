@@ -87,8 +87,10 @@ export const CodeBlock = ({
         showLineNumbers={showLineNumbers}
         wrapLines
         customStyle={{
+          
           background: "transparent",
           fontSize: "14px",
+          fontWeight:"normal",
           padding: 0,
           margin: 0,
         }}
