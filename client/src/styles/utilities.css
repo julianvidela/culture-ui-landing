@@ -23,3 +23,25 @@
     .bg-gradient-cyan-soft-hero-2 { background: radial-gradient(circle, rgba(178, 253, 230, 0.322), transparent); }
   }
   
+
+
+  @layer utilities {
+    .scrollbar-shadcn {
+      scrollbar-width: thin;
+      scrollbar-color: #888 transparent;
+    }
+  
+    .scrollbar-shadcn::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+  
+    .scrollbar-shadcn::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 9999px;
+    }
+  
+    .scrollbar-shadcn::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  }
