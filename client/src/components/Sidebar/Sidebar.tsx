@@ -5,7 +5,7 @@ const SideBar = () => {
    const {components,error,loading} = useComponents()
 
   return (
-    <aside className="w-64 text-white h-full pt-16 px-4 border-r border-[var(--border-primary)] ">
+    <aside className="w-64 text-white h-full pt-16 px-4">
       <h2 className="text-sm font-semibold mb-4">Menu</h2>
       <ul className="space-y-2 font-semibold text-[14px]  border-l border-[var(--border-primary)]">
       

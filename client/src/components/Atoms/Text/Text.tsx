@@ -1,58 +1,75 @@
-import React from 'react';
-import clsx from 'clsx';
+import React, { FC } from "react";
+import clsx from "clsx";
+import styles from "./text.module.css";
+import {
+  LabelStyle,
+  ColorStyle,
+  SizeStyle,
+  FontWeightStyle,
+  FamilyStyle,
+} from "@/interfaces/IStyle";
 
-type TextVariant = 'default' | 'muted' | 'danger' | 'success' | 'subtle';
+type Variant =
+  | "title"
+  | "sub-title"
+  | "sub-title-off"
+  | "text-italic"
+  | "text-bold"
+  | ""; // extendí si querés
 
-type TextProps = {
-  as?: React.ElementType;
-  size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
-  weight?: 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold';
-  align?: 'left' | 'center' | 'right' | 'justify';
-  color?: string; 
-  variant?: TextVariant;
-  truncate?: boolean;
-  italic?: boolean;
-  uppercase?: boolean;
+interface TextProps {
+  as?: LabelStyle;
+  children?: React.ReactNode;
   className?: string;
-  children: React.ReactNode;
-} & React.HTMLAttributes<HTMLElement>;
+  style?: React.CSSProperties;
+  title?: string;
+  onClick?: () => void;
+  color?: ColorStyle;
+  size?: SizeStyle;
+  fontWeight?: FontWeightStyle;
+  family?: FamilyStyle;
+  cursor?: React.CSSProperties["cursor"];
+  padding?: string;
+  variant?: Variant;
+}
 
-const variantClasses: Record<TextVariant, string> = {
-  default: 'text-foreground',
-  muted: 'text-muted-foreground',
-  danger: 'text-red-500 dark:text-red-400',
-  success: 'text-green-500 dark:text-green-400',
-  subtle: 'text-zinc-400 dark:text-zinc-500',
-};
-
-export const Text: React.FC<TextProps> = ({
-  as: Component = 'p',
-  size = 'base',
-  weight = 'normal',
-  align,
-  variant = 'default',
-  color,
-  truncate,
-  italic,
-  uppercase,
-  className,
+export const Text: FC<TextProps> = ({
+  as = "p",
   children,
-  ...props
+  className,
+  style = {},
+  title,
+  onClick,
+  color = "base",
+  size = "normal",
+  family = "",
+  fontWeight,
+  cursor,
+  padding = "0",
+  variant = "",
 }) => {
-  const baseClasses = clsx(
-    `text-${size}`,
-    `font-${weight}`,
-    align && `text-${align}`,
-    truncate && 'truncate',
-    italic && 'italic',
-    uppercase && 'uppercase',
-    variantClasses[variant] || color,
+  const composedClassName = clsx(
+    styles.default,
+    styles[`color-${color}`],
+    styles[`size-${size}`],
+    styles[`family-${family}`],
+    variant && styles[variant],
     className
   );
 
-  return (
-    <Component className={baseClasses} {...props}>
-      {children}
-    </Component>
+  return React.createElement(
+    as,
+    {
+      className: composedClassName,
+      style: {
+        ...style,
+        fontWeight,
+        cursor,
+        padding,
+      },
+      title,
+      onClick,
+    },
+    children
   );
 };

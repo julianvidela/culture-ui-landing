@@ -1,0 +1,30 @@
+ .default {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Colors */
+  
+  
+  .color-primary { color: #BBBBBB; }
+  .color-secondary { color: #fffef4; }
+  
+  
+  /* Sizes */
+  .size-extra-small { font-size: 12px; }
+  .size-small { font-size: 14px; }
+  .size-normal { font-size: 16px; }
+  .size-medium { font-size: 20px; }
+  .size-large { font-size: 32px; }
+  
+  /* Families */
+   .family-primary { font-family: 'Inter', sans-serif; }
+  .family-secondary { font-family: 'Georgia', serif; }
+  
+  /* Variants */
+   .title { font-size: 2rem; font-weight: 700; }
+  .sub-title { font-size: 1.5rem; font-weight: 600; }
+  .sub-title-off { font-size: 1.25rem; font-weight: 500; }
+  
+  .text-italic { font-style: italic; }
+  .text-bold { font-weight: bold; }  

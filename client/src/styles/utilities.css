@@ -29,6 +29,7 @@
     .scrollbar-shadcn {
       scrollbar-width: thin;
       scrollbar-color: #888 transparent;
+      
     }
   
     .scrollbar-shadcn::-webkit-scrollbar {
@@ -37,7 +38,7 @@
     }
   
     .scrollbar-shadcn::-webkit-scrollbar-thumb {
-      background-color: #888;
+      background-color: #636363;
       border-radius: 9999px;
     }
   

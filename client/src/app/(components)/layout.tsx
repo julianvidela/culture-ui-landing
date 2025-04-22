@@ -5,8 +5,8 @@ import React from "react";
 
 export default function LayoutComponent({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex ml-10 w-full">
-      <div className="w-full m-10">
+    <div className="flex mt-16 w-full">
+      <div className="w-full">
         
         {children}
       </div>

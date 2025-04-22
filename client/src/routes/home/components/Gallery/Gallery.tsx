@@ -5,7 +5,7 @@ import React from "react";
 const Gallery = () => {
   return (
     <section className="w-full h-auto my-28 md:mt-40 flex flex-col gap-10 relative">
-      <BackgroundGallery />
+      {/* <BackgroundGallery /> */}
       <div className="flex flex-col gap-4 text-center md:items-center">
         <h2 className=" text-[32px] w-[80%] m-auto md:full md:text-[40px] font-bold text-[var(--text-color-secondary)]">
           Design Smarter, Build Faster

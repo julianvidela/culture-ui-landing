@@ -12,6 +12,15 @@ body {
   font-family: var(--font-Manrope);
 }
 
+.scrollbar-hidden {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 :root {
   /* Colores de fondo */
   --background: #000000;

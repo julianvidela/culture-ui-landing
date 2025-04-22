@@ -3,5 +3,7 @@ export const navLinks = [
   { href: '/docs', label: 'Docs' },
   { href: '/allcomponents', label: 'Components' },
   { href: '/premium', label: 'Premium' },
+
+
 ];
 

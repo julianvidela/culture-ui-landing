@@ -3,6 +3,7 @@ import { useParams } from "next/navigation";
 import { useComponents } from "@/hooks/useComponents";
 import { CodeBlock } from "@/components/Atoms/codeBlock";
 import { PropsTable } from "@/components/Atoms/PropsTable/PropsTable";
+import { Text } from "@/components/Atoms/Text/Text";
 
 const ComponentDetail = () => {
   const { id } = useParams();
@@ -14,56 +15,59 @@ const ComponentDetail = () => {
   if (!component) return <p className="text-white">Componente no encontrado</p>;
 
   return (
-    <div className=" max-w-[750px] justify-start flex flex-col gap-10 text-white mb-16">
-      <div className="flex flex-col gap-4">
-        <h2 className="text-[32px] font-bold text-[var(--text-color-secondary)]">
+    <div className=" max-w-[750px] justify-start flex flex-col gap-[5rem] border-l border-[var(--border-primary)] text-white mb-16 px-8">
+      <div className="flex flex-col gap-3">
+        <Text fontWeight="700" color="secondary" size="large" as="h2">
           {component.name}
-        </h2>
-        <p className="text-[14px] font-semibold text-[var(--text-color-primary)]">
+        </Text>
+        <Text color="primary" fontWeight="600" size="small" as="p">
           {component.description}
-        </p>
+        </Text>
       </div>
 
       <div className="flex flex-col gap-4">
         <div>
-          <h3 className="text-[32px] font-bold text-[var(--text-color-secondary)]">
+          <Text fontWeight="700" size="medium" color="secondary" as="h3" className="relative">
+          <span className="absolute top-0 -left-8 z-20 block h-full w-[6px] rounded-tr-full rounded-br-full bg-zinc-400"></span>
             Instalation CLI
-          </h3>
+          </Text>
         </div>
         <div className="flex flex-col h-[7rem] rounded-lg border border-[var(--border-primary)]">
           <div className="h-[45px] px-6  bg-[var(--bg-black-degrade)] rounded-t-lg py-6 border-b border-[var(--border-primary)] flex items-center">
-            <p className="font-semibold text-[14px] text-[#BBBBBB]">
+            <Text color="primary" as="h4" size="small" fontWeight="600">
               npm
-            </p>
+            </Text>
           </div>
           <div className="h-[60%] bg-[var(--bg-black-degrade)] rounded-b-lg flex items-center px-5 font-semibold text-[14px] text-[var(--text-color-secondary)]">
-            <p>{component.installationCli}</p>
+            <Text color="secondary" as="p" size="small">
+              {component.installationCli}
+            </Text>
           </div>
         </div>
       </div>
 
       <div className="flex flex-col gap-4">
         <div>
-          <h3 className="text-[32px] font-bold text-[var(--text-color-secondary)]">
+          <Text fontWeight="700" size="medium" color="secondary" as="h3" className="relative">
+          <span className="absolute top-0 -left-8 z-20 block h-full w-[6px] rounded-tr-full rounded-br-full bg-zinc-400"></span>
             Usage
-          </h3>
+          </Text>
         </div>
-        <div className="flex flex-col h-auto rounded-xl bg-[var(--bg-black-degrade)] border border-[var(--border-primary)]">
-          <div className="h-[45px] px-6  rounded-t-lg py-6 border-b border-[var(--border-primary)] flex items-center">
-            <h4 className="font-semibold text-[14px] text-[#BBBBBB]">
-              jsx/tsx
-            </h4>
-          </div>
-
-          <CodeBlock code={component.usageExample} language="tsx" />
+        <div className="flex flex-col h-auto">
+          <CodeBlock
+            code={component.usageExample}
+            language="tsx"
+            languageText="jsx/tsx"
+          />
         </div>
       </div>
 
       <div className="flex flex-col gap-4">
         <div>
-          <h3 className="text-[32px] font-bold text-[var(--text-color-secondary)]">
-            component props
-          </h3>
+          <Text fontWeight="700" size="medium" color="secondary" as="h3">
+          
+            Components props
+          </Text>
         </div>
         <div>
           <PropsTable properties={component.properties} />
@@ -72,18 +76,13 @@ const ComponentDetail = () => {
 
       <div className="flex flex-col gap-4">
         <div>
-          <h3 className="text-[32px] font-bold text-[var(--text-color-secondary)]">
-            component props
-          </h3>
+          <Text fontWeight="700" size="medium" color="secondary" as="h3" className="relative">
+          <span className="absolute top-0 -left-8 z-20 block h-full w-[6px] rounded-tr-full rounded-br-full bg-zinc-400"></span>
+            Advanced Usage
+          </Text>
         </div>
-        <div className="flex flex-col h-auto rounded-xl bg-[var(--bg-black-degrade)] border border-[var(--border-primary)]">
-          <div className="h-[45px] px-6 rounded-t-lg py-6 border-b border-[var(--border-primary)] flex items-center">
-            <h4 className="font-semibold text-[14px] text-[#BBBBBB]">
-              jsx/tsx
-            </h4>
-          </div>
-
-          <CodeBlock code={component.advancedUsage} language="tsx" />
+        <div className="flex flex-col h-auto">
+          <CodeBlock code={component.advancedUsage} language="tsx" languageText="jsx/tsx" />
         </div>
       </div>
     </div>
