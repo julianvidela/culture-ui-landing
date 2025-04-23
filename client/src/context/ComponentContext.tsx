@@ -12,6 +12,7 @@ export interface Component {
   _id: string;
   name: string;
   description: string;
+  imageURL:string;
   installationCli: string;
   usageExample: string;
   properties:ParsedProp[];

@@ -32,7 +32,7 @@ const CardPremium = () => {
             </div>
           </div>
           <div className=" hidden lg:flex w-[60%] gap-5 items-end justify-center">
-            <div className="border border-[var(--border-primary)] bg-black border-b-0 w-[283px] h-[358px] rounded-lg relative overflow-hidden">
+            <div className="border border-[var(--border-primary)] bg-black border-b-0 w-[283px] h-[358px] rounded-t-lg relative overflow-hidden">
               <div className="absolute blur-[100px] bg-[#0a2d497a] bottom-[-150px] w-40 h-40" />
               <div className="w-full flex justify-center p-8 text-center">
                 <h3 className="text-[16px] font-bold text-[var(--text-color-secondary)] ">
@@ -40,7 +40,7 @@ const CardPremium = () => {
                 </h3>
               </div>
             </div>
-            <div className="border border-[var(--border-primary)] bg-black border-b-0 w-[283px] h-[475px] rounded-lg relative overflow-hidden">
+            <div className="border border-[var(--border-primary)] bg-black border-b-0 w-[283px] h-[475px] rounded-t-lg relative overflow-hidden">
               <div className="absolute blur-[100px] bg-[#46321098] bottom-1 w-40 h-40" />
               <div className="w-full flex justify-centerm p-8 text-center">
                 <h3 className="text-[16px] font-bold text-[var(--text-color-secondary)] ">

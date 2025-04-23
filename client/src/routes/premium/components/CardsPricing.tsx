@@ -46,7 +46,7 @@ const CardsPricing = () => {
       {pricingPlans.map((plan) => (
         <div
           key={plan.id}
-          className="relative border border-[var(--border-primary)] w-[308px] h-auto p-6 rounded-xl rounded-b-none overflow-hidden bg-black"
+          className="relative border border-[var(--border-primary)] w-[308px] h-auto p-6 rounded-xl overflow-hidden bg-black"
         >
           <div
             className="absolute blur-[120px] left-3 bottom-[45%] w-36 h-36"

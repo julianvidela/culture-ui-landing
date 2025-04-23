@@ -31,7 +31,7 @@ const LayoutWrapper = ({
             </div>
           )}
         </div>
-        <div className="flex flex-col w-full items-start">
+        <div className="flex flex-col w-full items-center">
           {/* <BackgroundGallery /> */}
           {children}
         </div>
