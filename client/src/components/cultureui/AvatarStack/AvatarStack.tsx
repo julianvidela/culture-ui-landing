@@ -13,13 +13,11 @@ interface Person {
 
 interface AvatarStackProps {
   people: Person[];
-  tooltipPosition?: "top" | "bottom";
   maxVisible?: number;
 }
 
 export const AvatarStack: React.FC<AvatarStackProps> = ({
   people,
-  tooltipPosition = "top",
   maxVisible = 5,
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -73,3 +71,44 @@ export const AvatarStack: React.FC<AvatarStackProps> = ({
     </div>
   );
 };
+
+
+//ejemplo de uso
+
+
+{/* <AvatarStack
+people={[
+  {
+    image: "https://img.freepik.com/fotos-premium/mujer-joven-sobre-escucha-musica-azul-aislado_1368-133884.jpg",
+    name: "Laura Martínez",
+    role: "Product Manager",
+  },
+  {
+    image: "https://img.freepik.com/fotos-premium/mujer-joven-sobre-escucha-musica-azul-aislado_1368-133884.jpg",
+    name: "Juan Ignacio",
+    role: "Frontend Dev",
+  },
+  {
+    image: "https://img.freepik.com/fotos-premium/mujer-joven-sobre-escucha-musica-azul-aislado_1368-133884.jpg",
+    name: "Eliana Ramos",
+    role: "UX Researcher",
+  },
+  {
+    image: "https://img.freepik.com/fotos-premium/mujer-joven-sobre-escucha-musica-azul-aislado_1368-133884.jpg",
+    name: "Eliana Ramos",
+    role: "UX Researcher",
+  },
+  {
+    image: "https://img.freepik.com/fotos-premium/mujer-joven-sobre-escucha-musica-azul-aislado_1368-133884.jpg",
+    name: "Eliana Ramos",
+    role: "UX Researcher",
+  },
+  {
+    image: "https://img.freepik.com/fotos-premium/mujer-joven-sobre-escucha-musica-azul-aislado_1368-133884.jpg",
+    name: "Eliana Ramos",
+    role: "UX Researcher",
+  },
+]}
+tooltipPosition="top"
+maxVisible={5}
+/> */}

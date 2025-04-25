@@ -66,6 +66,7 @@ export const Text: FC<TextProps> = ({
         fontWeight,
         cursor,
         padding,
+        
       },
       title,
       onClick,

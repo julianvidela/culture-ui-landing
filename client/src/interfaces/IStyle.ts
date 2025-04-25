@@ -5,7 +5,7 @@ export type ColorStyle = "primary" | "secondary";
 
 export type FamilyStyle = "primary" | "secondary";
 
-export type SizeStyle = "extra-small" | "small" | "normal" | "medium" | "large";
+export type SizeStyle = "extra-small" | "small" | "normal" | "medium" | "large" | "extra-large";
 
 export type FontWeightStyle =
   | "300"

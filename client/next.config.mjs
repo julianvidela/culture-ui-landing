@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["img.freepik.com"],
+   domains: ["img.freepik.com"],
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'culture-ui-document.s3.us-east-2.amazonaws.com'
+        hostname: 'culture-ui-document.s3.us-east-2.amazonaws.com',
+        
       },
     ],
   },

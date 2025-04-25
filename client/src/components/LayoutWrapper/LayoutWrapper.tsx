@@ -14,7 +14,6 @@ const LayoutWrapper = ({
 
   const showSidebar =
     pathname.startsWith("/docs") ||
-    pathname.startsWith("/allcomponents") ||
     pathname.startsWith("/components");
 
   return (

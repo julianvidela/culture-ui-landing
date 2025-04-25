@@ -16,6 +16,7 @@
   .size-normal { font-size: 16px; }
   .size-medium { font-size: 20px; }
   .size-large { font-size: 32px; }
+  .size-extra-large { font-size:40px; }
   
   /* Families */
    .family-primary { font-family: 'Inter', sans-serif; }

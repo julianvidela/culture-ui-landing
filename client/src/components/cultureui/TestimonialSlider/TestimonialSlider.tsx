@@ -61,7 +61,7 @@ export const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
   animate={{ opacity: 1, x: 0 }}
   exit={{ opacity: 0, x: direction === 1 ? -100 : 100 }}
   transition={{ duration: 0.4, ease: "easeInOut" }}
-  className={`flex flex-col items-center text-center bg-[#0A0A0A] m-auto border border-[var(--border-primary)] rounded-xl p-6 gap-4 `}
+  className={`flex flex-col items-center text-center bg-black m-auto border border-[var(--border-primary)] rounded-xl p-6 gap-4 `}
   style={{
     width: width || "500px",
     height: height || "220px",
