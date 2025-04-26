@@ -28,7 +28,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="hidden md:flex justify-center">
-          <div className="w-full max-w-[600px] md:max-w-[804px] m-auto mt-12 p-2 bg-[#ffffff7e] rounded-xl">
+          <div className="w-full max-w-[600px] md:max-w-[804px] m-auto mt-12 p-1 bg-[#ffffff7e] rounded-xl">
             <img src={Img.AllComponentsImg} alt="AllComponentsImg" className="rounded-xl w-full" />
           </div>
         </div>

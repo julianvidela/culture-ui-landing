@@ -39,7 +39,7 @@ export const FloatingNavBar: React.FC<FloatingNavBarProps> = ({
   return (
     <div
       className={clsx(
-        "flex gap-6 px-3 py-3 rounded-full shadow-xl backdrop-blur-md relative",
+        "flex gap-6 px-1 py-1 rounded-xl shadow-xl backdrop-blur-md relative",
         "border border-[var(--border-primary)]",
         className
       )}
@@ -63,7 +63,7 @@ export const FloatingNavBar: React.FC<FloatingNavBarProps> = ({
                 <motion.div
                   layoutId="indicator"
                   className={clsx(
-                    "absolute inset-0 rounded-full -z-10 border border-[var(--border-primary)]"
+                    "absolute inset-0 rounded-xl -z-10 border border-[var(--border-primary)]"
                   )}
                   style={{ backgroundColor: indicatorColor }}
                   transition={{ type: "spring", stiffness: 400, damping: 30 }}

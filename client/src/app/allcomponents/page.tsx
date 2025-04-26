@@ -1,7 +1,7 @@
-import ComponentList from "@/components/AllComponents/AllComponents";
+import ComponentShowCase from "@/app/allcomponents/components/ComponentShowCase/ComponentShowCase";
 
 const ComponentsPage = () => {
-    return <div><ComponentList/></div>;
+    return <div><ComponentShowCase/></div>;
   };
   
   export default ComponentsPage;
