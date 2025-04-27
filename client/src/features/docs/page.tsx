@@ -5,7 +5,9 @@ import { Text } from "@/components/Atoms/Text/Text";
 
 const Docs = () => {
   return (
-    <section className="max-w-[700px] h-auto mb-8 border-l flex flex-col gap-5 border-[var(--border-primary)] px-8">
+    <section className="w-full h-auto my-16 border-l flex flex-col items-start  gap-5 border-[var(--border-primary)] px-8">
+      <div className="max-w-[700px]">
+
       <div className="flex flex-col gap-5 mt-4">
         <Text fontWeight="700" color="secondary" size="large" as="h2" >
           
@@ -43,6 +45,7 @@ const Docs = () => {
       </div>
       <div className="mt-5">
         <FAQAccordion data={faqs} />
+      </div>
       </div>
     </section>
   );

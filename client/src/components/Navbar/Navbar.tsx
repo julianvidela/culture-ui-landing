@@ -10,7 +10,7 @@ import { navLinks } from "./DataLinks";
 import LogoCulture from "@/common/assets/icons/LogoCulture";
 import { useAuth } from "@/hooks/useAuth";
 import Img from "@/common/assets/img";
-import SidebarContent from "../Sidebar/SideBarContent";
+import SidebarContent from "../Sidebar/components/SideBarContent";
 
 const LOGIN_URL = "https://c23-53-webapp.onrender.com/api/v1/auth/login";
 

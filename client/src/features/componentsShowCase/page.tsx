@@ -1,7 +1,7 @@
 "use client";
 
 import { useComponents } from "@/hooks/useComponents";
-import { Footer } from "../../../../components/Footer/Footer";
+import { Footer } from "@/components/Footer/Footer";
 import { HeroShowCase } from "./components/HeroShowCase";
 import { ComponentsGallery } from "./components/ComponentsGallery";
 

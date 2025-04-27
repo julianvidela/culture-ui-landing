@@ -1,4 +1,5 @@
-import ComponentShowCase from "@/app/allcomponents/components/ComponentShowCase/ComponentShowCase";
+import React from "react";
+import ComponentShowCase from "@/features/componentsShowCase/page";
 
 const ComponentsPage = () => {
     return <div><ComponentShowCase/></div>;

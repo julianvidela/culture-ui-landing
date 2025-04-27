@@ -12,9 +12,9 @@ const LayoutWrapper = ({
 }>) => {
   const pathname = usePathname();
 
-  const showSidebar =
-    pathname.startsWith("/docs") ||
-    pathname.startsWith("/components");
+  const showSidebar = pathname.startsWith("/docs") || pathname.includes("/components");
+
+  
 
   return (
     <div className="">

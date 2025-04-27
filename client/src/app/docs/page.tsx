@@ -1,5 +1,5 @@
 import React from 'react'
-import Docs from '@/routes/docs/page'
+import Docs from '@/features/docs/page'
 
 const DocsPage = () => {
   return (

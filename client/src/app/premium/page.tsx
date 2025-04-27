@@ -1,4 +1,5 @@
-import Premium from "@/routes/premium/page";
+import React from "react";
+import Premium from "@/features/premium/page";
 
 const PremiumPage = () => {
   return <Premium />;

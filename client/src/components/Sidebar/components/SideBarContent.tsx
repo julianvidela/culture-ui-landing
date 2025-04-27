@@ -13,7 +13,7 @@ export const menuItems = [
   },
   {
     path: '/components',
-    title: 'Components',
+    title: 'Showcase',
   },
 
 ]

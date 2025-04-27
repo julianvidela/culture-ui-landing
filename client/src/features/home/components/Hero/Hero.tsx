@@ -7,7 +7,7 @@ import Img from "@/common/assets/img";
 const Hero = () => {
   return (
     <section className="w-full h-auto relative ">
-      <div className="border border-[var(--border-primary)] flex flex-col justify-center h-[450px] md:justify-between md:h-[670px] mt-8 md:mt-12 rounded-xl relative overflow-hidden p-8 md:p-10 z-1 ">
+      <div className="border border-[var(--border-primary)] flex flex-col justify-center h-[450px] md:justify-between md:h-[650px] mt-8 md:mt-12 rounded-xl relative overflow-hidden p-8 md:p-10 z-1 ">
         <BackgroundHero />
         <div className="w-full flex flex-col gap-10 md:gap-10">
           <div className="flex flex-col w-full items-center mt-8 md:mt-10 text-center">
@@ -20,10 +20,10 @@ const Hero = () => {
           </div>
           <div className="w-full flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
             <Button fontSize="14px" backgroundColor="black" fontWeight="700" textColor="white">
-              <Link href="/pages/docs">Get Started</Link>
+              <Link href="/docs">Get Started</Link>
             </Button>
             <Button textColor="black" backgroundColor="white" fontSize="14px" fontWeight="700">
-              <Link href="/pages/premium">Go Premium</Link>
+              <Link href="/premium">Go Premium</Link>
             </Button>
           </div>
         </div>

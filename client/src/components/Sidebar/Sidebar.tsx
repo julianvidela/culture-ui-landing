@@ -16,7 +16,7 @@ const SideBar = () => {
         </li>
         <li>
           <Link href="/allcomponents" className="block py-2 px-4 rounded text-[var(--text-color-primary)] hover:text-[var(--text-color-secondary)]">
-            Components
+            Showcase
           </Link>
         </li>
       </ul>

@@ -1,9 +1,9 @@
 
 
-import { getRandomPositions } from "@/helpers/lib/getRandomPositions";
+import { getRandomPositions } from "@/helpers/getRandomPositions";
 import { Button } from "@/components/Atoms/Button/Button";
 import { Text } from "@/components/Atoms/Text/Text";
-import { FloatingHelper } from "@/helpers/lib/FloatingHelper";
+import { FloatingHelper } from "@/helpers/FloatingHelper";
 import Link from "next/link";
 import clsx from "clsx";
 

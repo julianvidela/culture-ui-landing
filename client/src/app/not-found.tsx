@@ -1,5 +1,6 @@
 import { Button } from "@/components/Atoms/Button/Button"
 import Link from 'next/link'
+import React from "react";
 const NotFoundPage = () => {
   return (
     <div className="grid place-items-center mt-32">

@@ -1,4 +1,4 @@
-import BackgroundGallery from "@/components/Atoms/BackGrounds/BackGroundGallery/BackgroundGallery";
+
 
 import React from "react";
 
