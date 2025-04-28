@@ -2,12 +2,13 @@ import FAQAccordion from "@/components/cultureui/Accordion/FaqAccordion";
 import React from "react";
 import { faqs } from "@/components/cultureui/Accordion/resources/FaqData";
 import { Text } from "@/components/Atoms/Text/Text";
+import BackgroundGallery from "@/components/Atoms/BackGrounds/BackGroundGallery/BackgroundGallery";
 
 const Docs = () => {
   return (
     <section className="w-full h-auto my-16 border-l flex flex-col items-start  gap-5 border-[var(--border-primary)] px-8">
+    <BackgroundGallery/>
       <div className="max-w-[700px]">
-
       <div className="flex flex-col gap-5 mt-4">
         <Text fontWeight="700" color="secondary" size="large" as="h2" >
           

@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
@@ -7,6 +6,7 @@ import { AlignJustify, LogOut } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../Atoms/Button/Button";
 import { navLinks } from "./DataLinks";
+import { usePathname } from "next/navigation";
 import LogoCulture from "@/common/assets/icons/LogoCulture";
 import { useAuth } from "@/hooks/useAuth";
 import Img from "@/common/assets/img";
@@ -19,6 +19,7 @@ export const Navbar = () => {
   const { accessToken, logout, user } = useAuth();
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const userMenuRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -27,7 +28,6 @@ export const Navbar = () => {
       document.body.style.overflow = "";
     }
 
-    
     return () => {
       document.body.style.overflow = "";
     };
@@ -187,21 +187,30 @@ export const Navbar = () => {
                   </div>
                 )}
 
-                {navLinks.map((link, index) => (
-                  <Link
-                    key={index}
-                    onClick={() => setIsMenuOpen(false)}
-                    href={link.href}
-                    className="font-semibold text-[14px] text-[var(--text-color-primary)] transition-colors duration-300 ease-in-out hover:text-[var(--text-color-secondary)]"
-                  >
-                    <div className="hover:bg-[#ffffff0f] py-2 px-2 rounded-md">
-                      {link.label}
-                    </div>
-                  </Link>
-                ))}
+                <ul className="flex flex-col gap-2 list-none p-0 m-0">
+                  {navLinks.map((link, index) => {
+                    const isActive = pathname === link.href;
+
+                    return (
+                      <li key={index}>
+                        <Link
+                          href={link.href}
+                          onClick={() => setIsMenuOpen(false)}
+                          className={`block font-semibold text-[14px] py-2 px-4 rounded-md transition-colors duration-300 ease-in-out
+          ${
+            isActive
+              ? "text-[var(--text-color-secondary)]"
+              : "text-[var(--text-color-primary)] hover:text-[var(--text-color-secondary)]"
+          }`}
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
                 <div className="my-2">
-              
-                <SidebarContent onLinkClick={() => setIsMenuOpen(false)} />
+                  <SidebarContent onLinkClick={() => setIsMenuOpen(false)} />
                 </div>
 
                 {!accessToken ? (

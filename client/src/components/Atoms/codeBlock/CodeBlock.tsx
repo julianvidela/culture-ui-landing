@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Clipboard, ClipboardCheck } from "lucide-react"; 
 import { Text } from "@/components/Atoms/Text/Text";
+import { useCopyToClipboard } from "@/hooks/useCopyToClipboard"; 
+
 
 interface CodeBlockProps {
   code: string;
@@ -21,17 +22,8 @@ export const CodeBlock = ({
   showLineNumbers = false,
   theme = nightOwl,
 }: CodeBlockProps) => {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(code.trim());
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
-    } catch (err) {
-      console.error("Error al copiar:", err);
-    }
-  };
+  
+  const { copied, copy } = useCopyToClipboard();
 
   return (
     <div className="overflow-auto group flex flex-col h-auto rounded-xl bg-[var(--bg-black-degrade)] border border-[var(--border-primary)]">
@@ -40,7 +32,7 @@ export const CodeBlock = ({
           <Text color="primary" as="h4" size="small" fontWeight="600">{languageText}</Text>
         </div>
       <button
-        onClick={handleCopy}
+         onClick={() => copy(code)}
         className=" opacity-0 group-hover:opacity-100 transition-opacity text-white rounded-md"
         aria-label="Copiar código"
       >

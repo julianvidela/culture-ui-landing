@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
  import { Providers } from "@/providers/Providers";
+
 import "./globals.css";
 import '@/styles/utilities.css'; 
 
 import LayoutWrapper from "@/components/LayoutWrapper/LayoutWrapper";
+import  Icon  from "@/common/assets/icons";
 
 
 const manrope = Manrope({
@@ -25,6 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+      <link rel="icon" href={Icon.LogoPublicCulture} type="image/svg+xml"/>
+      {/* <link rel="alternate icon" href="/favicon.ico" /> */}
+      </head>
       <body className={`${manrope.variable}  antialiased`}>
           <Providers>
 

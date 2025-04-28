@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <div className="h-auto w-full mt-40 mb-10 flex flex-col gap-8 p-4">
+    <div className="h-auto w-full mt-20 mb-10 flex flex-col gap-8 p-4">
       <div className="w-full flex justify-center">
         <img src={Img.CultureUiText} alt="" />
       </div>

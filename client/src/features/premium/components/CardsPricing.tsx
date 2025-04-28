@@ -23,14 +23,14 @@ const CardsPricing = () => {
     if (plan.id !== "Free") {
 
       if (accessToken) {
-        router.push(`/pages/checkout?plan=${plan.id}&price=${plan.price}`);
+        router.push(`/features/checkout?plan=${plan.id}&price=${plan.price}`);
       } else {
 
         router.push(LOGIN_URL);
       }
     } else {
 
-      router.push("/pages/docs");
+      router.push("/docs");
 
     }
   };

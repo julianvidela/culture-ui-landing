@@ -1,24 +1,47 @@
 import Link from "next/link";
 import { useComponents } from "@/hooks/useComponents";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
+
 
 const SideBar = () => {
    const {components,error,loading} = useComponents()
+   const pathname = usePathname();
+
 
   return (
     <aside className="w-64 text-white h-full pt-16 px-4">
       <h2 className="text-sm font-semibold mb-4">Menu</h2>
       <ul className="space-y-2 font-semibold text-[14px]  border-l border-[var(--border-primary)]">
       
+      <li>
+  <Link
+    href="/docs"
+    className={clsx(
+      "block py-2 px-4 rounded text-[14px] font-semibold transition-colors",
+      pathname === "/docs"
+        ? "text-[var(--text-color-secondary)]"
+        : "text-[var(--text-color-primary)] hover:text-[var(--text-color-secondary)]"
+    )}
+  >
+    Docs
+  </Link>
+</li>
+
         <li>
-          <Link href="/docs" className="block py-2 px-4 rounded text-[var(--text-color-primary)] hover:text-[var(--text-color-secondary)]">
-            Docs
-          </Link>
-        </li>
-        <li>
-          <Link href="/allcomponents" className="block py-2 px-4 rounded text-[var(--text-color-primary)] hover:text-[var(--text-color-secondary)]">
-            Showcase
-          </Link>
-        </li>
+  <Link
+    href="/allcomponents"
+    className={clsx(
+      "block py-2 px-4 rounded text-[14px] font-semibold transition-colors",
+      pathname === "/showcase"
+        ? "text-[var(--text-color-secondary)]"
+        : "text-[var(--text-color-primary)] hover:text-[var(--text-color-secondary)]"
+    )}
+  >
+    Showcase
+  </Link>
+</li>
+
       </ul>
 
       
@@ -28,16 +51,24 @@ const SideBar = () => {
         {error && <p className="text-red-400">Error: {error}</p>}
 
         {!loading && !error && components.length > 0 ? (
-          components.map((component) => (
+         components.map((component) => {
+          const isActive = pathname === `/components/${component._id}`;
+          return (
             <li key={component._id}>
               <Link
-                href={`/components/${component._id}`} 
-                className="block font-semibold text-[14px] text-[var(--text-color-primary)] hover:text-[var(--text-color-secondary)] py-2 px-4 rounded"
+                href={`/components/${component._id}`}
+                className={clsx(
+                  "block font-semibold text-[14px] py-2 px-4 rounded transition-colors",
+                  isActive
+                    ? "text-[var(--text-color-secondary)]"
+                    : "text-[var(--text-color-primary)] hover:text-[var(--text-color-secondary)]"
+                )}
               >
                 {component.name}
               </Link>
             </li>
-          ))
+          )
+        })
         ) : (
           <p className="text-gray-400">No hay componentes disponibles</p>
         )}

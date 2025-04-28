@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const CardPremium = () => {
   return (
-    <div className="w-auto h-auto mb-20">
-      <div className="border border-[var(--border-primary)] h-[557px] mt-12 rounded-xl relative overflow-hidden px-10 md:px-20">
+    <div className="w-auto h-auto mb-10">
+      <div className="border border-[var(--border-primary)] h-[557px] md:mt-12 rounded-xl relative overflow-hidden px-10 md:px-20">
         <BackgroundCardP />
 
         <div className="relative z-10 h-full flex ">
