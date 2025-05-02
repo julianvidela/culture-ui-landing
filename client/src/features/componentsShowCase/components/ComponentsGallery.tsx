@@ -57,6 +57,7 @@ export const ComponentsGallery = () => {
         <div className="relative rounded-xl w-full lg:w-[450px] h-[280px] flex items-center justify-center overflow-hidden">
           <div className="absolute bg-violet-900 blur-[120px] top-[100%] lg:right-[5%] w-36 h-36" />
           <AvatarStack
+          
             people={[
               {
                 image:
@@ -84,6 +85,7 @@ export const ComponentsGallery = () => {
               },
             ]}
             maxVisible={3}
+            
           />
         </div>
       </div>

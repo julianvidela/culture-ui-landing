@@ -10,7 +10,7 @@ interface MotionTextProps {
   direction?: "up" | "down";
   loop?: boolean;
   className?: string;
-  interval?: number; // cuánto tiempo dura un ciclo
+  interval?: number; 
 }
 
 export const MotionText: React.FC<MotionTextProps> = ({
