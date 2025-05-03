@@ -1,14 +1,15 @@
+
+
 "use client";
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, X } from "lucide-react";
-import clsx from "clsx";
 
 interface ComponentOption {
   id: string;
   label: string;
-  targetId: string; // id del elemento al que scrollea
+  targetId: string;
 }
 
 interface ComponentCommandPaletteProps {
@@ -32,6 +33,12 @@ export const ComponentCommandPalette: React.FC<ComponentCommandPaletteProps> = (
     setIsOpen(false);
     setQuery("");
   };
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -49,7 +56,7 @@ export const ComponentCommandPalette: React.FC<ComponentCommandPaletteProps> = (
   }, [isOpen]);
 
   return (
-    <div className="fixed top-6 right-6 z-50">
+    <div className="">
       <button
         onClick={() => setIsOpen((prev) => !prev)}
         className="bg-zinc-900 text-white px-3 py-2 rounded-lg text-sm flex items-center gap-2 border border-zinc-700 shadow-md"
@@ -60,57 +67,65 @@ export const ComponentCommandPalette: React.FC<ComponentCommandPaletteProps> = (
       </button>
 
       <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="mt-2 bg-[#0A0A0A] border border-[var(--border-primary)] rounded-xl shadow-lg w-80 p-3"
-          >
-            <div className="flex items-center gap-2 mb-2">
-              <Search size={16} className="text-zinc-400" />
-              <input
-                ref={inputRef}
-                type="text"
-                placeholder="Search..."
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                className="bg-transparent text-sm w-full outline-none text-white placeholder-zinc-500"
-              />
-              <button onClick={() => setIsOpen(false)}>
-                <X size={16} className="text-zinc-400" />
-              </button>
-            </div>
+  {isOpen && (
+    <>
+      {/* Backdrop */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.2 }}
+        className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
+        onClick={() => setIsOpen(false)}
+      />
 
-            <div className="max-h-60 overflow-y-auto flex flex-col gap-1">
-              {filtered.length > 0 ? (
-                filtered.map((opt) => (
-                  <button
-                    key={opt.id}
-                    onClick={() => handleSelect(opt.targetId)}
-                    className="text-left w-full px-3 py-2 text-sm text-zinc-300 rounded hover:bg-zinc-800 transition-colors"
-                  >
-                    {opt.label}
-                  </button>
-                ))
-              ) : (
-                <p className="text-sm text-zinc-500 px-3 py-2">No matches.</p>
-              )}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Wrapper centrador */}
+      <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
+        {/* Modal */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.2 }}
+          className="bg-[#0A0A0A] border border-[var(--border-primary)] 
+                     rounded-xl h-[250px] w-[350px] shadow-lg  pointer-events-auto"
+        >
+          <div className="flex items-center border-b border-[var(--border-primary)] p-4 gap-2 mb-2">
+            <Search size={16} className="text-zinc-400" />
+            <input
+              ref={inputRef}
+              type="text"
+              placeholder="Search..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              className="bg-transparent text-sm w-full outline-none text-white placeholder-zinc-500"
+            />
+            <button onClick={() => setIsOpen(false)}>
+              <X size={16} className="text-zinc-400" />
+            </button>
+          </div>
+
+          <div className="max-h-60 overflow-y-auto flex flex-col gap-1 p-2">
+            {filtered.length > 0 ? (
+              filtered.map((opt) => (
+                <button
+                  key={opt.id}
+                  onClick={() => handleSelect(opt.targetId)}
+                  className="text-left w-full px-3 py-2 text-sm text-zinc-300 rounded hover:bg-zinc-800 transition-colors"
+                >
+                  {opt.label}
+                </button>
+              ))
+            ) : (
+              <p className="text-sm text-zinc-500 px-3 py-2">No matches.</p>
+            )}
+          </div>
+        </motion.div>
+      </div>
+    </>
+  )}
+</AnimatePresence>
+
     </div>
   );
 };
-
-
-//ejemplo de uso
-{/* <ComponentCommandPalette
-options={[
-  { id: "btn", label: "Button", targetId: "component-button" },
-  { id: "card", label: "Card", targetId: "component-card" },
-  { id: "carousel", label: "Carousel", targetId: "component-carousel" },
-]}
-/> */}

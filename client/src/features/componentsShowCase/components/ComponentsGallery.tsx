@@ -5,7 +5,11 @@ import { FloatingNavBar } from "@/components/cultureui/FloatingNavBar/FloatingNa
 import { MotionText } from "@/components/cultureui/MotionText/MotionText";
 import { SocialSelector } from "@/components/cultureui/SocialSelector/SocialSelector";
 import { StatsWidget } from "@/components/cultureui/StatsWidget/StatsWidget";
-import { Home, Search, TrendingUp, User } from "lucide-react";
+import { Home, Search, TrendingUp, User , AtSign } from "lucide-react";
+import  LinkedinIcon  from "@/common/assets/icons/Linkedin";
+import InstagramIcon from "@/common/assets/icons/Instagram";
+import GithubIcon from "@/common/assets/icons/GithubIcon";
+
 
 export const ComponentsGallery = () => {
   return (
@@ -94,7 +98,49 @@ export const ComponentsGallery = () => {
       <div className="flex flex-col lg:flex-row-reverse items-center justify-center w-full gap-6 md:gap-10">
         <div className="relative rounded-xl w-full lg:w-[450px] h-[260px] flex items-center justify-center overflow-hidden">
           <div className="absolute bg-zinc-50 blur-[120px] top-[100%] w-36 h-36" />
-          <SocialSelector iconSize={18} variant="default" className="text-white" />
+          <SocialSelector
+            items={[
+              {
+                id: "Linkedin",
+                icon: <LinkedinIcon size={20} color="#fafafa" strokeWidth={2} />,
+                color: "bg-blue-500",
+                description: "See what’s happening in the world right now.",
+                href: "https://www.linkedin.com/in/julian-videla",
+                username: "@JulianVidela",
+              },
+              {
+                id: "Portfolio",
+                icon: <AtSign size={20} strokeWidth={2} />,
+                color: "bg-violet-500",
+                description: "Connect with friends and the world around.",
+                href: "https://julianvidela.vercel.app/",
+                username: "@jv",
+              },
+              {
+                id: "instagram",
+                icon: <InstagramIcon size={20} strokeWidth={2} />,
+                color: "bg-pink-500",
+                description: "Capture and share the world’s moments.",
+                href: "https://www.instagram.com/julianvidela_/?theme=dark",
+                username: "@julianvidela_",
+              },
+              {
+                id: "github",
+                icon: <GithubIcon size={20} strokeWidth={2} />,
+                color: "bg-black",
+                description: "Connect with friends and the world around.",
+                href: "https://github.com/julianvidela",
+                username: "@julianvidela",
+              },
+            ]}
+            onChange={(id) => console.log(id)}
+            variant="colored"
+            iconSize={20}
+            iconPadding="p-4"
+            textColor="text-zinc-300"
+            activeBgColor="bg-zinc-800"
+            border={true}
+          />
         </div>
 
         <div className="relative rounded-xl w-full lg:w-[450px] h-[280px] flex items-center justify-center overflow-hidden px-4">

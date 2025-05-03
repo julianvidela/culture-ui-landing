@@ -1,12 +1,12 @@
-"use client";
+// "use client";
 
-import React from "react";
-import Premium from "@/features/premium/page";
+// import React from "react";
+// import Premium from "@/features/premium/page";
 
 
 
-const PremiumPage = () => {
-  return <Premium/>;
-};
+// const PremiumPage = () => {
+//   return <Premium/>;
+// };
 
-export default PremiumPage;
+// export default PremiumPage;
