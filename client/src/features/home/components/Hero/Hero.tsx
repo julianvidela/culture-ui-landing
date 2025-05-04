@@ -3,6 +3,7 @@ import BackgroundHero from "@/components/Atoms/BackGrounds/BackGroundHero/BackGr
 import { Button } from "@/components/Atoms/Button/Button";
 import Link from "next/link";
 import Img from "@/common/assets/img";
+import { MotionText } from "@/components/cultureui/MotionText/MotionText";
 
 const Hero = () => {
   return (
@@ -11,19 +12,14 @@ const Hero = () => {
         <BackgroundHero />
         <div className="w-full flex flex-col gap-10 md:gap-10">
           <div className="flex flex-col w-full items-center mt-8 md:mt-10 text-center">
-            <h1 className="text-[32px] md:text-[48px] font-bold text-[var(--text-color-secondary)] leading-tight">
-              Turn ideas into sleek interfaces!
-            </h1>
+            <MotionText text="Turn ideas into sleek interfaces!" interval={5000} direction="up" loop className="text-[32px] md:text-[48px] font-bold text-[var(--text-color-secondary)] leading-tight"/>
             <p className="text-[14px] md:text-[16px] font-bold text-[var(--text-color-primary)]">
               Create beautiful and functional UIs faster with our customizable tools.
             </p>
           </div>
           <div className="w-full flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-            <Button fontSize="14px" backgroundColor="black" fontWeight="700" textColor="white">
+            <Button fontSize="14px" backgroundColor="white" fontWeight="700" textColor="black" className="w-full sm:w-auto">
               <Link href="/docs">Get Started</Link>
-            </Button>
-            <Button textColor="black" backgroundColor="white" fontSize="14px" fontWeight="700">
-              <Link href="/premium">Go Premium</Link>
             </Button>
           </div>
         </div>

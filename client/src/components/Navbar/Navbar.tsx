@@ -258,7 +258,8 @@ import { usePathname } from "next/navigation";
 import LogoCulture from "@/common/assets/icons/LogoCulture";
 import Img from "@/common/assets/img";
 import SidebarContent from "../Sidebar/components/SideBarContent";
-import { ComponentCommandPalette } from "@/components/Atoms/CommandPalette/CommandPalette";
+import { CommandPalette } from "@/components/Atoms/CommandPalette/CommandPalette";
+import { CommandPaletteWrapper } from "../Atoms/CommandPalette/CommandPaletteWrapper";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -295,18 +296,7 @@ export const Navbar = () => {
 
         {/* Command Palette (desktop) */}
         <div className="hidden lg:flex">
-          <ComponentCommandPalette options={[
-            {
-              id: "docs",
-              label: "Docs",
-              targetId: "/docs",
-            },
-            {
-              id: "showcase",
-              label: "Showcase",
-              targetId: "/components",
-            },
-          ]} />
+          <CommandPaletteWrapper />
         </div>
 
         {/* Burger button */}
@@ -345,7 +335,7 @@ export const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               <div
-                className="bg-[#0a0a0a] h-[75vh] overflow-y-auto scroll-smooth scrollbar-hidden border-[var(--border-primary)] border rounded-t-2xl bottom-0 p-4 shadow-xl mx-auto w-full flex flex-col gap-3"
+                className="bg-[#0a0a0a] h-[65vh] overflow-y-auto scroll-smooth scrollbar-hidden border-[var(--border-primary)] border rounded-t-2xl bottom-0 p-4 shadow-xl mx-auto w-full flex flex-col gap-3"
                 onClick={(e) => e.stopPropagation()}
               >
                 <ul className="flex flex-col gap-2 list-none p-0 m-0">
@@ -356,7 +346,7 @@ export const Navbar = () => {
                         <Link
                           href={link.href}
                           onClick={() => setIsMenuOpen(false)}
-                          className={`block font-semibold text-[14px] py-2 px-4 rounded-md transition-colors duration-300 ease-in-out ${
+                          className={`block font-semibold text-[14px] py-2 px-2 rounded-md transition-colors duration-300 ease-in-out ${
                             isActive
                               ? "text-[var(--text-color-secondary)]"
                               : "text-[var(--text-color-primary)] hover:text-[var(--text-color-secondary)]"
@@ -370,23 +360,6 @@ export const Navbar = () => {
                 </ul>
                 <div className="my-2">
                   <SidebarContent onLinkClick={() => setIsMenuOpen(false)} />
-                </div>
-
-                <div className="my-3 flex items-center">
-                  < ComponentCommandPalette options={
-                    [
-                      {
-                        id: "docs",
-                        label: "Docs",
-                        targetId: "/docs",
-                      },
-                      {
-                        id: "showcase",
-                        label: "Showcase",
-                        targetId: "/components",
-                      },
-                    ]
-                  } />
                 </div>
               </div>
             </motion.div>
