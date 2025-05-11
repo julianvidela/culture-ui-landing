@@ -5,6 +5,7 @@ import Gallery from "./components/Gallery/Gallery";
 import CardPremium from "./components/CardPremium/CardPremium";
 import { Footer } from "@/components/Footer/Footer";
 import { TechShowcaseSection } from "./components/TechSection/TechSection";
+import OpenSourceSection from "./components/OpenSourceSection/OpenSourceSection";
 
 const Landing = () => {
 
@@ -12,6 +13,7 @@ const Landing = () => {
   return (
     <>
       <Hero />
+      <OpenSourceSection />
       <TechShowcaseSection/>
       <CardPremium />
       <Footer />

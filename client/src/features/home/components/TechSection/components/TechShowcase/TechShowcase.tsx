@@ -8,10 +8,10 @@ import Link from "next/link";
 import { Text } from "@/components/Atoms/Text/Text";
 import "./techsshowcase.css";
 import NextjsLogo from "@/common/assets/icons/LogoNext";
-import Image from "next/image";
+
 import LogoTailwind from "@/common/assets/icons/LogoTailwind";
 import LogoMotion from "@/common/assets/icons/LogoMotion";
-import { text } from "stream/consumers";
+
 import LogoTypescript from "@/common/assets/icons/LogoTypescript";
 
 const techStack = [
