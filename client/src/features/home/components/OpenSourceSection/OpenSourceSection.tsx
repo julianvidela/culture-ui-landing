@@ -2,20 +2,22 @@ import React from 'react'
 import { Text } from "@/components/Atoms/Text/Text";
 import ShinyText from '@/components/Atoms/ShinyText/ShinyText';
 import { useCopyToClipboard } from "@/hooks/useCopyToClipboard"; 
-import { ClipboardCheck, Clipboard } from 'lucide-react';
-import { Button } from '@/components/Atoms/Button/Button';
+import { ClipboardCheck, Clipboard, Folders } from 'lucide-react';
+import { FancyButton } from '@/components/Atoms/FancyButton/FancyButton';
+import Link from 'next/link';
+import GithubIcon from '@/common/assets/icons/GithubIcon';
 
  const OpenSourceSection = () => {
     const { copied, copy } = useCopyToClipboard();
   return (
-    <div className='h-auto w-full flex items-center flex-col gap-8 my-60'>
+    <div className='h-auto w-full flex items-center flex-col gap-16 md:gap-8 my-28 md:mt-60 md:mb-52'>
         <div className="w-fit  px-5 py-2 bg-orange-500 rounded-full ]">
                   <Text as="p" color="secondary" fontWeight="700" size="normal">
                     Creative Power
                   </Text>
                 </div>
 
-        <div className='flex flex-col gap-5 w-[80%] md:w-[50%]'>
+        <div className='flex flex-col gap-5 w-[85%] md:w-[70%]'>
             <h2 className="text-center text-[30px] md:text-[64px] font-bold text-gray-800 dark:text-white">
                 Open Source. Built with care.
             </h2>
@@ -23,17 +25,29 @@ import { Button } from '@/components/Atoms/Button/Button';
                 Culture UI is an open source UI library crafted to improve developer experience and design consistency. It's built by and for the community and you’re welcome to be part of it.
             </Text>
         </div>
-        <div className='flex gap-3 justify-center w-full'>
-            <Button variant='off' className="hidden md:flex">
-                <Text as="p" color="secondary" fontWeight="700" size="normal">
-                    Contribute on GitHub
-                </Text>
-            </Button>
-        <Button variant='primary' className="hidden md:flex">
-                <Text as="p" className='text-black' fontWeight="700" size="normal">
-                    Explore the Docs
-                </Text>
-            </Button>   
+        <div className='flex flex-col md:flex-row mt-5 gap-4 justify-center w-auto'>
+            
+            <FancyButton>
+            <Link
+              href="https://www.buymeacoffee.com/julianvidela"
+              target="_blank"
+              className="flex gap-3 justify-center items-center"
+            >
+              Explore the Docs
+              <Folders size={16} strokeWidth={3}/>
+            </Link>
+          </FancyButton>
+          <FancyButton >
+          <Link
+            href="https://github.com/julianvidela/Culture-Ui"
+            target="_blank"
+            className="flex items-center gap-3 "
+          >
+            <GithubIcon size={16} strokeWidth={3} />
+           Contribute on GitHub
+          </Link>
+          </FancyButton>
+           
         </div>
         <div className="flex gap-4 h-[50px] px-6  items-center">
   <div className="group cursor-pointer">

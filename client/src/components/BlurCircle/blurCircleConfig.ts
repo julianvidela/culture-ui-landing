@@ -58,5 +58,5 @@ export const galleryCircles: BlurCircleConfig[] = [
   
   export const cardCircles: BlurCircleConfig[] = [
     { className: "left-[2%] bottom-[-70%]", gradientClass: "bg-gradient-blue-deep-light" },
-    { className: "left-[80%] bottom-[20%]", gradientClass: "bg-gradient-cyan-soft-hero-2" },
+    { className: "right-[4%] bottom-[-20%]", gradientClass: "bg-gradient-cyan-soft-hero-2" },
   ];

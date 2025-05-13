@@ -7,6 +7,41 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    // Justify classes (all breakpoints)
+    'justify-start',
+    'justify-center',
+    'justify-end',
+    'sm:justify-start',
+    'sm:justify-center',
+    'sm:justify-end',
+    'md:justify-start',
+    'md:justify-center',
+    'md:justify-end',
+    'lg:justify-start',
+    'lg:justify-center',
+    'lg:justify-end',
+    'xl:justify-start',
+    'xl:justify-center',
+    'xl:justify-end',
+
+    // Text align classes (all breakpoints)
+    'text-left',
+    'text-center',
+    'text-right',
+    'sm:text-left',
+    'sm:text-center',
+    'sm:text-right',
+    'md:text-left',
+    'md:text-center',
+    'md:text-right',
+    'lg:text-left',
+    'lg:text-center',
+    'lg:text-right',
+    'xl:text-left',
+    'xl:text-center',
+    'xl:text-right',
+  ],
   theme: {
     extend: {
       colors: {

@@ -1,6 +1,6 @@
 import React from "react";
 import BackgroundHero from "@/components/Atoms/BackGrounds/BackGroundHero/BackGroundHero";
-import { Button } from "@/components/Atoms/Button/Button";
+import { Button} from "@/components/Atoms/Button/Button";
 import Link from "next/link";
 import Img from "@/common/assets/img";
 import { MotionText } from "@/components/cultureui/MotionText/MotionText";
