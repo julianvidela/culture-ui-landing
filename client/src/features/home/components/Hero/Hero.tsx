@@ -1,9 +1,11 @@
 import React from "react";
 import BackgroundHero from "@/components/Atoms/BackGrounds/BackGroundHero/BackGroundHero";
-import { Button} from "@/components/Atoms/Button/Button";
+import { Button } from "@/components/Atoms/Button/Button";
 import Link from "next/link";
 import Img from "@/common/assets/img";
+import { Text } from "@/components/Atoms/Text/Text";
 import { MotionText } from "@/components/cultureui/MotionText/MotionText";
+
 
 const Hero = () => {
   return (
@@ -14,18 +16,29 @@ const Hero = () => {
           <div className="flex flex-col w-full items-center mt-8 md:mt-10 text-center">
             <MotionText text="Turn ideas into sleek interfaces!" interval={5000} direction="up" loop className="text-[32px] md:text-[48px] font-bold text-[var(--text-color-secondary)] leading-tight"/>
             <p className="text-[14px] md:text-[16px] font-bold text-[var(--text-color-primary)]">
-              Create beautiful and functional UIs faster with our customizable tools.
+              Create beautiful and functional UIs faster with our customizable
+              tools.
             </p>
           </div>
           <div className="w-full flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-            <Button fontSize="14px" backgroundColor="white" fontWeight="700" textColor="black" className="w-full sm:w-auto">
+            <Button
+              fontSize="14px"
+              backgroundColor="white"
+              fontWeight="700"
+              textColor="black"
+              className="w-full sm:w-auto"
+            >
               <Link href="/docs">Get Started</Link>
             </Button>
           </div>
         </div>
         <div className="hidden md:flex justify-center">
           <div className="w-full max-w-[600px] md:max-w-[804px] m-auto mt-12 p-1 bg-[#ffffff7e] rounded-xl">
-            <img src={Img.AllComponentsImg} alt="AllComponentsImg" className="rounded-xl w-full" />
+            <img
+              src={Img.AllComponentsImg}
+              alt="AllComponentsImg"
+              className="rounded-xl w-full"
+            />
           </div>
         </div>
       </div>
@@ -33,4 +46,4 @@ const Hero = () => {
   );
 };
 
-export default Hero
+export default Hero;

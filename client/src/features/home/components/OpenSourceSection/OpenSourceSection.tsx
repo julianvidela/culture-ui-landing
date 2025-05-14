@@ -10,14 +10,14 @@ import GithubIcon from '@/common/assets/icons/GithubIcon';
  const OpenSourceSection = () => {
     const { copied, copy } = useCopyToClipboard();
   return (
-    <div className='h-auto w-full flex items-center flex-col gap-16 md:gap-8 my-28 md:mt-60 md:mb-52'>
+    <div className='h-auto w-full flex items-center flex-col gap-16 md:gap-8 my-28 md:my-36 lg:my-52 '>
         <div className="w-fit  px-5 py-2 bg-orange-500 rounded-full ]">
                   <Text as="p" color="secondary" fontWeight="700" size="normal">
                     Creative Power
                   </Text>
                 </div>
 
-        <div className='flex flex-col gap-5 w-[85%] md:w-[70%]'>
+        <div className='flex flex-col gap-5 w-[85%] md:w-[70%] lg:w-[50%]'>
             <h2 className="text-center text-[30px] md:text-[64px] font-bold text-gray-800 dark:text-white">
                 Open Source. Built with care.
             </h2>
@@ -29,8 +29,8 @@ import GithubIcon from '@/common/assets/icons/GithubIcon';
             
             <FancyButton>
             <Link
-              href="https://www.buymeacoffee.com/julianvidela"
-              target="_blank"
+              href="/docs"
+              
               className="flex gap-3 justify-center items-center"
             >
               Explore the Docs

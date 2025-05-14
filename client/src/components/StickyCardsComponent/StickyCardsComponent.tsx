@@ -86,7 +86,7 @@ export const StickyCardsStack = ({
                 top: `calc(-5vh + ${i * gap}px)`,
               }}
               className={clsx(
-                `relative -top-[25%] w-full  px-4 md:px-8`,
+                `relative -top-[25%] w-full  p-10`,
                 `h-auto min-h-[320px] md:h-[${cardHeight}]`,
                 `md:w-[${cardWidth}] min-h-[${cardHeight}] max-h-[${cardHeight}]`,
                 `flex flex-col justify-center bg-black rounded-[25px] border border-[var(--border-primary)] overflow-hidden text-white p-8 origin-top shadow-xl`

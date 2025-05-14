@@ -3,7 +3,6 @@
 import React from "react";
 import { useSearchParams } from "next/navigation";
 import BackgroundGallery from "@/components/Atoms/BackGrounds/BackGroundGallery/BackgroundGallery";
-import Paypal from "@/common/assets/icons/Paypal";
 import PayPalService from "@/services/paypalService";
 
 const Checkout = () => {
@@ -85,7 +84,7 @@ const Checkout = () => {
             className="w-full h-[75px] flex justify-center items-center border border-[var(--border-primary)] bg-black rounded-lg"
             onClick={handlePayPalCheckout}
           >
-            <Paypal />
+            
           </button>
         </div>
       </div>

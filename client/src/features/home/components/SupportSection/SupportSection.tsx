@@ -10,7 +10,7 @@ import { FancyButton } from "@/components/Atoms/FancyButton/FancyButton";
 
 export const ContributeSection = () => {
   return (
-    <section className="relative py-16 md:py-52 px-6 w-full flex justify-center items-center overflow-hidden">
+    <section className="relative py-28 md:pb-36 lg:pb-52 px-8 w-full flex justify-center items-center overflow-hidden">
       {/* Fondo difuminado */}
       <div
         className="absolute inset-0 -z-10 top-[90%] blur-[120px] opacity-40"
@@ -25,7 +25,7 @@ export const ContributeSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
-        className=" w-[95%] md:w-[50%] rounded-3xl flex flex-col gap-10 md:p-14 text-center"
+        className=" w-[95%] md:w-[70%] lg:w-[50%] rounded-3xl flex flex-col gap-10 md:p-14 text-center"
       >
        
         <h2 className="text-center text-[50px] md:text-[64px] font-bold text-gray-800 dark:text-white">
