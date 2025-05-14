@@ -28,16 +28,16 @@ const fadeUpVariant = {
 export const PhilosophySection = () => {
   return (
     <section className="relative flex flex-col-reverse lg:flex-row w-full gap-10 m-auto h-auto my-10 md:my-36 lg:my-[250px] px-5">
-      {/* Teléfonos */}
+      
       <div className="relative w-full lg:w-1/2 bg-[#f0faff] h-[700px] rounded-2xl flex flex-col items-center gap-3 p-6 overflow-hidden">
         <div className="h-full w-full flex items-center justify-center">
-          {/* Teléfono de arriba */}
+          
           <motion.div
             initial={{ opacity: 0, y: -100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="absolute -top-[270px] md:-top-72 md:  lg:-top-44 "
+            className="absolute -top-[270px] md:-top-32 md:left-[124px] lg:left-auto lg:-top-44 "
           >
             <Image
               src={Img.PhoneTop}
@@ -48,13 +48,13 @@ export const PhilosophySection = () => {
             />
           </motion.div>
 
-          {/* Teléfono de abajo */}
+         
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: true }}
-            className="absolute -bottom-60 md:-bottom-60 lg:-bottom-28 "
+            className="absolute -bottom-60 md:-bottom-32 md:right-[124px] lg:right-auto lg:-bottom-28 "
           >
             <Image
               src={Img.PhoneBottom}
@@ -67,7 +67,7 @@ export const PhilosophySection = () => {
         </div>
       </div>
 
-      {/* Contenido con staggered animation */}
+     
       <motion.div
         className="w-full lg:w-1/2 flex flex-col justify-evenly lg:justify-between gap-5 h-full"
         variants={containerVariants}
@@ -75,7 +75,7 @@ export const PhilosophySection = () => {
         whileInView="show"
         viewport={{ once: true }}
       >
-        {/* Título y subtítulo */}
+      
         <motion.div
           variants={fadeUpVariant}
           className="flex flex-col gap-5 justify-start items-center lg:items-end"
@@ -97,7 +97,7 @@ export const PhilosophySection = () => {
           </div>
         </motion.div>
 
-        {/* Tarjetas con stagger */}
+        
         <div className="flex flex-col items-end justify-end gap-4 w-full">
           {philosophyData.map((item, index) => (
             <motion.div

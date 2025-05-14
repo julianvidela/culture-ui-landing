@@ -1,8 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 interface MotionTextProps {
   text: string;
@@ -10,7 +11,7 @@ interface MotionTextProps {
   direction?: "up" | "down";
   loop?: boolean;
   className?: string;
-  interval?: number; 
+  interval?: number;
 }
 
 export const MotionText: React.FC<MotionTextProps> = ({
@@ -21,8 +22,12 @@ export const MotionText: React.FC<MotionTextProps> = ({
   interval = 3000,
   className,
 }) => {
+  const isDesktop = useMediaQuery("(min-width: 768px)"); 
   const words = text.split(" ");
   const [iteration, setIteration] = useState(0);
+
+  const initialY = direction === "up" ? 40 : -40;
+  const exitY = direction === "up" ? -40 : 40;
 
   useEffect(() => {
     if (!loop) return;
@@ -34,28 +39,46 @@ export const MotionText: React.FC<MotionTextProps> = ({
     return () => clearInterval(timer);
   }, [loop, interval]);
 
-  const getInitialY = direction === "up" ? "100%" : "-100%";
-  const getExitY = direction === "up" ? "-100%" : "100%";
-
   return (
-    <div className={clsx("inline-block overflow-hidden", className)} key={iteration}>
-      {words.map((word, index) => (
-        <span key={`${word}-${index}`} className="inline-block mr-2 overflow-hidden">
+    <AnimatePresence mode="wait">
+      <div className={clsx("inline-block overflow-hidden", className)} key={iteration}>
+        {isDesktop ? (
+          // Desktop: animar palabra por palabra
+          words.map((word, index) => (
+            <span key={`${word}-${index}`} className="inline-block mr-2 overflow-hidden">
+              <motion.span
+                initial={{ y: initialY, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: exitY, opacity: 0 }}
+                transition={{
+                  delay: index * delayStep,
+                  duration: 0.4,
+                  ease: "easeOut",
+                }}
+                className="inline-block"
+                style={{ willChange: "transform, opacity" }}
+              >
+                {word}&nbsp;
+              </motion.span>
+            </span>
+          ))
+        ) : (
+          
           <motion.span
-            initial={{ y: getInitialY, opacity: 0 }}
-            animate={{ y: "0%", opacity: 1 }}
-            exit={{ y: getExitY, opacity: 0 }}
+            initial={{ y: initialY, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: exitY, opacity: 0 }}
             transition={{
-              delay: index * delayStep,
-              duration: 0.5,
+              duration: 0.6,
               ease: "easeOut",
             }}
             className="inline-block"
+            style={{ willChange: "transform, opacity" }}
           >
-            {word}
+            {text}
           </motion.span>
-        </span>
-      ))}
-    </div>
+        )}
+      </div>
+    </AnimatePresence>
   );
 };

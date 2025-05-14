@@ -52,7 +52,7 @@ export const FancyButton: React.FC<BestiaButtonProps> = ({
       className={clsx(
         "button--bestia",
         bgClass,
-        "relative inline-flex items-center justify-center overflow-hidden px-10 py-3",
+        "relative inline-flex items-center justify-center overflow-hidden px-10 py-3 border border-[var(--border-primary)]  ",
         
       )}
     >

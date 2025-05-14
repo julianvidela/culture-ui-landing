@@ -1,14 +1,12 @@
-
-
 import { getRandomPositions } from "@/helpers/getRandomPositions";
-import { Button } from "@/components/Atoms/Button/Button";
+
 import { Text } from "@/components/Atoms/Text/Text";
 import { FloatingHelper } from "@/helpers/FloatingHelper";
 import Link from "next/link";
 import clsx from "clsx";
+import { FancyButton } from "@/components/Atoms/FancyButton/FancyButton";
 
-
-const tooltips =  [
+const tooltips = [
   { icon: "👨🏻‍🚀", tooltip: "Hi Word", text: "text-[25px]" },
   { icon: "🚀", tooltip: "to the moon", text: "text-[30px]" },
   { icon: "✨", tooltip: "Stars", text: "text-[38px]" },
@@ -36,36 +34,30 @@ export const HeroShowCase = () => {
         </Text>
       </div>
       <div className="w-full flex gap-4 sm:gap-6 justify-center">
-        <Button
-          fontSize="14px"
-          backgroundColor="white"
-          fontWeight="600"
-          textColor="black"
-        >
+        <FancyButton>
           <Link href="/docs">Get Started</Link>
-        </Button>
+        </FancyButton>
       </div>
       {tooltips.map((tooltip, index) => {
-  const { position, positionLg } = positions[index];
-  return (
-    <div
-      key={index}
-      className={clsx(position, `lg:${positionLg}`, "hidden md:block")}
-    >
-      <FloatingHelper tooltip={tooltip.tooltip}>
-        <p
-          className={clsx(
-            "bg-black border border-[var(--border-primary)] px-4 py-3 rounded-full",
-            tooltip.text
-          )}
-        >
-          {tooltip.icon}
-        </p>
-      </FloatingHelper>
-    </div>
-  );
-})}
-
+        const { position, positionLg } = positions[index];
+        return (
+          <div
+            key={index}
+            className={clsx(position, `lg:${positionLg}`, "hidden md:block")}
+          >
+            <FloatingHelper tooltip={tooltip.tooltip}>
+              <p
+                className={clsx(
+                  "bg-black border border-[var(--border-primary)] px-4 py-3 rounded-full",
+                  tooltip.text
+                )}
+              >
+                {tooltip.icon}
+              </p>
+            </FloatingHelper>
+          </div>
+        );
+      })}
     </div>
   );
 };
