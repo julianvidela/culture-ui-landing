@@ -3,7 +3,7 @@
 import React from "react";
 import { useParams } from "next/navigation";
 import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
-import { useComponents } from "@/hooks/useComponents";
+import { useComponentContext } from "@/context/ComponentContext";
 import { CodeBlock } from "@/components/Atoms/codeBlock/CodeBlock";
 import { PropsTable } from "@/components/Atoms/PropsTable/PropsTable";
 import { Text } from "@/components/Atoms/Text/Text";
@@ -12,8 +12,8 @@ import { ClipboardCheck, Clipboard } from "lucide-react";
 
 const ComponentDetail = () => {
   const { id } = useParams();
-  const { components, error, loading } = useComponents();
-  const component = components.find((comp) => comp._id === id);
+  const { components, error, loading } = useComponentContext();
+  const component = components.find((comp) => comp.id === id);
   const { copied, copy } = useCopyToClipboard();
 
   if (loading) return <p>Cargando componentes...</p>;
@@ -86,11 +86,17 @@ const ComponentDetail = () => {
           </Text>
         </div>
         <div className="flex flex-col h-auto">
+         
+          <p>
+          
           <CodeBlock
             code={component.usageExample}
             language="tsx"
             languageText="jsx/tsx"
           />
+          </p>
+          
+
         </div>
       </div>
 
@@ -101,7 +107,13 @@ const ComponentDetail = () => {
           </Text>
         </div>
         <div>
-          <PropsTable properties={component.properties} />
+          <PropsTable
+            properties={component.properties.map((p: any) => ({
+              prop: p.prop ?? p.name, // fallback to 'name' if 'prop' is missing
+              type: p.type,
+              description: p.description,
+            }))}
+          />
         </div>
       </div>
 

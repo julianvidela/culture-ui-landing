@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useComponents } from "@/hooks/useComponents";
+import { useComponentContext } from "@/context/ComponentContext";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
@@ -24,16 +24,16 @@ export const menuItems = [
 
 
 const SidebarContent = ({ onLinkClick }: SidebarContentProps) => {
-  const { components } = useComponents()
+  const { components } = useComponentContext()
   const pathname = usePathname();
   return (
     <ul className="flex gap-3 flex-col list-none">
     {components.map((component) => {
-      const isActive = pathname === `/components/${component._id}`;
+      const isActive = pathname === `/components/${component.id}`;
       return (
-        <li key={component._id}>
+        <li key={component.id}>
           <Link
-            href={`/components/${component._id}`}
+            href={`/components/${component.id}`}
             onClick={onLinkClick}
             className={clsx(
               "block font-semibold text-[14px]  py-2 px-2 rounded transition-colors",

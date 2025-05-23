@@ -1,8 +1,8 @@
 import { CommandPalette } from "@/components/Atoms/CommandPalette/CommandPalette";
-import { useComponents } from "@/hooks/useComponents";
+import { useComponentContext } from "@/context/ComponentContext";
 
 export const CommandPaletteWrapper = () => {
-  const { components } = useComponents();
+  const { components } = useComponentContext();
 
   const staticOptions = [
     { id: "docs", label: "Docs", path: "/docs" },
@@ -10,9 +10,9 @@ export const CommandPaletteWrapper = () => {
   ];
 
   const dynamicOptions = components.map((component) => ({
-    id: component._id,
+    id: component.id,
     label: component.name,
-    path: `/components/${component._id}`,
+    path: `/components/${component.id}`,
   }));
 
   const options = [...staticOptions, ...dynamicOptions];

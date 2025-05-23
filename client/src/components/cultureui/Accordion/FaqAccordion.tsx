@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import styles from "./faqaccordion.module.css";
+import clsx from "clsx";
 
 interface FAQItem {
   question: string;
@@ -38,14 +38,14 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({
   };
 
   return (
-    <div className={styles["faqContainer"]} style={{ maxWidth: width }}>
+    <div className={clsx("w-full mx-auto mb-10", width)}>
       {data.map((faq, index) => {
         const isOpen = openIndex === index;
         return (
-          <div key={index} className={styles["faqItem"]}>
+          <div key={index} className="border-t border-[var(--border-primary)] overflow-hidden">
             <button
               onClick={() => toggleFAQ(index)}
-              className={styles["faqButton"]}
+              className="w-full flex justify-between items-center py-5 text-left transition-colors duration-300 bg-transparent border-none cursor-pointer"
               style={{
                 color: questionColor,
                 fontSize: questionSize,
@@ -54,7 +54,7 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({
             >
               {faq.question}
               <ChevronDown
-                className={styles.faqChevron}
+                className="w-5 h-5 transition-transform duration-300"
                 style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
               />
             </button>
@@ -63,10 +63,10 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({
               initial={{ height: 0 }}
               animate={{ height: isOpen ? "auto" : 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className={styles["faqContent"]}
+              className="overflow-hidden"
             >
               <div
-                className={styles["faqText"]}
+                className="pb-6 w-[95%]"
                 style={{
                   color: answerColor,
                   fontSize: answerSize,

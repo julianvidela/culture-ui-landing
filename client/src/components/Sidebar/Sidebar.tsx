@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { useComponents } from "@/hooks/useComponents";
+import { useComponentContext } from "@/context/ComponentContext";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
 
 const SideBar = () => {
-   const {components,error,loading} = useComponents()
+   const {components,error,loading} = useComponentContext()
    const pathname = usePathname();
 
 
@@ -52,11 +52,11 @@ const SideBar = () => {
 
         {!loading && !error && components.length > 0 ? (
          components.map((component) => {
-          const isActive = pathname === `/components/${component._id}`;
+          const isActive = pathname === `/components/${component.id}`;
           return (
-            <li key={component._id}>
+            <li key={component.id}>
               <Link
-                href={`/components/${component._id}`}
+                href={`/components/${component.id}`}
                 className={clsx(
                   "block font-semibold text-[14px] py-2 px-4 rounded transition-colors",
                   isActive

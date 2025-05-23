@@ -23,18 +23,19 @@ export const ComponentsGallery = () => {
               {
                 id: "home",
                 icon: <Home size={24} strokeWidth={2} />,
-                href: "",
+                
               },
               {
                 id: "search",
                 icon: <Search size={24} strokeWidth={2} />,
-                href: "",
+                
               },
               {
                 id: "profile",
                 icon: <User size={24} strokeWidth={2} />,
-                href: "",
+               
               },
+                
             ]}
             bgColor="#24242430"
             indicatorColor="#242424630"

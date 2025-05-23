@@ -64,7 +64,7 @@ export const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
   const current = testimonials[index];
 
   return (
-    <div className="relative w-full max-w-2xl mx-auto">
+    <div className="relative w-full max-w-2xl flex flex-col gap-4 mx-auto">
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={index}
@@ -122,21 +122,29 @@ export const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
       </AnimatePresence>
 
       {showControls && (
-        <div className="mt-4 flex justify-center gap-6">
-          <button
-            onClick={() => paginate(-1)}
-            className="p-2 bg-[#ffffff0a] hover:bg-[#ffffff14] rounded-full"
-          >
-            <ChevronLeft size={20} stroke="#fff" />
-          </button>
-          <button
-            onClick={() => paginate(1)}
-            className="p-2 bg-[#ffffff0a] hover:bg-[#ffffff14] rounded-full"
-          >
-            <ChevronRight size={20} stroke="#fff" />
-          </button>
-        </div>
-      )}
+  <div
+    className="flex justify-center gap-6"
+    style={{
+      width: width || "500px", 
+      margin: "0 auto",
+    }}
+  >
+    <button
+      onClick={() => paginate(-1)}
+      className="p-2 bg-[#ffffff0a] hover:bg-[#ffffff14] rounded-full"
+    >
+      <ChevronLeft size={20} stroke="#fff" />
+    </button>
+    <button
+      onClick={() => paginate(1)}
+      className="p-2 bg-[#ffffff0a] hover:bg-[#ffffff14] rounded-full"
+    >
+      <ChevronRight size={20} stroke="#fff" />
+    </button>
+  </div>
+)}
     </div>
   );
 };
+
+

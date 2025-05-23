@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import CloseIcon from "@/common/assets/icons/Close";
-import "./modal.css";
+import clsx from "clsx";
 
 interface ModalProps {
   title?: string;
@@ -35,8 +35,8 @@ export const Modal: React.FC<ModalProps> = ({
   fontWeight = "700",
   buttonText = "Submit",
   border,
-  successMessageBg,
-  successMessageText,
+  successMessageBg = "#000000",
+  successMessageText = "#ffffff",
   inputPlaceholder = "Your email",
   onSubmit,
   trigger,
@@ -58,7 +58,10 @@ export const Modal: React.FC<ModalProps> = ({
       {trigger ? (
         <div onClick={() => setIsOpen(true)}>{trigger}</div>
       ) : (
-        <button onClick={() => setIsOpen(true)} className="submit-button">
+        <button
+          onClick={() => setIsOpen(true)}
+          className="bg-indigo-600 text-white border-none px-4 py-2 rounded-md w-80 cursor-pointer hover:bg-indigo-500"
+        >
           Open Modal
         </button>
       )}
@@ -66,67 +69,78 @@ export const Modal: React.FC<ModalProps> = ({
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="modal-overlay"
+            className="fixed top-0 left-0 w-full h-full p-4 flex items-center justify-center bg-black/50 backdrop-blur-md z-[1000]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
             <motion.div
-              className="modal-content p-4 gap-3"
+              className={clsx(
+                "flex flex-col relative text-center rounded-lg shadow-md w-full max-w-md p-4 gap-3",
+              )}
+              style={{
+                backgroundColor,
+                color: textColor,
+                border,
+              }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              style={{ backgroundColor, color: textColor, border }}
             >
-              <div className="close-wrapper z-1" style={{ backgroundColor }}>
-                <div className="close-container z-40">
-                  <button onClick={() => setIsOpen(false)}>
-                    <CloseIcon stroke="#595D62" />
-                  </button>
-                </div>
+              {/* Cierre */}
+              <div
+                className="absolute top-2 right-2 w-[50px] h-[50px] flex items-center justify-center rounded-full z-50"
+                style={{ backgroundColor }}
+              >
+                <button
+                  className="w-[35px] h-[35px] rounded-full bg-gray-200 flex items-center justify-center cursor-pointer"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <CloseIcon stroke="#595D62" />
+                </button>
               </div>
 
+              {/* Imagen */}
               {imageSrc && (
-                <div className="relative z-10">
-                  <motion.img
-                    src={imageSrc}
-                    alt="Modal Image"
-                    className="w-full rounded-lg"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.5 }}
-                  />
-                </div>
+                <motion.img
+                  src={imageSrc}
+                  alt="Modal Image"
+                  className="w-full rounded-lg"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5 }}
+                />
               )}
 
+              {/* Título y descripción */}
               <motion.div
-                className="modal-header my-5"
+                className="my-5 flex flex-col items-center gap-1"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.1 }}
               >
                 <h2 style={{ fontSize: titleSize, fontWeight }}>{title}</h2>
-                <p style={{ fontSize: descriptionSize, fontWeight }}>
-                  {description}
-                </p>
+                <p style={{ fontSize: descriptionSize, fontWeight }}>{description}</p>
               </motion.div>
 
-              <form onSubmit={handleSubmit}>
+              {/* Form */}
+              <form onSubmit={handleSubmit} className="w-full">
                 <input
                   type="email"
                   placeholder={inputPlaceholder}
-                  className="input-email"
+                  className="w-full p-2 border border-gray-300 rounded-md mt-2"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
-                <div className="modal-footer mt-4">
+
+                <div className="mt-4 w-full">
                   {submitted ? (
                     <motion.div
-                      className="success-message"
+                      className="text-center p-3 rounded-md font-bold text-sm"
                       style={{
                         backgroundColor: successMessageBg,
                         color: successMessageText,
@@ -140,7 +154,10 @@ export const Modal: React.FC<ModalProps> = ({
                   ) : customSubmitButton ? (
                     customSubmitButton
                   ) : (
-                    <button className="submit-button-modal" type="submit">
+                    <button
+                      type="submit"
+                      className="bg-indigo-600 text-white w-full py-2 px-4 mt-2 rounded-md hover:bg-indigo-500 transition-colors"
+                    >
                       {buttonText}
                     </button>
                   )}
