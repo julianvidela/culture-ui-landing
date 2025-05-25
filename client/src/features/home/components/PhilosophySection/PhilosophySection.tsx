@@ -28,10 +28,10 @@ const fadeUpVariant = {
 export const PhilosophySection = () => {
   return (
     <section className="relative flex flex-col-reverse lg:flex-row w-full gap-10 m-auto h-auto my-10 md:my-36 lg:my-[250px] px-5">
-      
-      <div className="relative w-full lg:w-1/2 bg-[#f0faff] h-[700px] rounded-2xl flex flex-col items-center gap-3 p-6 overflow-hidden">
+      <div className="relative w-full lg:w-1/2  h-[700px] rounded-2xl flex flex-col items-center gap-3 p-6 overflow-hidden">
+        <div className="absolute blur-[120px] -bottom-[20%] bg-orange-600 w-40 h-40" />
+        <div className="absolute blur-[120px] -top-[20%] bg-blue-600 w-40 h-40" />
         <div className="h-full w-full flex items-center justify-center">
-          
           <motion.div
             initial={{ opacity: 0, y: -100 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -48,13 +48,12 @@ export const PhilosophySection = () => {
             />
           </motion.div>
 
-         
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: true }}
-            className="absolute -bottom-60 md:-bottom-32 md:right-[124px] lg:right-auto lg:-bottom-28 "
+            className="absolute -bottom-60 md:-bottom-32 md:right-[124px] lg:right-auto lg:-bottom-32 "
           >
             <Image
               src={Img.PhoneBottom}
@@ -67,7 +66,6 @@ export const PhilosophySection = () => {
         </div>
       </div>
 
-     
       <motion.div
         className="w-full lg:w-1/2 flex flex-col justify-evenly lg:justify-between gap-5 h-full"
         variants={containerVariants}
@@ -75,7 +73,6 @@ export const PhilosophySection = () => {
         whileInView="show"
         viewport={{ once: true }}
       >
-      
         <motion.div
           variants={fadeUpVariant}
           className="flex flex-col gap-5 justify-start items-center lg:items-end"
@@ -97,15 +94,16 @@ export const PhilosophySection = () => {
           </div>
         </motion.div>
 
-        
         <div className="flex flex-col items-end justify-end gap-4 w-full">
           {philosophyData.map((item, index) => (
             <motion.div
               key={index}
               variants={fadeUpVariant}
-              className="flex flex-col w-full rounded-lg p-4"
-              style={{ backgroundColor: item.bgColor }}
+              className="flex flex-col w-full rounded-lg p-4 overflow-hidden relative bg-black"
             >
+                <div className="absolute blur-[120px] -bottom-[100%] w-full h-5" style={{
+                  backgroundColor: item.bgColor
+                }} />
               <div className="flex flex-col gap-3">
                 <div className="flex gap-3 items-center justify-start">
                   <Text

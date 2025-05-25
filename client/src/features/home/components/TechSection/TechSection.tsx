@@ -1,11 +1,9 @@
 "use client";
 
-import  { StickyCardsStack } from "../../../../components/StickyCardsComponent/StickyCardsComponent";
+import { StickyCardsStack } from "../../../../components/StickyCardsComponent/StickyCardsComponent";
 import ScrollReveal from "../../../../components/Atoms/ScrollFloat/ScrollFloat";
 import { Text } from "@/components/Atoms/Text/Text";
 import { techStack } from "./TechData";
-
-
 
 export const TechShowcaseSection = () => {
   return (
@@ -16,23 +14,18 @@ export const TechShowcaseSection = () => {
             Creative Power ✨
           </Text>
         </div>
-        
-  <ScrollReveal
-  text="Built with technologies developers love"
-  
-           justifyContentH2={{ base: "center", lg: "start" }}
-  justifyContainer={{ base: "center", lg: "start" }}
-  align={{ base: "center", lg: "left" }}
-  
-  className="w-[85%] md:w-[80%] lg:w-[75%] text-[35px] md:text-[50px] lg:text-[38px] font-semibold text-zinc-800 dark:text-white"
-/>
 
-
-
+        <ScrollReveal
+          text="Built with technologies developers love"
+          justifyContentH2={{ base: "center", lg: "start" }}
+          justifyContainer={{ base: "center", lg: "start" }}
+          align={{ base: "center", lg: "left" }}
+          className="w-[85%] md:w-[80%] lg:w-[75%] text-[35px] md:text-[50px] lg:text-[38px] font-semibold text-zinc-800 dark:text-white"
+        />
       </div>
 
       <div className="flex-grow flex lg:w-[55%]">
-        <StickyCardsStack items={techStack}  cardHeight="400px"/>
+        <StickyCardsStack items={techStack} cardHeight="400px" />
       </div>
     </section>
   );

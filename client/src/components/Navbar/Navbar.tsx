@@ -11,7 +11,7 @@ import { navLinks } from "./DataLinks";
 import { usePathname } from "next/navigation";
 import LogoCulture from "@/common/assets/icons/LogoCulture";
 import SidebarContent from "../Sidebar/components/SideBarContent";
-import { CommandPaletteWrapper } from "../Atoms/CommandPalette/CommandPaletteWrapper";
+import { CommandPaletteWrapper } from "../Atoms/CommandPalette/components/CommandPaletteWrapper";
 import { useScrollLock } from "@/hooks/useScrollLock";
 
 export const Navbar = () => {
@@ -20,17 +20,10 @@ export const Navbar = () => {
   
   useScrollLock(isMenuOpen);
 
-  useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isMenuOpen]);
-
   return (
     <div className="border-b border-[var(--border-primary)] w-full h-auto z-50 relative">
       <nav className="flex justify-between items-center w-full py-6">
-        {/* Logo + links */}
+      
         <div className="flex gap-14">
           <div className="flex items-center gap-3 text-[var(--text-color-secondary)] font-bold text-[24px]">
             <LogoCulture />
@@ -49,12 +42,12 @@ export const Navbar = () => {
           </div>
         </div>
 
-        {/* Command Palette (desktop) */}
+        
         <div className="hidden lg:flex">
           <CommandPaletteWrapper />
         </div>
 
-        {/* Burger button */}
+     
         <Button
           onClick={() => setIsMenuOpen(true)}
           backgroundColor="transparent"
@@ -64,11 +57,11 @@ export const Navbar = () => {
         </Button>
       </nav>
 
-      {/* Mobile drawer menu */}
+      
       <AnimatePresence>
         {isMenuOpen && (
           <>
-            {/* Backdrop */}
+           
             <motion.div
               key="backdrop"
               initial={{ opacity: 0 }}
@@ -79,7 +72,7 @@ export const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
             />
 
-            {/* Drawer */}
+            
             <motion.div
               key="mobile-menu"
               initial={{ y: "100%", opacity: 0 }}

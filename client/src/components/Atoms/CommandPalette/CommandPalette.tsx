@@ -1,7 +1,7 @@
 "use client";
 import { use, useState } from "react";
 import { Search } from "lucide-react";
-import { CommandPaletteModal } from "./CommandPaletteModal";
+import { CommandPaletteModal } from "./components/CommandPaletteModal";
 import { useCommandPaletteHotkey } from "@/hooks/useCommandPaletteHotkey";
 import { useScrollLock } from "@/hooks/useScrollLock";
 import { useRouter } from "next/navigation";

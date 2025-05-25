@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Lenis from "lenis";
 import Link from "next/link";
 import clsx from "clsx";
 import { Text } from "@/components/Atoms/Text/Text";
@@ -37,15 +36,6 @@ export const StickyCardsStack = ({
     target: container,
     offset: ["start start", "end end"],
   });
-
-  useEffect(() => {
-    const lenis = new Lenis();
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-  }, []);
 
   return (
     <section
@@ -140,6 +130,7 @@ export const StickyCardsStack = ({
           </div>
         );
       })}
-    </section>
+    </section> 
   );
 };
+

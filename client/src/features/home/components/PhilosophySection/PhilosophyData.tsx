@@ -7,8 +7,8 @@ export const philosophyData = [
     description:
       "This idea started as part of a simulated project. After the simulation ended, it lingered as potential. I knew finishing it could help me — and maybe others.",
     icon: <Lightbulb size={16} />,
-    bgColor: "#EEFBFF",
-    titleColor: "#000000",
+    bgColor: "#fafafa",
+    titleColor: "#fafafa",
     desColor: "#696969",
   },
   {

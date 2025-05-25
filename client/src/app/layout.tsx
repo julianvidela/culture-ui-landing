@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
- import { Providers } from "@/providers/Providers";
+import { Providers } from "@/providers/Providers";
 
 import "./globals.css";
-import '@/styles/utilities.css'; 
+import "@/styles/utilities.css";
 
 import LayoutWrapper from "@/components/LayoutWrapper/LayoutWrapper";
-import  Icon  from "@/common/assets/icons";
-
+import Icon from "@/common/assets/icons";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -28,19 +27,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <link rel="icon" href={Icon.LogoPublicCulture} type="image/svg+xml"/>
-      {/* <link rel="alternate icon" href="/favicon.ico" /> */}
+        <link rel="icon" href={Icon.LogoPublicCulture} type="image/svg+xml" />
       </head>
       <body className={`${manrope.variable}  antialiased`}>
-          <Providers>
-
+        <Providers>
           <div className="max-w-[1400px] mx-auto px-4">
-            <LayoutWrapper>
-                {children}
-              </LayoutWrapper>
+            <LayoutWrapper>{children}</LayoutWrapper>
           </div>
-          </Providers>
-        
+        </Providers>
       </body>
     </html>
   );

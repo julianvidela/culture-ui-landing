@@ -1,20 +1,29 @@
-import { useEffect } from "react";
+
+
+import { useEffect, useId, useRef } from "react";
+import { useUIContext } from "@/context/UIcontext";
 
 export function useScrollLock(isLocked: boolean) {
-    useEffect(() => {
-      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-      if (isLocked) {
-        document.body.style.overflow = "hidden";
-        document.body.style.paddingRight = `${scrollbarWidth}px`;
-      } else {
-        document.body.style.overflow = "";
-        document.body.style.paddingRight = "";
+  const { lockScroll, unlockScroll } = useUIContext();
+  const id = useId();
+  const lockedRef = useRef(false); 
+
+  useEffect(() => {
+    if (isLocked && !lockedRef.current) {
+      lockScroll(id);
+      lockedRef.current = true;
+    }
+
+    if (!isLocked && lockedRef.current) {
+      unlockScroll(id);
+      lockedRef.current = false;
+    }
+
+    return () => {
+      if (lockedRef.current) {
+        unlockScroll(id);
+        lockedRef.current = false;
       }
-  
-      return () => {
-        document.body.style.overflow = "";
-        document.body.style.paddingRight = "";
-      };
-    }, [isLocked]);
-  }
-  
+    };
+  }, [isLocked]);
+}

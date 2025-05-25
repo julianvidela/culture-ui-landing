@@ -1,29 +1,7 @@
-// import axios from "axios";
 
-// const API_URL = "https://c23-53-webapp.onrender.com/api/v1/component";
-
-
-// export const componentService = async () => {
-//   try {
-//     const response = await axios.get(API_URL);
-//     console.log(response)
-//     return response.data; 
-//   } catch (error) {
-//     console.error("Error obteniendo los componentes:", error);
-//     return [];
-//   }
-// };
+import { supabase } from "@/lib/supabaseClient";
 
 
-
-
-// src/services/componentService.ts
-import { createClient } from "@supabase/supabase-js";
-
-const supabase = createClient(
-  "https://lvrnssnafxbbmiigjfim.supabase.co",
- "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx2cm5zc25hZnhiYm1paWdqZmltIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc0MTQ3MDgsImV4cCI6MjA2Mjk5MDcwOH0.fMuP3R5nDCQqqyTDO0Zm_c56Sozv3dode7Yer4mO5-0"
-);
 
 export interface ParsedProp {
   name: string;
