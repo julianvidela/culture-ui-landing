@@ -2,41 +2,6 @@ type Position = {
     position: string;
     positionLg: string;
   };
-  
-  // export const presetPositions = [
-  //   {
-  //     position: "absolute top-[14%] left-[8%]",
-  //     positionLg: "absolute top-[15%] left-[16%]",
-  //   },
-  //   {
-  //     position: "absolute top-[23%] right-[3%]",
-  //     positionLg: "absolute top-[20%] right-[12%]",
-  //   },
-  //   {
-  //     position: "absolute top-[38%] left-[1%]",
-  //     positionLg: "absolute top-[45%] left-[5%]",
-  //   },
-  //   {
-  //     position: "absolute top-[50%] right-[10%]",
-  //     positionLg: "absolute top-[55%] right-[8%]",
-  //   },
-  //   {
-  //     position: "absolute bottom-[30%] left-[20%]",
-  //     positionLg: "absolute bottom-[25%] left-[12%]",
-  //   },
-  //   {
-  //     position: "absolute bottom-[10%] right-[16%]",
-  //     positionLg: "absolute bottom-[20%] right-[6%]",
-  //   },
-  //   {
-  //     position: "absolute bottom-[8%] left-[35%]",
-  //     positionLg: "absolute bottom-[6%] left-[30%]",
-  //   },
-  //   {
-  //     position: "absolute bottom-[8%] right-[30%]",
-  //     positionLg: "absolute bottom-[6%] right-[25%]",
-  //   },
-  // ];
 
 
   export const presetPositions = [

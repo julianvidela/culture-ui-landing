@@ -1,4 +1,4 @@
-// utils/resolveResponsiveClass.ts
+
 
 export type ResponsiveValue<T extends string> =
   | T

@@ -39,7 +39,7 @@ import GithubIcon from '@/common/assets/icons/GithubIcon';
           </FancyButton>
           <FancyButton >
           <Link
-            href="https://github.com/julianvidela/Culture-Ui"
+            href="https://github.com/julianvidela/cultureui-library.git"
             target="_blank"
             className="flex items-center gap-3 "
           >
@@ -49,16 +49,19 @@ import GithubIcon from '@/common/assets/icons/GithubIcon';
           </FancyButton>
            
         </div>
-        <div className="flex gap-4 h-[50px] px-6  items-center">
+        <div className="flex h-[50px] px-6  items-center">
   <div className="group cursor-pointer">
-     <ShinyText text=" ~ npm i culture-ui" speed={3} className="text-[16px] font-bold text-transparent bg-clip-text bg-gradient-to-r animate-text" />
+    <code className='flex items-center'>
+
+     <ShinyText text=" ~ npm i cultureui-library" speed={3} className="text-[16px] font-bold text-transparent bg-clip-text bg-gradient-to-r animate-text" />
     <button
-      onClick={() => copy("npm i culture-ui")}
+      onClick={() => copy("npm i cultureui-library")}
       className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity text-white rounded-md"
       aria-label="Copiar código"
     >
       {copied ? <ClipboardCheck color="#b5b5b5a4" size={13} strokeWidth={3}/> : <Clipboard color="#b5b5b5a4" size={13} strokeWidth={3} />}
     </button>
+    </code>
   </div>
 </div>
 

@@ -1,8 +1,9 @@
 "use client";
 
-import { Footer } from "@/components/Footer/Footer";
+
 import { HeroShowCase } from "./components/HeroShowCase";
 import { ComponentsGallery } from "./components/ComponentsGallery";
+import { Footer } from "@/components/Footer/Footer";
 
 
 
@@ -13,8 +14,8 @@ const ComponentShowCase = () => {
       <HeroShowCase />
 
       <ComponentsGallery />
-
-      <Footer /> 
+                     
+      <Footer/>               
       
     </div>
   );

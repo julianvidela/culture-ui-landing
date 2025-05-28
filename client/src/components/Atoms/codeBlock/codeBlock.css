@@ -1,0 +1,9 @@
+pre, code {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+pre span {
+  background: transparent !important;
+}

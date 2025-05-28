@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer/Footer";
 import { TechShowcaseSection } from "./components/TechSection/TechSection";
 import OpenSourceSection from "./components/OpenSourceSection/OpenSourceSection";
 import { PhilosophySection } from "./components/PhilosophySection/PhilosophySection";
-import { ContributeSection } from "./components/SupportSection/SupportSection";
+
 
 const Landing = () => {
 
@@ -17,7 +17,7 @@ const Landing = () => {
       <OpenSourceSection />
       <TechShowcaseSection/>
       <PhilosophySection />
-      <ContributeSection />
+      <Footer />
       
     </>
   );

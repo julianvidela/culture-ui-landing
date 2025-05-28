@@ -15,7 +15,7 @@ export const UIProvider = ({ children }: { children: React.ReactNode }) => {
   const [isScrollLocked, setIsScrollLocked] = useState(false);
   
 useEffect(() => {
-  console.log("[UIContext] isScrollLocked:", isScrollLocked);
+  isScrollLocked
 }, [isScrollLocked]);
 
 const lockScroll = (id: string) => {

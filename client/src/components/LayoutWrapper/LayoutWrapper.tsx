@@ -13,7 +13,7 @@ const LayoutWrapper = ({
   const pathname = usePathname();
 
   const showSidebar =
-    pathname.startsWith("/docs") || pathname.includes("/components");
+    pathname.startsWith("/docs") || pathname.includes("/components") || pathname.includes("/installation");
 
   return (
     <div className="">
@@ -29,7 +29,7 @@ const LayoutWrapper = ({
             </div>
           )}
         </div>
-        <div className="flex flex-col w-full items-center">{children}</div>
+        <div className="flex flex-col w-full">{children}</div>
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   safelist: [
-    // Justify classes (all breakpoints)
+   
     'justify-start',
     'justify-center',
     'justify-end',
@@ -25,7 +25,7 @@ const config: Config = {
     'xl:justify-center',
     'xl:justify-end',
 
-    // Text align classes (all breakpoints)
+
     'text-left',
     'text-center',
     'text-right',

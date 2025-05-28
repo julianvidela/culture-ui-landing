@@ -45,7 +45,7 @@ const ComponentDetail = () => {
             Instalation CLI
           </Text>
         </div>
-        <div className="flex overflow-auto group flex-col h-[7rem] rounded-lg bg-[var(--bg-black-degrade)] border border-[var(--border-primary)]">
+        <div className="flex overflow-auto group flex-col h-[7rem] rounded-lg bg-[#0A0A0A] ">
           <div className="flex justify-between h-[50px] px-6 rounded-t-lg  border-b border-[var(--border-primary)] items-center ">
             <div>
               <Text color="primary" as="h4" size="small" fontWeight="600">
@@ -64,9 +64,12 @@ const ComponentDetail = () => {
               )}
             </button>
           </div>
-          <div className="h-[60%] bg-[var(--bg-black-degrade)] rounded-b-lg flex items-center px-5 font-semibold text-[14px] text-[var(--text-color-secondary)]">
+          <div className="h-[60%] bg-[#0A0A0A] rounded-b-lg flex items-center px-5 font-semibold text-[14px] text-[var(--text-color-secondary)]">
             <Text color="secondary" as="p" size="small">
+              <code className="text-violet-400"> 
               {component.installationCli}
+
+              </code>
             </Text>
           </div>
         </div>

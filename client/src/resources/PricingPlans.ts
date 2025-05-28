@@ -69,24 +69,5 @@ const pricingPlans = [
   },
 ];
 
-// {
-//   id: "one-time",
-//   title: "One Time Payment",
-//   price: "$15 / month",
-//   buttonLabel: "Buy Now",
-//   description: [
-//     "Access to premium components without a subscription.",
-//     "Select a specific component and pay only for what you need.",
-//     "Perfect for small projects that require an extra touch.",
-//   ],
-//   icon: Icon.DiamonBlack,
-//   color: {
-//     backgroundCard: "#50BB9B",
-//     backgroundSvg: "#B2FDE6",
-//     button: "#B2FDE6",
-//     text: "#000000",
-//     checkMark: "#B2FDE6",
-//   },
-// },
-//
+
 export default pricingPlans

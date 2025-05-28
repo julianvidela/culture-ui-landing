@@ -49,7 +49,7 @@ export const componentService = async (): Promise<Component[]> => {
       const text = await data.text();
       try {
         const parsed: Component = JSON.parse(text);
-        console.log("holaaaa puutoo",parsed)
+        
         return parsed;
       } catch (e) {
         console.warn("Error parseando", file.name);

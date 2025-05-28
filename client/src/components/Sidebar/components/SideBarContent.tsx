@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useComponentContext } from "@/context/ComponentContext";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import { title } from "process";
 
 interface SidebarContentProps {
   onLinkClick?: () => void;
@@ -12,6 +13,10 @@ export const menuItems = [
   {
     path: '/docs',
     title: 'Docs',
+  },
+  {
+    path:'/installation',
+    title:'Intallation'
   },
   {
     path: '/components',

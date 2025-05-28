@@ -27,6 +27,20 @@ const SideBar = () => {
     Docs
   </Link>
 </li>
+     
+      <li>
+  <Link
+    href="/installation"
+    className={clsx(
+      "block py-2 px-4 rounded text-[14px] font-semibold transition-colors",
+      pathname === "/installation"
+        ? "text-[var(--text-color-secondary)]"
+        : "text-[var(--text-color-primary)] hover:text-[var(--text-color-secondary)]"
+    )}
+  >
+    Installation
+  </Link>
+</li>
 
         <li>
   <Link

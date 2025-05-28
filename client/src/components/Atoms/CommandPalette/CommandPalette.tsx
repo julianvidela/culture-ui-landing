@@ -1,5 +1,5 @@
 "use client";
-import { use, useState } from "react";
+import { useState } from "react";
 import { Search } from "lucide-react";
 import { CommandPaletteModal } from "./components/CommandPaletteModal";
 import { useCommandPaletteHotkey } from "@/hooks/useCommandPaletteHotkey";
