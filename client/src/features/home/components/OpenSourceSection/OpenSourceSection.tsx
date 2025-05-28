@@ -10,7 +10,7 @@ import GithubIcon from '@/common/assets/icons/GithubIcon';
  const OpenSourceSection = () => {
     const { copied, copy } = useCopyToClipboard();
   return (
-    <div className='h-auto w-full flex items-center flex-col gap-16 md:gap-8 my-28 md:py-52 lg:p-0  lg:my-36 '>
+    <div className='h-auto w-full flex items-center flex-col gap-16 md:gap-8 my-28 md:pb-32 lg:p-0 lg:pb-0  lg:my-36 '>
         <div className="w-fit  px-5 py-2 bg-black rounded-full border border-[var(--border-primary)]">
                   <Text as="p" color="secondary" fontWeight="700" size="normal">
                    🌌 Creative Power
@@ -53,13 +53,13 @@ import GithubIcon from '@/common/assets/icons/GithubIcon';
   <div className="group cursor-pointer bg-[#ffffff15] py-3 px-8 rounded-full">
     <code className='flex items-center'>
 
-     <ShinyText text=" ~ npm i cultureui-library" speed={3} className="text-[18px] font-bold text-transparent bg-clip-text bg-gradient-to-r animate-text" />
+     <ShinyText text=" ~ npm i cultureui-library" speed={3} className=" text-[14px] md:text-[18px] font-bold text-transparent bg-clip-text bg-gradient-to-r animate-text" />
     <button
       onClick={() => copy("npm i cultureui-library")}
       className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity text-white rounded-md"
       aria-label="Copiar código"
     >
-      {copied ? <ClipboardCheck color="#b5b5b5a4" size={13} strokeWidth={3}/> : <Clipboard color="#b5b5b5a4" size={13} strokeWidth={3} />}
+      {copied ? <ClipboardCheck color="#b5b5b5a4" size={14} strokeWidth={3}/> : <Clipboard color="#b5b5b5a4" size={14} strokeWidth={3} />}
     </button>
     </code>
   </div>
