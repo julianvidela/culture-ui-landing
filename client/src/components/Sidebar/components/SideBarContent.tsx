@@ -18,11 +18,6 @@ export const menuItems = [
     path:'/installation',
     title:'Intallation'
   },
-  {
-    path: '/components',
-    title: 'Showcase',
-  },
-
 ]
 
 

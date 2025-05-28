@@ -3,7 +3,7 @@
 import { Navbar } from "@/components/Navbar/Navbar";
 import SideBar from "@/components/Sidebar/Sidebar";
 import { usePathname } from "next/navigation";
-import BackgroundGallery from "../Atoms/BackGrounds/BackGroundGallery/BackgroundGallery";
+
 
 const LayoutWrapper = ({
   children,

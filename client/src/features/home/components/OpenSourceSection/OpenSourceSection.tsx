@@ -10,15 +10,15 @@ import GithubIcon from '@/common/assets/icons/GithubIcon';
  const OpenSourceSection = () => {
     const { copied, copy } = useCopyToClipboard();
   return (
-    <div className='h-auto w-full flex items-center flex-col gap-16 md:gap-8 my-28 md:py-52 lg:p-0  lg:my-52 '>
-        <div className="w-fit  px-5 py-2 bg-orange-500 rounded-full ]">
+    <div className='h-auto w-full flex items-center flex-col gap-16 md:gap-8 my-28 md:py-52 lg:p-0  lg:my-36 '>
+        <div className="w-fit  px-5 py-2 bg-black rounded-full border border-[var(--border-primary)]">
                   <Text as="p" color="secondary" fontWeight="700" size="normal">
-                    Creative Power
+                   🌌 Creative Power
                   </Text>
                 </div>
 
-        <div className='flex flex-col gap-5 w-[85%] md:w-[70%] lg:w-[50%]'>
-            <h2 className="text-center text-[30px] md:text-[64px] font-bold text-gray-800 dark:text-white">
+        <div className='flex flex-col gap-5 w-[85%] md:w-[70%] lg:w-[65%]'>
+            <h2 className="text-center text-[30px] md:text-[64px] lg:text-[80px] font-bold  text-white">
                 Open Source. Built with care.
             </h2>
             <Text className="text-center" as="p" color='primary' size="normal" fontWeight="600">
@@ -50,10 +50,10 @@ import GithubIcon from '@/common/assets/icons/GithubIcon';
            
         </div>
         <div className="flex h-[50px] px-6  items-center">
-  <div className="group cursor-pointer">
+  <div className="group cursor-pointer bg-[#ffffff15] py-3 px-8 rounded-full">
     <code className='flex items-center'>
 
-     <ShinyText text=" ~ npm i cultureui-library" speed={3} className="text-[16px] font-bold text-transparent bg-clip-text bg-gradient-to-r animate-text" />
+     <ShinyText text=" ~ npm i cultureui-library" speed={3} className="text-[18px] font-bold text-transparent bg-clip-text bg-gradient-to-r animate-text" />
     <button
       onClick={() => copy("npm i cultureui-library")}
       className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity text-white rounded-md"

@@ -8,7 +8,7 @@ import BackgroundGallery from "@/components/Atoms/BackGrounds/BackGroundGallery/
 export const Installation = () => {
   return (
     <section className="w-full h-auto mt-16 mb-20 border-l flex flex-col gap-6 border-[var(--border-primary)] px-8">
-      <BackgroundGallery />
+      {/* <BackgroundGallery /> */}
 
       <div className="max-w-[700px] flex flex-col gap-8 mt-4">
         <div className="flex flex-col gap-3">
@@ -23,7 +23,8 @@ export const Installation = () => {
 
         
         <div className="flex flex-col gap-3">
-          <Text fontWeight="700" color="secondary" size="medium"  as="h3">
+          <Text fontWeight="700" color="secondary" size="medium"  as="h3" className="relative">
+             <span className="absolute top-0 -left-8 z-20 block h-full w-[6px] rounded-tr-full rounded-br-full bg-zinc-400"></span>
             1. Install the package
           </Text>
           
@@ -40,7 +41,8 @@ export const Installation = () => {
         </div>
 
         <div className="flex flex-col gap-3">
-          <Text fontWeight="700" color="secondary" size="medium" as="h3">
+          <Text fontWeight="700" color="secondary" size="medium" as="h3" className="relative">
+             <span className="absolute top-0 -left-8 z-20 block h-full w-[6px] rounded-tr-full rounded-br-full bg-zinc-400"></span>
             2. Configure TailwindCSS
           </Text>
           <Text color="primary" size="small" fontWeight="600" className="flex gap-2 items-center">
@@ -68,7 +70,8 @@ export const Installation = () => {
 
         
         <div className="flex flex-col gap-3">
-          <Text fontWeight="700" color="secondary" size="medium" as="h3">
+          <Text fontWeight="700" color="secondary" size="medium" as="h3" className="relative">
+             <span className="absolute top-0 -left-8 z-20 block h-full w-[6px] rounded-tr-full rounded-br-full bg-zinc-400"></span>
             3. Use components
           </Text>
           <Text color="primary" size="small" fontWeight="600">

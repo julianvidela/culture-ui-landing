@@ -7,7 +7,6 @@ import { useComponentContext } from "@/context/ComponentContext";
 import { CodeBlock } from "@/components/Atoms/codeBlock/CodeBlock";
 import { PropsTable } from "@/components/Atoms/PropsTable/PropsTable";
 import { Text } from "@/components/Atoms/Text/Text";
-import BackgroundGallery from "@/components/Atoms/BackGrounds/BackGroundGallery/BackgroundGallery";
 import { ClipboardCheck, Clipboard } from "lucide-react";
 
 const ComponentDetail = () => {
@@ -22,7 +21,7 @@ const ComponentDetail = () => {
 
   return (
     <div className=" max-w-[750px] justify-start flex flex-col gap-[5rem] border-l border-[var(--border-primary)] text-white mb-16 px-8">
-      <BackgroundGallery />
+   
       <div className="flex flex-col gap-3">
         <Text fontWeight="700" color="secondary" size="large" as="h2">
           {component.name}
@@ -112,7 +111,7 @@ const ComponentDetail = () => {
         <div>
           <PropsTable
             properties={component.properties.map((p: any) => ({
-              prop: p.prop ?? p.name, // fallback to 'name' if 'prop' is missing
+              prop: p.prop ?? p.name, 
               type: p.type,
               description: p.description,
             }))}
