@@ -8,6 +8,7 @@ import { CodeBlock } from "@/components/Atoms/codeBlock/CodeBlock";
 import { PropsTable } from "@/components/Atoms/PropsTable/PropsTable";
 import { Text } from "@/components/Atoms/Text/Text";
 import { ClipboardCheck, Clipboard } from "lucide-react";
+import ComponentPreview from "@/components/Atoms/ComponentsPreview/ComponentPreview";
 
 const ComponentDetail = () => {
   const { id } = useParams();
@@ -21,6 +22,7 @@ const ComponentDetail = () => {
 
   return (
     <div className=" max-w-[750px] justify-start flex flex-col gap-[5rem] border-l border-[var(--border-primary)] text-white mb-16 px-8">
+
    
       <div className="flex flex-col gap-3">
         <Text fontWeight="700" color="secondary" size="large" as="h2">
@@ -30,6 +32,13 @@ const ComponentDetail = () => {
           {component.description}
         </Text>
       </div>
+      <div className="flex flex-col gap-4">
+  <Text fontWeight="700" size="medium" color="secondary" as="h3" className="relative">
+    <span className="absolute top-0 -left-8 z-20 block h-full w-[6px] rounded-tr-full rounded-br-full bg-zinc-400"/>
+    Preview
+  </Text>
+  <ComponentPreview id={component.slug} />
+</div>
 
       <div className="flex flex-col gap-4">
         <div>
@@ -40,7 +49,7 @@ const ComponentDetail = () => {
             as="h3"
             className="relative"
           >
-            <span className="absolute top-0 -left-8 z-20 block h-full w-[6px] rounded-tr-full rounded-br-full bg-zinc-400"></span>
+            <span className="absolute top-0 -left-8 z-20 block h-full w-[6px] rounded-tr-full rounded-br-full bg-zinc-400"/>
             Instalation CLI
           </Text>
         </div>
@@ -83,7 +92,7 @@ const ComponentDetail = () => {
             as="h3"
             className="relative"
           >
-            <span className="absolute top-0 -left-8 z-20 block h-full w-[6px] rounded-tr-full rounded-br-full bg-zinc-400"></span>
+            <span className="absolute top-0 -left-8 z-20 block h-full w-[6px] rounded-tr-full rounded-br-full bg-zinc-400"/>
             Usage
           </Text>
         </div>
@@ -128,7 +137,7 @@ const ComponentDetail = () => {
             as="h3"
             className="relative"
           >
-            <span className="absolute top-0 -left-8 z-20 block h-full w-[6px] rounded-tr-full rounded-br-full bg-zinc-400"></span>
+            <span className="absolute top-0 -left-8 z-20 block h-full w-[6px] rounded-tr-full rounded-br-full bg-zinc-400"/>
             Advanced Usage
           </Text>
         </div>
