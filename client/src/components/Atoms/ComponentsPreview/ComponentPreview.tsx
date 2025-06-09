@@ -5,7 +5,7 @@ import { AnimatedTooltip } from "@/components/cultureui/TooltipAnimated/TooltipA
 import Carrousel from "@/components/cultureui/Carrusel/Carrusel";
 import { FloatingNavBar } from "@/components/cultureui/FloatingNavBar/FloatingNavBar";
 import { AtSign, Home, Search, TrendingUp, User } from "lucide-react";
-import { Modal } from "@/components/cultureui/Modal/Modal";
+import { Modal } from "@/components/cultureui/modal/Modal";
 import { MotionText } from "@/components/cultureui/MotionText/MotionText";
 import { SocialSelector } from "@/components/cultureui/SocialSelector/SocialSelector";
 import LinkedinIcon from "@/common/assets/icons/Linkedin";
