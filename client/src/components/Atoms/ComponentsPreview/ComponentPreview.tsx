@@ -11,7 +11,6 @@ import { SocialSelector } from "@/components/cultureui/SocialSelector/SocialSele
 import LinkedinIcon from "@/common/assets/icons/Linkedin";
 import InstagramIcon from "@/common/assets/icons/Instagram";
 import GithubIcon from "@/common/assets/icons/GithubIcon";
-import { stat } from "fs";
 import { StatsWidget } from "@/components/cultureui/StatsWidget/StatsWidget";
 
 
