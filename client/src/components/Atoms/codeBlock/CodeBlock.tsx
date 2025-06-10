@@ -62,7 +62,7 @@ export const CodeBlock = ({
       
       <div
         className={`px-6 transition-all duration-300 ease-in-out ${
-          expanded ? "max-h-[1000px]" : "max-h-[350px]"
+          expanded ? "max-h-auto" : "max-h-[350px]"
         } overflow-hidden relative scrollbar-shadcn`}
       >
         <SyntaxHighlighter

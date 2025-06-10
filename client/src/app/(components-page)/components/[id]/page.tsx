@@ -22,8 +22,6 @@ const ComponentDetail = () => {
 
   return (
     <div className=" max-w-[750px] justify-start flex flex-col gap-[5rem] border-l border-[var(--border-primary)] text-white mb-16 px-8">
-
-   
       <div className="flex flex-col gap-3">
         <Text fontWeight="700" color="secondary" size="large" as="h2">
           {component.name}
@@ -33,12 +31,18 @@ const ComponentDetail = () => {
         </Text>
       </div>
       <div className="flex flex-col gap-4">
-  <Text fontWeight="700" size="medium" color="secondary" as="h3" className="relative">
-    <span className="absolute top-0 -left-8 z-20 block h-full w-[6px] rounded-tr-full rounded-br-full bg-zinc-400"/>
-    Preview
-  </Text>
-  <ComponentPreview id={component.slug} />
-</div>
+        <Text
+          fontWeight="700"
+          size="medium"
+          color="secondary"
+          as="h3"
+          className="relative"
+        >
+          <span className="absolute top-0 -left-8 z-20 block h-full w-[6px] rounded-tr-full rounded-br-full bg-zinc-400" />
+          Preview
+        </Text>
+        <ComponentPreview id={component.slug} />
+      </div>
 
       <div className="flex flex-col gap-4">
         <div>
@@ -49,7 +53,7 @@ const ComponentDetail = () => {
             as="h3"
             className="relative"
           >
-            <span className="absolute top-0 -left-8 z-20 block h-full w-[6px] rounded-tr-full rounded-br-full bg-zinc-400"/>
+            <span className="absolute top-0 -left-8 z-20 block h-full w-[6px] rounded-tr-full rounded-br-full bg-zinc-400" />
             Instalation CLI
           </Text>
         </div>
@@ -74,9 +78,8 @@ const ComponentDetail = () => {
           </div>
           <div className="h-[60%] bg-[#0A0A0A] rounded-b-lg flex items-center px-5 font-semibold text-[14px] text-[var(--text-color-secondary)]">
             <Text color="secondary" as="p" size="small">
-              <code className="text-violet-400"> 
-              {component.installationCli}
-
+              <code className="text-violet-400">
+                {component.installationCli}
               </code>
             </Text>
           </div>
@@ -92,22 +95,18 @@ const ComponentDetail = () => {
             as="h3"
             className="relative"
           >
-            <span className="absolute top-0 -left-8 z-20 block h-full w-[6px] rounded-tr-full rounded-br-full bg-zinc-400"/>
+            <span className="absolute top-0 -left-8 z-20 block h-full w-[6px] rounded-tr-full rounded-br-full bg-zinc-400" />
             Usage
           </Text>
         </div>
         <div className="flex flex-col h-auto">
-         
           <p>
-          
-          <CodeBlock
-            code={component.usageExample}
-            language="tsx"
-            languageText="jsx/tsx"
-          />
+            <CodeBlock
+              code={component.usageExample}
+              language="tsx"
+              languageText="jsx/tsx"
+            />
           </p>
-          
-
         </div>
       </div>
 
@@ -120,7 +119,7 @@ const ComponentDetail = () => {
         <div>
           <PropsTable
             properties={component.properties.map((p: any) => ({
-              prop: p.prop ?? p.name, 
+              prop: p.prop ?? p.name,
               type: p.type,
               description: p.description,
             }))}
@@ -137,7 +136,7 @@ const ComponentDetail = () => {
             as="h3"
             className="relative"
           >
-            <span className="absolute top-0 -left-8 z-20 block h-full w-[6px] rounded-tr-full rounded-br-full bg-zinc-400"/>
+            <span className="absolute top-0 -left-8 z-20 block h-full w-[6px] rounded-tr-full rounded-br-full bg-zinc-400" />
             Advanced Usage
           </Text>
         </div>

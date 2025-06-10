@@ -203,8 +203,7 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({ id }) => {
   if (!PreviewComponent) {
     return (
       <span className="text-zinc-500">
-        {" "}
-        Disponible: {Object.keys(componentMap).join(", ")}
+        No preview available for this component.
       </span>
     );
   }
