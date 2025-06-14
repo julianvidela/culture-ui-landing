@@ -34,9 +34,15 @@ export const HeroShowCase = () => {
         </Text>
       </div>
       <div className="w-full flex gap-4 sm:gap-6 justify-center">
-        <FancyButton>
-          <Link href="/docs">Get Started</Link>
-        </FancyButton>
+       
+          <Link href="/docs">
+            <FancyButton variant="dark">
+              
+              <span className="text-sm font-medium">Get Started</span>
+              
+            </FancyButton>
+          </Link>
+        
       </div>
       {tooltips.map((tooltip, index) => {
         const { position, positionLg } = positions[index];

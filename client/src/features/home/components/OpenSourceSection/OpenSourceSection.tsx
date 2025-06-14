@@ -27,26 +27,28 @@ import GithubIcon from '@/common/assets/icons/GithubIcon';
         </div>
         <div className='flex flex-col md:flex-row mt-5 gap-4 justify-center w-auto'>
             
-            <FancyButton>
-            <Link
-              href="/docs"
-              
-              className="flex gap-3 justify-center items-center"
-            >
-              Explore the Docs
-              <Folders size={16} strokeWidth={3}/>
-            </Link>
-          </FancyButton>
-          <FancyButton >
-          <Link
-            href="https://github.com/julianvidela/cultureui-library.git"
-            target="_blank"
-            className="flex items-center gap-3 "
-          >
-            <GithubIcon size={16} strokeWidth={3} />
-           Contribute on GitHub
-          </Link>
-          </FancyButton>
+            <Link href="/docs" className="inline-block">
+  <FancyButton>
+    <div className="flex gap-3 justify-center items-center">
+      <span className="text-sm font-medium">Explore the Docs</span>
+      <Folders size={16} strokeWidth={3} />
+    </div>
+  </FancyButton>
+</Link>
+
+<Link
+  href="https://github.com/julianvidela/cultureui-library.git"
+  target="_blank"
+  className="inline-block"
+>
+  <FancyButton>
+    <div className="flex items-center gap-2">
+      <GithubIcon size={16} strokeWidth={2.5} />
+      <span className="text-sm font-medium">Contribute on GitHub</span>
+    </div>
+  </FancyButton>
+</Link> 
+
            
         </div>
         <div className="flex h-[50px] px-6  items-center">

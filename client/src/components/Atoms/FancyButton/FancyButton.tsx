@@ -57,9 +57,10 @@ export const FancyButton: React.FC<BestiaButtonProps> = ({
       )}
     >
       <div className="button__bg" />
-      <span className="text-white relative z-10 mix-blend-difference font-semibold text-[14px]">
+      <div className="text-white relative z-10 mix-blend-difference font-semibold text-[14px]">
         {children}
-      </span>
+      </div>
+      
     </button>
   );
 };

@@ -8,7 +8,7 @@ import { CodeBlock } from "@/components/Atoms/codeBlock/CodeBlock";
 import { PropsTable } from "@/components/Atoms/PropsTable/PropsTable";
 import { Text } from "@/components/Atoms/Text/Text";
 import { ClipboardCheck, Clipboard } from "lucide-react";
-import ComponentPreview from "@/components/Atoms/ComponentsPreview/ComponentPreview";
+import ComponentPreview from "@/components/ComponentsPreview/ComponentPreview";
 
 const ComponentDetail = () => {
   const { id } = useParams();
