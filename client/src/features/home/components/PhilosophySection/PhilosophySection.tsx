@@ -6,6 +6,7 @@ import { Text } from "@/components/Atoms/Text/Text";
 import { philosophyData } from "./PhilosophyData";
 import Image from "next/image";
 import Img from "@/common/assets/img";
+import { easeOut } from "framer-motion";
 
 const containerVariants = {
   hidden: {},
@@ -21,7 +22,7 @@ const fadeUpVariant = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.6, ease: easeOut },
   },
 };
 
@@ -35,7 +36,7 @@ export const PhilosophySection = () => {
           <motion.div
             initial={{ opacity: 0, y: -100 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: easeOut}}
             viewport={{ once: true }}
             className="absolute -top-[270px] md:-top-32 md:left-[124px] lg:left-auto lg:-top-44 "
           >
@@ -51,7 +52,7 @@ export const PhilosophySection = () => {
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            transition={{ duration: 0.8, ease: easeOut, delay: 0.2 }}
             viewport={{ once: true }}
             className="absolute -bottom-60 md:-bottom-32 md:right-[124px] lg:right-auto lg:-bottom-32 "
           >
