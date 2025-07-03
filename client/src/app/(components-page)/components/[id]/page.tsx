@@ -3,21 +3,22 @@
 import React from "react";
 import { useParams } from "next/navigation";
 import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
-import { useComponentContext } from "@/context/ComponentContext";
+
 import { CodeBlock } from "@/components/Atoms/codeBlock/CodeBlock";
 import { PropsTable } from "@/components/Atoms/PropsTable/PropsTable";
 import { Text } from "@/components/Atoms/Text/Text";
 import { ClipboardCheck, Clipboard } from "lucide-react";
 import ComponentPreview from "@/components/ComponentsPreview/ComponentPreview";
+import { useComponents } from "@/hooks/useComponents";
 
 const ComponentDetail = () => {
   const { id } = useParams();
-  const { components, error, loading } = useComponentContext();
+  const { data: components = [], isLoading, error } = useComponents()
   const component = components.find((comp) => comp.id === id);
   const { copied, copy } = useCopyToClipboard();
 
-  if (loading) return <p>Cargando componentes...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (isLoading) return <p>Cargando componentes...</p>;
+  if (error) return <p>Error: {typeof error === "string" ? error : error.message}</p>;
   if (!component) return <p className="text-white">Componente no encontrado</p>;
 
   return (

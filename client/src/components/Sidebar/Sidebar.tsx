@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { useComponentContext } from "@/context/ComponentContext";
+
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import { useComponents } from "@/hooks/useComponents";
 
 
 const SideBar = () => {
-   const {components,error,loading} = useComponentContext()
+   const { data: components = [], isLoading, error } = useComponents()
    const pathname = usePathname();
 
 
@@ -48,10 +49,10 @@ const SideBar = () => {
       
       <h3 className="mt-6 text-sm font-semibold mb-5">Componentes</h3>
       <ul className="mt-2 space-y-2 border-l border-[var(--border-primary)]">
-        {loading && <p className="text-gray-400">Cargando componentes...</p>}
-        {error && <p className="text-red-400">Error: {error}</p>}
+        {isLoading && <p className="text-gray-400">Cargando componentes...</p>}
+        {error && <p className="text-red-400">Error: {typeof error === "string" ? error : error.message}</p>}
 
-        {!loading && !error && components.length > 0 ? (
+        {!isLoading && !error && components.length > 0 ? (
          components.map((component) => {
           const isActive = pathname === `/components/${component.id}`;
           return (

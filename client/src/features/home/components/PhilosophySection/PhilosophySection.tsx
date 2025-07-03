@@ -45,7 +45,7 @@ export const PhilosophySection = () => {
               alt="Phone top"
               width={240}
               height={480}
-              className="rounded-xl drop-shadow-xl"
+              className="rounded-xl drop-shadow-xl"  
             />
           </motion.div>
 

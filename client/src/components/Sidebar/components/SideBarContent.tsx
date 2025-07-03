@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useComponentContext } from "@/context/ComponentContext";
+import { useComponents } from "@/hooks/useComponents";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { title } from "process";
@@ -24,7 +24,7 @@ export const menuItems = [
 
 
 const SidebarContent = ({ onLinkClick }: SidebarContentProps) => {
-  const { components } = useComponentContext()
+   const { data: components = []} = useComponents()
   const pathname = usePathname();
   return (
     <ul className="flex gap-3 flex-col list-none">

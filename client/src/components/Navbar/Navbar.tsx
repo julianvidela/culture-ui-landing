@@ -2,7 +2,7 @@
 
 "use client";
 
-import React, { use, useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { AlignJustify } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
