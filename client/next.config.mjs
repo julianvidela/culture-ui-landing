@@ -1,11 +1,13 @@
+
+import MillionLint from "@million/lint";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
    domains: ["img.freepik.com"],
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'culture-ui-document.s3.us-east-2.amazonaws.com',
+        protocol: "https",
+        hostname: "culture-ui-document.s3.us-east-2.amazonaws.com",
         
       },
     ],
@@ -41,5 +43,8 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default MillionLint.next({
+  enabled: true,
+  rsc: true
+})(nextConfig);
 

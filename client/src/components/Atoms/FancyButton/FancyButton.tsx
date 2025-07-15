@@ -1,33 +1,5 @@
 
 
-// import React from "react";
-// import "./fancyButton.css";
-// import clsx from "clsx";
-
-// interface BestiaButtonProps {
-//   text: string;
-//   variant?: "light" | "dark";
-
-// }
-
-// export const FancyButton: React.FC<BestiaButtonProps> = ({
-//   text,
-//   variant = "light",
-  
-// }) => {
-//   const bgClass = variant === "light" ? "light" : "dark";
-
-  
-
-//   return (
-//     <button className={clsx("button--bestia", bgClass, "relative inline-flex items-center justify-center overflow-hidden px-8 py3")}>
-//       <div className="button__bg" />
-//       <span className="text-white relative z-10 mix-blend-difference font-semibold text-[14px]">{text}</span>
-//     </button>
-//   );
-// };
-
-
 import React from "react";
 import "./fancyButton.css";
 import clsx from "clsx";
@@ -52,7 +24,7 @@ export const FancyButton: React.FC<BestiaButtonProps> = ({
       className={clsx(
         "button--bestia",
         bgClass,
-        "relative inline-flex items-center justify-center overflow-hidden px-10 py-3 border border-[var(--border-primary)]  ",
+        "relative inline-flex items-center justify-center overflow-hidden px-10 py-3 w-full border border-[var(--border-primary)]  ",
         
       )}
     >

@@ -22,7 +22,7 @@ const ComponentDetail = () => {
   if (!component) return <p className="text-white">Componente no encontrado</p>;
 
   return (
-    <div className=" max-w-[750px] justify-start flex flex-col gap-[5rem] border-l border-[var(--border-primary)] text-white mb-16 px-8">
+    <div className=" animate-fade-in max-w-[750px] justify-start flex flex-col gap-[5rem] border-l border-[var(--border-primary)] text-white mb-16 px-8">
       <div className="flex flex-col gap-3">
         <Text fontWeight="700" color="secondary" size="large" as="h2">
           {component.name}
@@ -101,13 +101,13 @@ const ComponentDetail = () => {
           </Text>
         </div>
         <div className="flex flex-col h-auto">
-          <p>
+          
             <CodeBlock
               code={component.usageExample}
               language="tsx"
               languageText="jsx/tsx"
             />
-          </p>
+          
         </div>
       </div>
 

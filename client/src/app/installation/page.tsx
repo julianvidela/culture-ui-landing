@@ -3,7 +3,9 @@ import React from 'react'
 
  const Installationpage = () => {
   return (
-    <div><Installation/></div>
+    <div className='animate-fade-in'>
+      <Installation/>
+    </div>
   )
 }
  export default Installationpage

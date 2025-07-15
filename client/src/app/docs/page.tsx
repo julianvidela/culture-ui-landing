@@ -1,10 +1,12 @@
-import React from 'react'
-import Docs from '@/features/docs/page'
+import React from "react";
+import Docs from "@/features/docs/page";
 
 const DocsPage = () => {
   return (
-    <Docs />
-  )
-}
+    <div className="animate-fade-in">
+      <Docs />
+    </div>
+  );
+};
 
-export default DocsPage
+export default DocsPage;

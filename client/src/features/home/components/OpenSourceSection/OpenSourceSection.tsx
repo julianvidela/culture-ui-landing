@@ -29,7 +29,7 @@ import GithubIcon from '@/common/assets/icons/GithubIcon';
             
             <Link href="/docs" className="inline-block">
   <FancyButton>
-    <div className="flex gap-3 justify-center items-center">
+    <div className="flex gap-2 justify-center items-center">
       <span className="text-sm font-medium">Explore the Docs</span>
       <Folders size={16} strokeWidth={3} />
     </div>

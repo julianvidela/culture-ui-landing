@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import React, { useState } from "react";
@@ -13,17 +11,26 @@ import LogoCulture from "@/common/assets/icons/LogoCulture";
 import SidebarContent from "../Sidebar/components/SideBarContent";
 import { CommandPaletteWrapper } from "../Atoms/CommandPalette/components/CommandPaletteWrapper";
 import { useScrollLock } from "@/hooks/useScrollLock";
+import { useQueryClient } from "@tanstack/react-query";
+import { componentService } from "@/services/componentService";
+import { prefetchComponents } from "@/hooks/useComponents";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
-  
+ const queryClient = useQueryClient();
+
+ const handlePrefetch = () => {
+  prefetchComponents(queryClient);
+};
+
+ 
+
   useScrollLock(isMenuOpen);
 
   return (
     <div className="border-b border-[var(--border-primary)] w-full h-auto z-50 relative">
       <nav className="flex justify-between items-center w-full py-6">
-      
         <div className="flex gap-14">
           <div className="flex items-center gap-3 text-[var(--text-color-secondary)] font-bold text-[24px]">
             <LogoCulture />
@@ -32,6 +39,9 @@ export const Navbar = () => {
           <div className="hidden lg:flex items-center gap-6 text-[14px]">
             {navLinks.map((link, index) => (
               <Link
+                onMouseEnter={() => {
+                  if (link.href === "/docs") handlePrefetch();
+                }}
                 key={index}
                 href={link.href}
                 className="font-semibold text-[var(--text-color-secondary)] transition-colors duration-300 ease-in-out hover:text-[var(--text-color-primary)]"
@@ -42,12 +52,10 @@ export const Navbar = () => {
           </div>
         </div>
 
-        
         <div className="hidden lg:flex">
           <CommandPaletteWrapper />
         </div>
 
-     
         <Button
           onClick={() => setIsMenuOpen(true)}
           backgroundColor="transparent"
@@ -57,11 +65,9 @@ export const Navbar = () => {
         </Button>
       </nav>
 
-      
       <AnimatePresence>
         {isMenuOpen && (
           <>
-           
             <motion.div
               key="backdrop"
               initial={{ opacity: 0 }}
@@ -72,7 +78,6 @@ export const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
             />
 
-            
             <motion.div
               key="mobile-menu"
               initial={{ y: "100%", opacity: 0 }}

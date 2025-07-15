@@ -5,7 +5,7 @@ import { createAsyncStoragePersister } from '@tanstack/query-async-storage-persi
 export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 1000 * 60 * 5, // 5 minutos
+      staleTime: 1000 * 60 * 5, 
     },
   },
 })
@@ -18,6 +18,8 @@ if (typeof window !== 'undefined') {
   persistQueryClient({
     queryClient,
     persister: localStoragePersister,
-    maxAge: 1000 * 60 * 60, // 1 hora
+    maxAge: 1000 * 60 * 60, 
   })
 }
+
+

@@ -2,7 +2,7 @@ import React from "react";
 import ComponentShowCase from "@/features/componentsShowCase/page";
 
 const ComponentsPage = () => {
-    return <div>
+    return <div className="animate-fade-in">
       <ComponentShowCase/>
     </div>;
   };

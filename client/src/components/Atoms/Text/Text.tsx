@@ -34,7 +34,7 @@ interface TextProps {
 }
 
 export const Text: FC<TextProps> = ({
-  as = "p",
+  as = "span",
   children,
   className,
   style = {},

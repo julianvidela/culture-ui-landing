@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { queryClient } from "@/lib/reactQueryClient";
 import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
 import { createAsyncStoragePersister } from "@tanstack/query-async-storage-persister";
+import { DevtoolsWrapper } from "@/components/DevtoolsWrapper/DevtoolsWrapper";
 
 export function ClientOnly({ children }: { children: React.ReactNode }) {
   const [isClient, setIsClient] = useState(false);
@@ -20,11 +21,12 @@ export function ClientOnly({ children }: { children: React.ReactNode }) {
   if (!isClient || !persister) return null;
 
   return (
-    <PersistQueryClientProvider
-      client={queryClient}
-      persistOptions={{ persister }}
-    >
-      {children}
-    </PersistQueryClientProvider>
+   <PersistQueryClientProvider
+  client={queryClient}
+  persistOptions={{ persister }}
+>
+  {children}
+  <DevtoolsWrapper />
+</PersistQueryClientProvider>
   );
 }

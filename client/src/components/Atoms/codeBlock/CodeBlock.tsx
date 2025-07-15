@@ -46,7 +46,7 @@ export const CodeBlock = ({
     >
       
       <div className="flex justify-between h-[50px] px-6 border-b border-[var(--border-primary)] items-center">
-        <Text color="primary" as="h4" size="small" fontWeight="600">
+        <Text color="primary" as="p" size="small" fontWeight="600">
           {languageText}
         </Text>
 
