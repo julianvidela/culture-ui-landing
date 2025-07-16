@@ -23,30 +23,23 @@
 // }
 
 
+
+
 import { QueryClient } from '@tanstack/react-query';
-import { persistQueryClient } from '@tanstack/react-query-persist-client';
-import { createAsyncStoragePersister } from '@tanstack/query-async-storage-persister';
 
-export const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 1000 * 60 * 5,
-    },
-  },
-});
+// Singleton para evitar múltiples instancias
+let client: QueryClient | null = null;
 
-export function setupQueryClientPersistence() {
-  if (typeof window === 'undefined') return; 
-
-  const localStoragePersister = createAsyncStoragePersister({
-    storage: window.localStorage,
-  });
-
-  persistQueryClient({
-    queryClient,
-    persister: localStoragePersister,
-    maxAge: 1000 * 60 * 60,
-  });
-}
-
-
+export const getQueryClient = () => {
+  if (!client) {
+    client = new QueryClient({
+      defaultOptions: {
+        queries: {
+          staleTime: 1000 * 60 * 5,
+          refetchOnWindowFocus: false,
+        },
+      },
+    });
+  }
+  return client;
+};
