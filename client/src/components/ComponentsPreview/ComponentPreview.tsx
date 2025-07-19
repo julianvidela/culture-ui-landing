@@ -45,7 +45,6 @@ const previewProps: Record<string, any> = {
         answer:
           "Just run `npm install cultureui-library` and import the components you need.",
       },
-     
     ],
   },
   animatedtooltip: {
@@ -124,13 +123,29 @@ const previewProps: Record<string, any> = {
     ],
   },
   modal: {
-    title: "Subscribe to our Newsletter",
-    description: "Enter your email to receive updates.",
-    buttonText: "Subscribe",
-    onSubmit: handleSubmit,
+    title: "Únete a la comunidad",
+    description: "Sé parte de nuestro newsletter exclusivo.",
+    backgroundColor: "#ffffff",
+    textColor: "#333333",
+    titleSize: "24px",
+    descriptionSize: "16px",
+    fontWeight: "700",
+    buttonText: "Suscribirse",
+    border: "1px solid #e5e7eb",
+    successMessageBg: "#000000",
+    successMessageText: "#ffffff",
+    inputPlaceholder: "Correo electrónico",
     trigger: (
       <button className="px-8 py-4 text-sm font-semibold bg-black text-white rounded-lg">
-        Open Modal ✈️
+        Abrir Modal
+      </button>
+    ),
+    customSubmitButton: (
+      <button
+        type="submit"
+        className="w-full py-4 text-sm font-semibold bg-black text-white rounded-lg"
+      >
+        Suscribirse
       </button>
     ),
   },

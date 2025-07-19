@@ -1,12 +1,15 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, X } from "lucide-react";
-import { useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 
 interface Option {
+
   id: string;
   label: string;
   path?: string;
   targetId?: string;
+  icon?: React.ReactNode;
+  type?: "static" | "dynamic"; 
 }
 
 interface Props {
@@ -27,6 +30,9 @@ export const CommandPaletteModal: React.FC<Props> = ({
   onClose,
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const staticOptions = options.filter(opt => opt.type === "static");
+  const dynamicOptions = options.filter(opt => opt.type === "dynamic");
 
   useEffect(() => {
     if (isOpen) inputRef.current?.focus();
@@ -66,18 +72,40 @@ export const CommandPaletteModal: React.FC<Props> = ({
               </button>
             </div>
 
-            <div className="max-h-64 overflow-y-auto flex flex-col gap-2 px-1 py-1 ">
-              {options.length > 0 ? (
-                options.map((opt) => (
-                  <button
-                    key={opt.id}
-                    onClick={() => onSelect(opt)}
-                    className="text-left w-full px-3 py-3 text-sm font-semibold rounded-md text-zinc-300 hover:bg-zinc-800 transition-colors"
-                  >
-                    {opt.label}
-                  </button>
-                ))
-              ) : (
+             <div className="max-h-72 overflow-y-auto flex flex-col gap-2 px-1 pt-4 ">
+              {staticOptions.length > 0 && (
+                <>
+                  <div className="px-3 py-1 text-sm text-zinc-500 font-semibold">Menu</div>
+                  {staticOptions.map((opt) => (
+                    <button
+                      key={opt.id}
+                      onClick={() => onSelect(opt)}
+                      className="text-left flex items-center w-full px-3 py-3 text-sm font-semibold rounded-md text-zinc-300 hover:bg-zinc-800 transition-colors"
+                    >
+                      {opt.icon && <span className="mr-2">{opt.icon}</span>}
+                      {opt.label}
+                    </button>
+                  ))}
+                </>
+              )}
+
+              {dynamicOptions.length > 0 && (
+                <>
+                  <div className="px-3 py-1 text-sm text-zinc-500 font-semibold">Components</div>
+                  {dynamicOptions.map((opt) => (
+                    <button
+                      key={opt.id}
+                      onClick={() => onSelect(opt)}
+                      className="text-left flex items-center w-full px-3 py-3 text-sm font-semibold rounded-md text-zinc-300 hover:bg-zinc-800 transition-colors"
+                    >
+                      {opt.icon && <span className="mr-2">{opt.icon}</span>}
+                      {opt.label}
+                    </button>
+                  ))}
+                </>
+              )}
+
+              {staticOptions.length === 0 && dynamicOptions.length === 0 && (
                 <div className="flex items-center justify-center w-full h-full py-10">
                   <p className="text-zinc-500 text-sm font-semibold">No results found 😮</p>
                 </div>

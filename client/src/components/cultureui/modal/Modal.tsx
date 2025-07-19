@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import CloseIcon from "@/common/assets/icons/Close";
 import clsx from "clsx";
 
+
+
 interface ModalProps {
   title?: string;
   imageSrc?: string;

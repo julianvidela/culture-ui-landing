@@ -12,6 +12,7 @@ interface Option {
   label: string;
   path?: string;
   targetId?: string;
+  icon?: React.ReactNode; 
 }
 
 interface Props {
