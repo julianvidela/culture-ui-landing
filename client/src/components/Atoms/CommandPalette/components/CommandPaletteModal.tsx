@@ -46,7 +46,7 @@ export const CommandPaletteModal: React.FC<Props> = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm flex justify-center items-center"
+          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-lg flex justify-center items-center"
           onClick={onClose}
         >
           <motion.div
@@ -55,7 +55,7 @@ export const CommandPaletteModal: React.FC<Props> = ({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="bg-[#0A0A0A] border border-zinc-700 rounded-xl w-[450px] h-auto z-50 pb-1 overflow-hidden scrollbar-shadcn"
+            className="bg-[#0A0A0A] border border-zinc-700 rounded-xl w-[500px] h-auto z-50 pb-1 overflow-hidden scrollbar-shadcn"
           >
             <div className="flex border-b-2 border-[var(--border-primary)]  items-center gap-2  p-4">
               <Search size={16} className="text-zinc-400" />

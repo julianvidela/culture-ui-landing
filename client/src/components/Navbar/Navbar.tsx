@@ -12,8 +12,9 @@ import SidebarContent from "../Sidebar/components/SideBarContent";
 import { CommandPaletteWrapper } from "../Atoms/CommandPalette/components/CommandPaletteWrapper";
 import { useScrollLock } from "@/hooks/useScrollLock";
 import { useQueryClient } from "@tanstack/react-query";
-import { componentService } from "@/services/componentService";
 import { prefetchComponents } from "@/hooks/useComponents";
+import Img from "@/common/assets/img";
+
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,14 +30,13 @@ export const Navbar = () => {
   useScrollLock(isMenuOpen);
 
   return (
-    <div className="border-b border-[var(--border-primary)] w-full h-auto z-50 relative">
-      <nav className="flex justify-between items-center w-full py-6">
+    <div className="bg-[#e7e7e7] w-full rounded-lg h-auto z-50 relative my-5">
+      <nav className="flex justify-between items-center w-full py-6 px-6">
         <div className="flex gap-14">
-          <div className="flex items-center gap-3 text-[var(--text-color-secondary)] font-bold text-[24px]">
-            <LogoCulture />
-            <h2>Culture UI</h2>
+          <div className="flex items-center gap-3 text-black font-extrabold text-[24px]">
+            <img src={Img.CultureLog} alt="logo culture"/>
           </div>
-          <div className="hidden lg:flex items-center gap-6 text-[14px]">
+          <div className="hidden lg:flex items-center gap-6">
             {navLinks.map((link, index) => (
               <Link
                 onMouseEnter={() => {
@@ -44,7 +44,7 @@ export const Navbar = () => {
                 }}
                 key={index}
                 href={link.href}
-                className="font-semibold text-[var(--text-color-secondary)] transition-colors duration-300 ease-in-out hover:text-[var(--text-color-primary)]"
+                className="font-bold text-base text-black transition-colors duration-300 ease-in-out hover:text-[var(--text-color-primary)]"
               >
                 {link.label}
               </Link>

@@ -9,7 +9,7 @@ export function useCommandPaletteHotkey({ onToggle }: UseCommandPaletteHotkeyPro
     const down = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();
-        onToggle(); // Más claro y reusable
+        onToggle(); 
       }
     };
     window.addEventListener("keydown", down);

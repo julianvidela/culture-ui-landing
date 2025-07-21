@@ -1,5 +1,5 @@
 import React from 'react'
-import CardsPricing from './components/CardsPricing';
+
 
 const Premium = () => {
   return (
@@ -9,7 +9,7 @@ const Premium = () => {
         <p className='text-[16px] font-bold text-[var(--text-color-primary)]'>Explore opciones de precios adaptadas a desarrolladores de todos los niveles.</p>
       </div>
       <div className='w-auto h-auto mt-20'>
-        <CardsPricing />
+        
       </div>
     </section>
   )

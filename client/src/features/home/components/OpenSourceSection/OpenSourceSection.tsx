@@ -10,7 +10,7 @@ import GithubIcon from '@/common/assets/icons/GithubIcon';
  const OpenSourceSection = () => {
     const { copied, copy } = useCopyToClipboard();
   return (
-    <div className='h-auto w-full flex items-center flex-col gap-16 md:gap-8 my-28 md:pb-32 lg:p-0 lg:pb-0  lg:my-36 '>
+    <div className='h-auto w-full flex items-center flex-col gap-16 md:gap-8 my-28 md:pb-32 lg:p-0 lg:pb-0 lg:my-0 lg:mt-[5rem] lg:mb-[5rem] '>
         <div className="w-fit  px-5 py-2 bg-black rounded-full border border-[var(--border-primary)]">
                   <Text as="p" color="secondary" fontWeight="700" size="normal">
                    🌌 Creative Power
