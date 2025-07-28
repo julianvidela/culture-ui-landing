@@ -51,11 +51,11 @@ export const CommandPalette: React.FC<Props> = ({ options }) => {
     <>
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="bg-trasparent text-black px-4 py-2 rounded-lg text-sm font-semibold flex items-center justify-center gap-2  shadow-md"
+        className="bg-[#0a0a0a] text-[var(--text-color-secondary)] border border-[var(--border-primary)] px-4 py-2 rounded-lg text-sm font-semibold flex items-center justify-center gap-2  shadow-md"
       >
         <Search size={18} />
         Search components
-        <kbd className="ml-2 text-base text-zinc-400">⌘K</kbd>
+        <kbd className="ml-2 text-sm text-zinc-400">⌘K</kbd>
       </button>
 
       <CommandPaletteModal
